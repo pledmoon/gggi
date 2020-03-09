@@ -1,0 +1,43 @@
+include ../utils/mixins
+
+include ../utils/bemto/bemto
+- set_bemto_settings({ modifier: "--" });
+
+block variables
+
+include head
+include ../layouts/header.pug
+include ../layouts/footer.pug
+include ../components/breadcrumbs
+
+doctype html
+html(lang="ru-RU")
+  
+  head
+    +head()
+
+  body(class=pageClass)
+
+    .wrapper
+
+      .wrapper__main
+
+        block header
+          +header()
+
+          if breadcrumbs
+            +breadcrumbs(breadcrumbs)
+
+        block content
+
+      .wrapper__footer
+
+        block footer
+          +footer()
+
+    script(src="assets/js/libs.min.js")
+    script(src="https://unpkg.com/popper.js@1")
+    script(src="https://unpkg.com/tippy.js@5")
+    script(src="assets/js/main.js")
+
+    block script

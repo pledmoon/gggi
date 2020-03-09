@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+
+// 1.Abstracts (Configuration and Helpers)
+@import "abstracts/mixins";
+@import "abstracts/functions";
+@import "abstracts/variables";
+
+// 2.Vendors
+@import "../../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../../node_modules/swiper/swiper.scss";
+@import "../../../node_modules/lightgallery.js/src/sass/lightgallery.scss";
+@import "../../../node_modules/choices.js/src/styles/choices.scss";
+
+// 2.Vendors-extensions
+@import "vendors-extensions/bootstrap";
+@import "vendors-extensions/choices.scss";
+@import "vendors/nouislider.scss";
+@import "vendors/drift-basic.scss";
+@import "vendors/simplebar.scss";
+
+// 3.Base stuff
+@import "base/base";      // maybe reset
+@import "base/utilities"; // aka helpers
+@import "base/fonts";
+@import "base/typography";
+@import "base/forms";
+@import "base/table";
+@import "base/animations";
+@import "base/print";
+
+// 4.Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/section";
+@import "layout/carousels";
+@import "layout/demo-styleguide";
+
+// 5.Components
+@import "components/buttons";
+@import "components/icons";
+@import "components/tooltip";
+@import "components/soc";
+@import "components/breadcrumbs";
+@import "components/pagination";
+
+// 6.Pages (page-specific styles)
+//@import 'pages/home'
+
+// 7.Themes
+// @import 'themes/default';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__footer {
+
+  }
+}

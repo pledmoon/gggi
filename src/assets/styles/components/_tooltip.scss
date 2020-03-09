@@ -1,0 +1,66 @@
+/* Tippy Tooltip */
+.tooltip {
+  position: relative;
+  color: $primary-color;
+  font-size: 1.6rem;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+.tippy-tooltip.white-border-theme {
+  background-color: $white;
+  border: 1px solid $gray--medium;
+  color: $black;
+}
+
+.tippy-tooltip.white-border-theme .tippy-arrow {
+  border: 1px solid $gray--medium;
+  width: 1rem;
+  height: 1rem;
+  background: $white;
+  transform: rotate(45deg);
+}
+
+.tippy-tooltip.white-border-theme .tippy-content {
+  background: $white;
+  z-index: 2;
+  position: relative;
+  border-radius: 5px;
+}
+
+[data-interactive] {
+  box-shadow: 0 0 1.5rem rgba($black, 0.35);
+}
+
+[data-tooltip-content] {
+  display: none;
+}
+
+.tooltip-markup {
+  padding: 1rem;
+
+  &__heading {
+    font-size: 1.4rem;
+    color: $black;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 3.5rem;
+      height: 3px;
+      background: $primary-color;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      margin-top: -1px;
+    }
+  }
+
+  &__body {
+    font-size: 1.4rem;
+  }
+}
+/* Tippy Tooltip */

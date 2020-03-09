@@ -1,0 +1,35 @@
+.accordeon {
+  $self: &;
+
+  &__heading {
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+
+    &::after {
+      content: "+";
+      font-size: 2.2rem;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 600;
+      color: $primary-color;
+    }
+
+    &.is-active {
+      &::after {
+        content: "-";
+        color: #e7e7e7;
+      }
+
+      + #{$self}__body {
+        display: block;
+      }
+    }
+  }
+
+  &__body {
+    display: none;
+  }
+}

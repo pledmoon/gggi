@@ -1,0 +1,21 @@
+.demo-section {
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+
+  .square {
+    width: 10rem;
+    height: 10rem;
+
+    &--primary {
+      background-color: $primary-color;
+    }
+
+    &--secondary {
+      background-color: $secondary-color;
+    }
+
+    &--tertiary {
+      background-color: $tertiary-color;
+    }
+  }
+}

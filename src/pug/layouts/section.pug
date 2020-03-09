@@ -1,0 +1,15 @@
+mixin section(heading, buttonText=false, mod='')
+  
+  +b.SECTION.section(class=mod)
+    if heading
+      +e.heading #{heading}
+
+    +e.body
+      if block
+        block
+      else
+        p No content provided
+
+    if buttonText
+      .text-center
+        +e.A(href="#").btn.btn.btn--reverse #{buttonText}

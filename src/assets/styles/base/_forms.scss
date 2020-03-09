@@ -1,0 +1,198 @@
+::placeholder {
+  color: $dark--medium;
+  font-size: 1.4rem;
+}
+
+input,
+textarea {
+  padding: 1.5rem 1.5rem;
+  width: 100%;
+  border: 1px solid $input-border-color;
+  outline: none;
+  border-radius: $input-border-radius;
+  font-family: $font-base-stack;
+
+  &:focus {
+    border-color: $input-border-color-focus;
+  }
+}
+
+input {}
+
+textarea {
+  resize: vertical;
+}
+
+button,
+button:focus {
+  outline: none;
+  font-family: $font-base-stack;
+  cursor: pointer;
+}
+
+label {
+  user-select: none;
+}
+
+fieldset {
+  border: none;
+}
+
+/* Checkbox */
+.checkbox-label {
+  &__main {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: $font-base-color;
+    padding: 0 0 0 2.5rem;
+    position: relative;
+    margin: 0;
+    user-select: none;
+    line-height: 1.2;
+    font-weight: 500;
+    display: block;
+    
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+
+    &::before {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 1px solid #e7e7e7;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__input {
+    @include hide-element;
+  }
+
+  &__input:checked + .checkbox-label__main::after {
+    content: "";
+    width: .8rem;
+    height: .8rem;
+    background-color: $primary-color;
+    position: absolute;
+    left: .4rem;
+    top: .4rem;
+  }
+
+  &__input[disabled] + .checkbox-label__main {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &__amount {
+    color: $gray;
+    font-size: 1.2rem;
+  }
+}
+/* Checkbox */
+
+/* Radio */
+.radio-label {
+  &__main {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: $font-base-color;
+    height: 100%;
+    padding: 0 0 0 2.5rem;
+    position: relative;
+    margin: 0;
+    user-select: none;
+    line-height: 1.2;
+    font-weight: 500;
+    display: block;
+    
+    min-width: 1.6rem;
+    min-height: 1.6rem;
+
+    &::before {
+      content: "";
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 1px solid #e7e7e7;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 50%;
+      background: $white;
+    }
+
+    &::after {
+      content: "";
+      width: .8rem;
+      height: .8rem;
+      position: absolute;
+      left: .4rem;
+      top: .4rem;
+      border-radius: 50%;
+      background-color: transparent;
+    }
+  }
+
+  &__input {
+    @include hide-element;
+  }
+
+  &__input:checked + .radio-label__main::before {
+    //border-color: $primary-color;
+  }
+
+  &__input:checked + .radio-label__main::after {
+    background-color: $primary-color;
+  }
+
+  &__input[disabled] + .radio-label__main {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &__amount {
+    color: $dark--medium;
+    font-size: 1.2rem;
+  }
+}
+/* Radio */
+
+/* Type File */
+.upload-file {
+  position: relative;
+
+  [class*="fa"] {
+    color: $primary-color;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__upload {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    color: $dark--medium;
+    transition: all .3s;
+    cursor: pointer;
+    display: block;
+    border: 1px dashed $gray--medium;
+    border-radius: $input-border-radius;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    line-height: 1;
+  }
+}
+/* Type File */

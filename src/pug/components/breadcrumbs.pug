@@ -1,0 +1,9 @@
+mixin breadcrumbs(list)
+
+  - const lastElement = list.pop(list[list.length - 1]);
+  
+  +b.UL.breadcrumbs
+    each item in list
+      +e.LI.item
+        +e.A.link(href="#") #{item}
+    +e.LI.item= lastElement

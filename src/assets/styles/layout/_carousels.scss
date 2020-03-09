@@ -1,0 +1,75 @@
+.js-interactive-carousel {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+
+  &.swiper-container-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .swiper-pagination-bullets {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @media (min-width: $lg) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.swiper-pagination-bullets {
+  text-align: center;
+
+  .swiper-pagination-bullet {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid #e7e7e7;
+    display: inline-block;
+    margin: 0 .5rem;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+
+    &-active {
+      cursor: default;
+
+      &::after {
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        background-color: $primary-color;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.brands-carousel-wrap {
+  padding: 2.5rem 0;
+}
+
+.brands-carousel {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  &.swiper-container-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.js-promo-carousel {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+
+  &.swiper-container-initialized {
+    opacity: 1;
+    visibility: visible;
+  }
+}

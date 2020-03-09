@@ -1,0 +1,198 @@
+extends templates/main
+
+block variables
+  - let title = 'UI сайта styleguide';
+  - let pageClass = 'ui-page';
+
+block content
+  .container-fluid
+    h1 Styleguide
+    .demo-section
+      h2 Brand Colors Palette
+      .row
+        .col-6
+        .col-6
+          div.square.square--primary
+          div.square.square--secondary
+          div.square.square--tertiary
+    .demo-section
+      h2 Typography
+      h1 Header 1
+      h2 Header 2
+      h3 Header 3
+      h4 Header 4
+      h5 Header 5
+      h6 Header 6
+
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perspiciatis, veniam quisquam dolores aperiam omnis, pariatur? Explicabo, atque, necessitatibus quis dolorum accusantium #[a(href="#") sit harum aperiam libero] quaerat, molestias accusamus excepturi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perspiciatis, veniam quisquam dolores aperiam omnis, pariatur? Explicabo, atque, necessitatibus quis dolorum accusantium sit harum aperiam libero quaerat, molestias accusamus excepturi.
+
+      p.small Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perspiciatis, veniam quisquam dolores aperiam omnis, pariatur? Explicabo, atque, necessitatibus quis dolorum accusantium sit harum aperiam libero quaerat, molestias accusamus excepturi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perspiciatis, veniam quisquam dolores aperiam omnis, pariatur? Explicabo, atque, necessitatibus quis dolorum accusantium sit harum aperiam libero quaerat, molestias accusamus excepturi.
+
+      blockquote
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta modi ex, placeat obcaecati repellat! Eum dignissimos dolorem, consectetur saepe mollitia repellat reiciendis laudantium, aperiam corporis, nihil ea dolorum, soluta rem!   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum id iure, modi veritatis nam aut aspernatur necessitatibus assumenda magnam facilis, asperiores, rerum maiores corporis provident hic natus sit ullam obcaecati?
+        cite #[a(href="#") Bill Gates, CEO Microsoft]
+
+    .demo-section
+      h2 Кнопки
+      a(href="#").btn Default Button
+      a(href="#").btn.btn--primary Primary Button
+      a(href="#").btn.btn--secondary Secondary Button
+      a(href="#").btn.btn--reverse Reverse Button
+      h3 Кнопки размеры
+      a(href="#").btn Default Button
+      a(href="#").btn.btn--primary Primary Button
+      a(href="#").btn.btn--secondary Secondary Button
+      a(href="#").btn.btn--reverse Reverse Button
+      h3 Кнопки недоступные
+      a(href="#" disabled).btn Default Button
+      a(href="#" disabled).btn.btn--primary Primary Button
+      a(href="#" disabled).btn.btn--secondary Secondary Button
+      a(href="#" disabled).btn.btn--reverse Reverse Button
+    .demo-section
+      h2 Формы
+      form(action="/" method="GET" name="demo-form")
+        fieldset
+          legend Основные поля
+          .row
+            .col-6
+              div
+                label(for="demo-text") Обычное поле #[span *]
+                input(type="text" name="demo-text" id="demo-text" placeholder="Поле text")
+            .col-6
+              div
+                label(for="demo-password") Поле парольное
+                input(type="password" name="demo-password" id="demo-password" placeholder="Поле password")
+            .col-6
+              div
+                label(for="demo-email") Почтовое поле #[span *]
+                input(type="email" name="demo-email" id="demo-email" placeholder="Поле email")
+            .col-6
+              div
+                label(for="demo-tel") Поле для телефона
+                input(type="tel" name="demo-tel" id="demo-tel" placeholder="Поле tel")
+            .col-6
+              div
+                label(for="") Поле
+            .col-6
+              div
+                label(for="demo-txt") Поле для сообщений
+                textarea(placeholder="Сообщение" name="demo-txt" id="demo-txt")
+            .col-6
+              div
+                .upload-file
+                  i.fa.fa-file-alt
+                  input.upload-file__upload(type="file" id="upload-price-file" name="uploaded-file" multiple data-multiple-caption="{count} файлов выбрано")
+                  label.upload-file__label(for="upload-price-file") #[span Выберите файл]
+
+        fieldset
+          legend Дополнительные поля
+          .row
+            .col-6
+              div
+                label(for="demo-url") Поле для URL
+                input(type="url" name="demo-url" id="demo-url" placeholder="Поле url")
+            .col-6
+              div
+                label(for="demo-number") Поле для чисел
+                input(type="number" name="demo-number" id="demo-number" placeholder="Поле number")
+            .col-6
+              div
+                label(for="demo-color") Поле для цвета
+                input(type="color" name="demo-color" id="demo-color" placeholder="Поле color")
+            .col-6
+              div
+                label(for="demo-date") Поле для дат
+                input(type="date" name="demo-date" id="demo-date" placeholder="Поле date")
+            .col-6
+              div
+                label(for="demo-month") Поле для месяца
+                input(type="month" name="demo-month" id="demo-month" placeholder="Поле month")
+            .col-6
+              div
+                label(for="demo-week") Поле для недели
+                input(type="week" name="demo-week" id="demo-week" placeholder="Поле week")
+            .col-6
+              div
+                label(for="demo-time") Поле для времени
+                input(type="time" name="demo-time" id="demo-time" placeholder="Поле time")
+            .col-6
+              div
+                label(for="demo-range") Поле для диапазона
+                input(type="range" name="demo-range" id="demo-range" placeholder="Поле range")
+        fieldset
+          legend Селекты
+          .row
+            .col-6
+              label(for="demo-select") Обычный список
+              select(style="js-select-default" id="demo-select")
+                optgroup(label="Фрукты")
+                  option(value="opt-1") Банан
+                  option(value="opt-2") Абрикосы
+                  option(value="opt-3" disabled) Недоступный пункт
+                  option(value="opt-4" selected) Апельсины
+                optgroup(label="Овощи")
+                  option(value="opt-5") Картофель
+                  option(value="opt-6") Капуста
+                  option(value="opt-7") Морковь
+            .col-6
+              label(for="demo-select" multiple) Множественный список
+              select(style="js-select-default" id="demo-select")
+                optgroup Фрукты
+                  option(value="opt-1") Банан
+                  option(value="opt-2") Абрикосы
+                  option(value="opt-3" disabled) Недоступный пункт
+                  option(value="opt-4") Апельсины
+                optgroup Овощи
+                  option(value="opt-5") Картофель
+                  option(value="opt-6") Капуста
+                  option(value="opt-7") Морковь
+
+        fieldset
+          legend Чекбоксы и Радиокнопки
+          .row
+            .col-6
+              .checkbox-label
+                input.checkbox-label__input(type="checkbox" name="checkbox-opt-1" id="checkbox-opt-1")
+                label.checkbox-label__main(for="checkbox-opt-1") +Горчица #[span.checkbox-label__amount (48)]
+              .checkbox-label
+                input.checkbox-label__input(type="checkbox" name="checkbox-opt-2" id="checkbox-opt-2" disabled)
+                label.checkbox-label__main(for="checkbox-opt-2") +Кетчуп #[span.checkbox-label__amount (135)]
+              .checkbox-label
+                input.checkbox-label__input(type="checkbox" name="checkbox-opt-3" id="checkbox-opt-3")
+                label.checkbox-label__main(for="checkbox-opt-3") +Майонез #[span.checkbox-label__amount (354)]
+              .checkbox-label
+                input.checkbox-label__input(type="checkbox" name="checkbox-opt-4" id="checkbox-opt-4" checked)
+                label.checkbox-label__main(for="checkbox-opt-4") +Кари #[span.checkbox-label__amount (12)]
+              .checkbox-label
+                input.checkbox-label__input(type="checkbox" name="checkbox-opt-5" id="checkbox-opt-5")
+                label.checkbox-label__main(for="checkbox-opt-5") +Чесночный соус #[span.radio-checkbox__amount (48)]
+
+            .col-6
+              .radio-label
+                input.radio-label__input(type="radio" name="payment-type" value="radio-opt-1" id="radio-opt-1")
+                label.radio-label__main(for="radio-opt-1") Visa #[span.radio-label__amount (11)]
+              .radio-label
+                input.radio-label__input(type="radio" name="payment-type" checked value="radio-opt-2" id="radio-opt-2")
+                label.radio-label__main(for="radio-opt-2") Master Card #[span.radio-label__amount (3)]
+              .radio-label
+                input.radio-label__input(type="radio" name="payment-type" value="radio-opt-3" id="radio-opt-3")
+                label.radio-label__main(for="radio-opt-3") Western Union #[span.radio-label__amount (17)]
+              .radio-label
+                input.radio-label__input(type="radio" name="payment-type" value="radio-opt-4" id="radio-opt-4" disabled)
+                label.radio-label__main(for="radio-opt-4") WebMoney #[span.radio-label__amount (234)]
+              .radio-label
+                input.radio-label__input(type="radio" name="payment-type" value="radio-opt-5" id="radio-opt-5")
+                label.radio-label__main(for="radio-opt-5") PayPal #[span.radio-label__amount (234)]
+        fieldset
+          legend Состояния
+          .row
+            .col-6
+            .col-6
+        input(type="submit" name="demo-send" value="Отправить").btn.btn--primary
+        button(type="submit" name="demo-send-button").btn.btn--secondary Кнопка отправить
+        
+    .demo-section
+      h2 Иконки    
+
+    .demo-section
+      h2 Медиа

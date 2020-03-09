@@ -1,0 +1,28 @@
+mixin icon(name, mod)
+  if(mod)
+    svg(class="icon icon-" + name + ' ' + mod)
+      use(href="assets/images/svg/symbol/sprite.svg#" + name)
+  else
+    svg(class="icon icon-" + name)
+      use(href="assets/images/svg/symbol/sprite.svg#" + name)
+
+//- [initialization]
+//- - blocks = {}
+
+//- mixin set(key)
+//-   - blocks[key] = this.block
+
+//- [mixin definition]
+//- mixin layout
+//-   block
+//-   .main
+//-     - blocks.main()
+//-   .side
+//-     - blocks.side()
+
+//- [mixin call]
+//- +layout
+//-   +set('main')
+//-     p Main
+//-   +set('side')
+//-     p Side

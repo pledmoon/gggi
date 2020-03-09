@@ -1,0 +1,19 @@
+mixin select(data, classes, type, initClass)
+
+  if type == 'autocomplete'
+    div.select-autocomplete(class=classes)
+      select.js-select-autocomplete&attributes(attributes)
+        each option in data
+          option(value=option.value) #{option.optionText}
+
+  if type == 'custom'
+    div(class=classes)
+      select(class=initClass)&attributes(attributes)
+        each option in data
+          option(value=option.value) #{option.optionText}
+
+  else
+    div.select-default(class=classes)
+      select.js-select-default&attributes(attributes)
+        each option in data
+          option(value=option.value) #{option.optionText}

@@ -1,0 +1,124 @@
+.sidebar-area {
+  @media (min-width: $md) {
+    padding-top: 4rem;
+  }
+
+  .h2, 
+  .h3 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: #303030;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    font-weight: 500;
+  }
+
+  @media (min-width: $md) {
+    > *:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+  
+  .sidebar-dropdown-products {
+    margin-bottom: 1.5rem;
+
+    &__main {
+      border-bottom: 1px dotted #e6e6e6;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .dropdown-products {
+    &__title {
+      font-size: 1.4rem;
+      line-height: 1.2;
+      max-width: 16rem;
+    }
+  }
+
+  .main-heading {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.reverse-order > .col-md-9 {
+  //-@media (min-width: $md) {
+    order: -1;
+  //-}
+}
+
+.main-area {
+  padding: 2rem 0 0;
+
+  @media (min-width: $md) {
+    padding: 4rem 0 0;
+  }
+
+  &__header {
+    .order-status {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__intro {
+    color: $black;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  &__result {
+    color: $gray;
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  &__date {
+    font-size: 1.4rem;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #b8b8b8;
+  }
+}
+
+.products {
+  > .row [class*="col-"] {
+    padding-bottom: 3rem;
+  }
+
+  .product-line {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.products__banner {
+  margin-top: -3rem;
+
+  &__link {}
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.sidebar-note {
+  position: relative;
+  padding-left: 4.5rem;
+  line-height: 1.4;
+  margin-bottom: 4rem;
+
+  &__desc {
+    font-size: 1.4rem;
+    color: $gray;
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: #cdcdcd;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

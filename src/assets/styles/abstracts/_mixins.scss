@@ -1,0 +1,62 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-vertical {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+@mixin hide-element {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin size($val) {
+  width: $val;
+  height: $val;
+}
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+// @mixin respond-to($breakpoint) {
+//   $raw-query: map-get($breakpoints, $breakpoint);
+
+//   @if $raw-query {
+//     $query: if(
+//       type-of($raw-query) == 'string',
+//       unquote($raw-query),
+//       inspect($raw-query)
+//     );
+
+//     @media #{$query} {
+//       @content;
+//     }
+//   } @else {
+//     @error 'No value found for `#{$breakpoint}`. '
+//          + 'Please make sure it is defined in `$breakpoints` map.';
+//   }
+// }
