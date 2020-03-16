@@ -1,0 +1,91 @@
+.steps {
+  $self: &;
+
+  margin: 0 0 3rem;
+  text-align: center;
+
+  @media (min-width: $md) {
+    margin-bottom: 4rem;
+  }
+
+  &__list {
+    display: inline-flex;
+    justify-content: space-between;
+    max-width: $layout-max-width;
+    padding: 0 1.5rem;
+  }
+
+  &__item {
+    position: relative;
+    width: 14rem;
+    margin: 0 0 0 6.4rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:not(:last-child)::after {
+      content: ">";
+      position: absolute;
+      left: 100%;
+      top: 1.1rem;
+      font-size: 1.4rem;
+      background: $white;
+      padding: 0 .5rem;
+      color: $gray--medium;
+      transform: translate(-50%, 0);
+      margin-left: 3.2rem;
+    }
+
+    &:not(:last-child)::before {
+      content: "";
+      border-top: 2px dotted $gray--medium;
+      position: absolute;
+      left: 70%;
+      top: 2rem;
+      width: 100%;
+    }
+
+    &.active {
+      #{$self}__icon-wrap {
+        border-color: $primary-color;
+      }
+
+      #{$self}__icon {
+        fill: $primary-color;
+      }
+
+      #{$self}__heading {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__step {
+    text-align: center;
+  }
+  
+  &__icon-wrap {
+    border: 2px solid $gray--medium;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  &__icon {
+    fill: #dadada;
+    width: 2.2rem;
+    height: 2.2rem;
+
+    @include absolute-center;
+  }
+
+  &__heading {
+    font-size: 1.4rem;
+    color: #dadada;
+    font-family: $headings-fonts-stack;
+    text-transform: uppercase;
+  }
+}

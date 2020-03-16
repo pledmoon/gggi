@@ -1,0 +1,37 @@
+extends templates/main
+
+include components/soc-auth
+
+block variables
+  - const title = 'Log in';
+  - const pageClass = 'forms-page';
+
+block header
+  header.header.header--cropped
+    +logo()
+
+block content
+  // forms-area
+  section.forms-area.forms-area--wide
+    .forms-area__body
+      .forms-area__title.tertiary-heading Log #[span in]
+      .forms-area__content
+        form.forms-area__form(action="/" method="POST" name="login-form")
+          .forms-area__field
+            input.forms-area__input(type="email" name="user-email" id="field-1" placeholder="Email")
+            label.forms-area__label(for="field-1") Email
+          .forms-area__field
+            .forms-area__field-body
+              input.forms-area__input(type="password" name="user-psw" id="field-2" placeholder="Password")
+              label.forms-area__label(for="field-2") Password
+          .forms-area__footer
+            button.forms-area__btn.btn.btn--grad.btn--animated(type="submit" name="send-data") Log In
+        .forms-area__auth-invite #[span OR]
+        +soc-auth('forms-area__soc')
+    aside.forms-area__aside
+      .forms-area__aside-body
+        .forms-area__title.tertiary-heading Hi, friend!
+        p.forms-area__promo Allows you to ensure your gift is not already purchased for the giftee in our database, save time by storing info for future order, link in other accounts to ensure you receive the best price, and easily schedule and budget for other occasions
+        a.btn.btn--primary-reverse(href="#") Sign Up
+
+  // forms-area

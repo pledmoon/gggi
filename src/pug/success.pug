@@ -1,0 +1,51 @@
+extends templates/main
+
+block variables
+  - const title = 'Thank you';
+  - const pageClass = 'inner-page';
+  - const navbarHidden = true;
+  - const footerLogoHidde = true;
+
+block header
+  +header-promo()
+
+block content
+  // main-heading
+  .main-heading-wrap
+    .main-heading
+      .main-heading__body #[span.main-heading__first-letter T]hank #[span.main-heading__accent you]
+  // /main-heading
+  
+  .rounded-area
+    .rounded-area__wrap
+      .rounded-area__main
+        .rounded-area__centered
+          p.rounded-area__desc Thank you for using our gift picking service. We advise you to register on our website to be ready for any holiday. We always will find the best gift for you!
+          a.rounded-area__btn.btn.btn--grad.btn--animated(href="#") Sign Up Now
+          .rounded-area__separator or
+          a.rounded-area__btn.btn.btn--primary.btn--animated(href="#") Buy yourself
+
+block footer
+  +footer-promo()
+
+block script
+  script(src="assets/js/inputmask.min.js")
+
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const datePickerMask = document.querySelectorAll('.js-date-picker');
+      
+      if (datePickerMask) {
+        datePickerMask.forEach((pickerField) => {
+          const userCodeMaskInstance = new Inputmask({
+            mask: '9999 / 99 / 99',
+            definitions: {},
+            autoUnmask: true,
+            placeholder: '_',
+            //- clearMaskOnLostFocus: false
+          });
+
+          userCodeMaskInstance.mask(pickerField);
+        });
+      }
+    });

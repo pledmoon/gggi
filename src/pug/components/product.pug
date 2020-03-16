@@ -1,0 +1,16 @@
+mixin product(data, mod)
+  // product
+  +b.ARTICLE.product(class=mod)
+    +e.HEADER.header
+      +e.A.img-wrap(href="#")
+        +e.IMG.img(src=data.path alt="product")
+      +e.score
+        +e.score-value= data.score
+        +e.score-desc score
+      +e.A.brand(href="#")
+        +e.IMG.brand-img(src=data.brandPath alt="brand")
+    +e.heading
+      +e.heading-link(href="#")= data.heading
+    +e.price= data.price
+    +e.A.btn.btn--primary-reverse.btn--sm(href="#") Select
+  // /product

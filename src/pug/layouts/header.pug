@@ -1,8 +1,100 @@
+include ../components/logo
+include ../components/navbar
+
 mixin header()
+  // header
   header.header
-    .container-fluid
-      h2 HEADER
-  //- +b.HEADER.header
-  //-   .container-fluid
-  //-     +e.main
-  //-       +logo(logoIndex, 'header__logo')
+    .header__main
+      +logo(logoIndex, 'header__main-logo')
+
+      +b.BUTTON.navbar-trigger.d-md-none.order-first(type="button")
+        +e.SPAN.line
+        +e.SPAN.line
+
+      .navbar-bg
+      
+      if tinyNav
+
+        +navbar([
+          {
+            icon: 'home',
+            title: 'Home page'
+          },
+          {
+            icon: 'friends',
+            title: 'List of Friends',
+            active: true
+          },
+          {
+            icon: 'calendar',
+            title: 'Occasion',
+            amount: 12
+          }
+        ], 'header__main-navbar')
+
+      else
+        
+        +navbar([
+          {
+            icon: 'home',
+            title: 'Home page',
+            active: true
+          },
+          {
+            icon: 'friends',
+            title: 'List of Friends'
+          },
+          {
+            icon: 'calendar',
+            title: 'Occasion',
+            amount: 12
+          },
+          {
+            icon: 'gift',
+            title: 'Your gifts',
+            subnavbar: [
+              {
+                title: 'Subitem 1'
+              },
+              {
+                title: 'Subitem 2'
+              },
+              {
+                title: 'Subitem Nested',
+                subnavbar: [
+                  {
+                    title: 'Very deep subitem 1'
+                  },
+                  {
+                    title: 'Very deep subitem 2'
+                  },
+                  {
+                    title: 'Very deep subitem 3'
+                  },
+                  {
+                    title: 'Very deep subitem 4'
+                  },
+                  {
+                    title: 'Very deep subitem 5'
+                  },
+                  {
+                    title: 'Very deep subitem 6'
+                  }
+                ]
+              },
+              {
+                title: 'Subitem very long'
+              },
+              {
+                title: 'Subitem 3'
+              }
+            ]
+          },
+          {
+            icon: 'wallet',
+            title: 'Payments'
+          }
+        ], 'header__main-navbar')
+
+      include ../components/user-authorized
+  // /header

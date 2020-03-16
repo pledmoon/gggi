@@ -1,0 +1,56 @@
+// ****************
+// * Fixed Footer *
+// ****************
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__footer {
+
+  }
+
+  .content {
+    background: $white;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem rgba($black, 0.1);
+    padding: 5rem;
+
+    @media (min-width: $md) {
+      padding: 5rem 9.5rem;
+    }
+  }
+
+  .primary-content {
+    background: $white;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem rgba($black, 0.1);
+    padding: 4rem 3rem;
+
+    &__footer {
+      padding: 4rem 0;
+
+      .next-step-btn {
+        min-width: 24rem;
+        margin-bottom: 2rem;
+
+        [class*="fa"] {
+          font-size: 1.4rem;
+          margin-left: 1.5rem;
+          position: relative;
+          top: -2px;
+        }
+      }
+
+      .next-step-stage {
+        color: #cdcdcd;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

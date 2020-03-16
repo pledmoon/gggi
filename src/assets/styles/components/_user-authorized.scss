@@ -1,0 +1,133 @@
+.user-authorized {
+  $self: &;
+
+  position: relative;
+  max-width: 15rem;
+  width: 100%;
+
+  @media (min-width: $xlg) {
+    max-width: 29rem;
+  }
+
+  &.opened {
+    box-shadow: 0 0 3rem rgba($black, 0.1);
+
+    #{$self}__user-icon {
+      transform: translateY(-50%) rotate(-180deg);
+    }
+
+    #{$self}__user {
+      z-index: $dropdownAboveZIndex;
+      background: $white;
+    }
+
+    #{$self}__body {
+      box-shadow: 0 0 3rem rgba($black, 0.1);
+    }
+  }
+
+  &__user {
+    padding: 1.5rem 4.5rem 1.5rem 3rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: #526070;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &-avatar {
+      width: 55px;
+      height: 55px;
+      flex: none;
+      margin-right: 1.5rem;
+      position: relative;
+      margin-left: auto;
+
+      @media (min-width: $xlg) {
+        margin-left: 0;
+      }
+
+      &-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        border-radius: 50%;
+
+        @include absolute-center;
+      }
+    }
+
+    &-name {
+      display: none;
+
+      @include truncate-text;
+    
+      @media (min-width: $xlg) {
+        display: block;
+      }
+    }
+
+    &-icon {
+      color: $primary-color;
+      transition: all .3s;
+      position: absolute;
+      right: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__body {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: $white;
+    width: 100%;
+    min-width: 29rem;
+
+    &::before {
+      content: "";
+      width: calc(100% - 6rem);
+      height: 0;
+      border-top: 2px dotted #e6e6e6;
+      position: absolute;
+      left: 3rem;
+    }
+  }
+
+  &__nav {
+    padding: 2rem 0;
+  }
+
+  &__list {
+    line-height: 1.2;
+  }
+
+  &__item {
+    font-size: 1.6rem;
+  }
+
+  &__link {
+    color: $secondary-color;
+    transition: all .3s;
+    display: block;
+    padding: 1rem 3rem;
+
+    &:hover {
+      color: $primary-color;
+      background: #e9f4f6;
+    }
+  }
+
+  &__text {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  &__icon {
+    margin-right: 1.5rem;
+    fill: #cdcdcd;
+    width: 1.8rem;
+  }
+}

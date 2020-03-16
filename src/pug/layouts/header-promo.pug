@@ -1,0 +1,37 @@
+include ../components/logo
+include ../components/navbar
+
+mixin header-promo()
+  // header
+  header.header
+    .container-fluid
+      .header__promo(class=navbarHidden ? 'header__promo--no-nav' : '')
+        +logo(logoIndex, 'header__promo-logo')
+        
+        unless navbarHidden
+          +b.BUTTON.navbar-trigger.d-md-none.order-first(type="button")
+            +e.SPAN.line
+            +e.SPAN.line
+
+          .navbar-bg
+
+          +navbar([
+            {
+              title: 'Who we are',
+              active: true
+            },
+            {
+              title: 'How it work'
+            },
+            {
+              title: 'Testemonials'
+            },
+            {
+              title: 'Gift ideas'
+            }
+          ], 'navbar--promo header__promo-navbar')
+
+        .header__promo-auth-helpers
+          a.header__login.btn.btn--grad.btn--sm.btn--animated(href="#") Log in
+          a.header__signup.btn.btn--primary-reverse.btn--sm.btn--animated(href="#") Sign up
+  // /header

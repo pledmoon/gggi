@@ -15,6 +15,7 @@ module.exports = function () {
                 'node_modules/choices.js/public/assets/scripts/choices.min.js',
                 'node_modules/nouislider/distribute/nouislider.min.js',
                 'node_modules/drift-zoom/dist/Drift.min.js',
+                'node_modules/pikaday/pikaday.js',
                 'node_modules/simplebar/dist/simplebar.min.js',
                 'src/assets/js/Modal.js'
             ])
@@ -30,6 +31,7 @@ module.exports = function () {
                 'node_modules/choices.js/public/assets/scripts/choices.min.js',
                 'node_modules/nouislider/distribute/nouislider.min.js',
                 'node_modules/drift-zoom/dist/Drift.min.js',
+                'node_modules/pikaday/pikaday.js',
                 'node_modules/simplebar/dist/simplebar.min.js',
                 'src/assets/js/Modal.js'
             ])

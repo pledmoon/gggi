@@ -1,15 +1,20 @@
 // ************************
 // | Template main colors |
 // ************************
+// Brand Color Palette
 $primary-color: #00b0b3 !default;
-$secondary-color: orangered !default;
-$tertiary-color: tomato;
+$secondary-color: #005f7a !default;
+$tertiary-color: tomato !default;
 
+// Useful dark colors
 $white: #ffffff !default;
 $black: #000000 !default;
 $dark: #333333 !default;
 $dark--medium: #9a9a9a !default;
+$dark--light: #9a9a9a !default;
+$dark--thin: #9a9a9a !default;
 
+// Userful gray colors
 $gray: #cccccc !default;
 $gray--medium: #e6e6e6 !default;
 $gray--light: #f7f7f7 !default;
@@ -19,17 +24,12 @@ $gray--thin: #fafafa !default;
 // | Base styles |
 // ***************
 $body-bg: #fafafa !default;
-$layout-max-width: 1170px !default;
-
-$font-base-weight: 400 !default;
-$font-base-stack: 'Helvetica', Arial, sans-serif !default;
-$font-base-size: 1.8rem !default;
-$font-base-color: #526070 !default;
-$base-line-height: 1.5 !default;
+$layout-max-width: 1110px !default;
 
 $baseZIndex: 3 !default;
 $flowZIndex: 11 !default;
 $dropdownZIndex: 55 !default;
+$dropdownAboveZIndex: 77 !default;
 $overlayZIndex: 101 !default;
 $overlayAboveZIndex: 111 !default;
 
@@ -57,39 +57,66 @@ $xlg--mw: 1199px;
 // **************
 // | Typography |
 // **************
+// Base fonts stack
+$font-base-weight: 400 !default;
+$font-base-stack: Rubik, 'Helvetica', Arial, sans-serif !default;
+$font-base-size: 1.8rem !default;
+$font-base-color: #526070 !default;
+$base-line-height: 1.5 !default;
+
 // Headings
 $headings-weight: 400 !default;
 $headings-fonts-stack: 'Fredoka One', 'Helvetica', Arial, sans-serif !default;
 $headings-color: #333333 !default;
 $headings-line-height: 1.1 !default;
 
-// ***********
-// | Buttons |
-// ***********
+// ********************************************
+// | Buttons                                  |
+// ********************************************
+// Btn Base
 $btn-color: $dark--medium !default;
+$btn-radius: 12rem !default;
 
-$btn-main-color: $white !default;
-$btn-main-bg: mix(black, $primary-color, 5%) !default;
+// Btn Primary
+$btn-primary-color: $white !default;
+$btn-primary-bg: $primary-color !default;
+$btn-primary-hover: mix($black, $primary-color, 11%) !default;
 
+// Btn Secondary
 $btn-secondary-color: $white !default;
 $btn-secondary-bg: $secondary-color !default;
+$btn-secondary-hover: mix($black, $secondary-color, 11%) !default;
 
+// Btn Tertiary
 $btn-tertiary-color: $white !default;
 $btn-tertiary-bg: $tertiary-color !default;
+$btn-tertiary-hover: mix($black, $tertiary-color, 11%) !default;
 
-$btn-reverse-color: $primary-color !default;
-$btn-reverse-bg: transparent !default;
+// Btn Gray
+$btn-gray-bg: #cdcdcd !default;
+$btn-gray-color: $white !default;
+$btn-gray-hover: mix($black, $btn-gray-bg, 11%) !default;
 
-$btn-radius: 0 !default;
+// Btn Grad
+$btn-grad-bg: linear-gradient(to right, #ff5e4a 0%, #ffc544 100%) !default;
+$btn-grad-color: $white !default;
+$btn-grad-hover: #ff5e4a !default;
 
+// Btn Statusses
+$btn-danger-bg: #ff3000 !default;
+$btn-danger-color: $white !default;
+$btn-danger-hover: mix(black, $btn-danger-bg, 11%) !default;
+
+// Icons
 $btn-icon-fill-color: #ffffff !default;
 
 // *********
 // | Forms |
 // *********
 $input-border-color: #e6e6e6;
-$input-border-color-focus: #cccccc;
-$input-border-radius: 0;
+$input-border-radius: .5rem;
+$input-border-color-focus: $primary-color;
+$input-focus-shadow: 0 0 1.5rem rgba($primary-color, 0.2);
 
 // **********
 // | Header |

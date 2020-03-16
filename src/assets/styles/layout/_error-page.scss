@@ -1,0 +1,31 @@
+.error-area {
+  max-width: 75rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  text-align: center;
+
+  &__img-wrap {
+    margin-bottom: 5rem;
+    padding: 0 10%;
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+  }
+
+  &__desc {
+    color: #526070;
+    font-size: 1.8rem;
+    max-width: 52rem;
+    margin: 0 auto 5rem;
+  }
+
+  &__btn {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

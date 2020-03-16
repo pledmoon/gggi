@@ -1,0 +1,125 @@
+extends templates/main
+
+block variables
+  - const title = 'Your Profile';
+  - const pageClass = 'profile-page';
+
+block content
+  .main-heading-wrap
+    .main-heading
+      .main-heading__body #[span.main-heading__first-letter Y]our #[span.main-heading__accent profile]
+
+  .container-fluid
+    main.primary-content
+      
+      // your-profile-form
+      +b.FORM.fast-search(name="fast-search" action="/" method="POST")
+
+        +e.FIGURE.user-picture.user-picture
+          .user-picture__img-wrap
+            img.user-picture__img(src="assets/images/avatar.svg" width="100" alt="")
+          figcaption.user-picture__details
+            a.user-picture__add(href="#") #[i.fas.fa-camera] #[span Add Photo]
+        
+        // set of fields 1
+        +e.FIELDSET.section(name="occasion")
+          +e.LEGEND.heading.secondary-heading.text-center Your Personal Data
+          .row
+            .col-md-4
+              +e.field
+                +e.LABEL.label(for="u-name") First Name #[span *]
+                +e.INPUT.input(type="text" name="user-name" value="Maxim" id="u-name" tabindex="1")
+            .col-md-4
+              +e.field
+                +e.LABEL.label(for="u-lastname") Last Name #[span *]
+                +e.INPUT.input(type="text" name="user-lastname" value="Conoplin" id="u-lastname" tabindex="2")
+            .col-md-4
+                +e.LABEL.label(for="u-birth") Birthday #[span *]
+                +e.field-datepicker
+                  +e.INPUT.date-picker.js-date-picker(id="u-birth" type="text" name="birthday" placeholder="YYYY / MM / DD" tabindex="3")
+                  i.fa.fa-calendar-alt
+        // /set of fields 1
+
+        // set of fields 2
+        +e.FIELDSET.section(name="more-options")
+          +e.LEGEND.heading.secondary-heading.text-center Personal Preferences
+          .row
+            .col-md-6
+              +e.field
+                +e.LABEL.label(for="interest") Interest
+                +e.tag.select-tag
+                  +e.INPUT.input.js-select-tags(id="interest" type="text" name="user-preferences" value="Boats,Hedgehogs,Beavers,Football,Computers" placeholder="Enter his interest’s" tabindex="4")
+                  +e.tags-helper Examples: movie, cars, cats
+            .col-md-6
+              +e.field
+                +e.LABEL.label(for="avoid") Avoid
+                +e.tag.select-tag
+                  +e.INPUT.input.js-select-tags(id="avoid" type="text" name="user-avoids" value="" placeholder="Enter his avoid’s" tabindex="5")
+                  +e.tags-helper Examples: sport, dogs, theater
+        // /set of fields 2
+
+        // set of fields 3
+        +e.FIELDSET.section(name="more-options")
+          +e.LEGEND.heading.secondary-heading.text-center Address Book
+          +e.field
+            .row
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-email") Email #[span *]
+                  +e.INPUT.input(type="email" name="user-email" id="u-email" tabindex="6")
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-tel") Phone #[span *]
+                  +e.INPUT.input(type="tel" name="user-tel" id="u-tel" tabindex="7")
+          +e.field
+            +e.LABEL.label(for="u-main-addr") Address 1 #[span *]
+            +e.INPUT.input(type="text" name="user-main-address" id="u-main-addr" tabindex="8")
+          +e.field
+            +e.LABEL.label(for="u-spare-addr") Address 2
+            +e.INPUT.input(type="text" name="user-spare-address" id="u-spare-addr" tabindex="9")
+          .row
+            .col-md-6
+              +e.field
+                +e.LABEL.label(for="u-city") City #[span *]
+                +e.INPUT.input(type="text" name="user-city" id="u-city" tabindex="10")
+            .col-md-3
+              +e.field
+                +e.LABEL.label(for="u-state") State #[span *]
+                +e.INPUT.input(type="text" name="user-state" id="u-state" tabindex="11")
+            .col-md-3
+              +e.field
+                +e.LABEL.label(for="u-zip") Zip #[span *]
+                +e.INPUT.input(type="text" name="user-zip" id="u-zip" tabindex="12")
+        // /set of fields 3
+
+        // set of fields 4
+        +e.section
+          +e.summary
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="add-opts-gift" checked id="checkbox-opt-1" tabindex="13")
+              label.checkbox-label__main(for="checkbox-opt-1") Profile information can be shared with friends
+            +e.INPUT.submit-btn.btn--grad.--animated(type="submit" name="send-data" value="Update")
+        // /set of fields 4
+      // /your-profile-form
+
+block script
+  script(src="assets/js/inputmask.min.js")
+
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const datePickerMask = document.querySelectorAll('.js-date-picker');
+      
+      if (datePickerMask) {
+        datePickerMask.forEach((pickerField) => {
+          const userCodeMaskInstance = new Inputmask({
+            mask: '9999 / 99 / 99',
+            definitions: {},
+            autoUnmask: true,
+            placeholder: '_',
+            //- clearMaskOnLostFocus: false
+          });
+
+          userCodeMaskInstance.mask(pickerField);
+        });
+      }
+    });

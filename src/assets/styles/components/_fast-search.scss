@@ -1,0 +1,136 @@
+.fast-search {
+  $self: &;
+
+  &__section {
+    border-bottom: 1px dotted $gray--medium;
+    padding-bottom: 3.5rem;
+    margin-bottom: 3.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  
+  &__heading {}
+
+  &__field {
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__field-datepicker {
+    position: relative;
+
+    #{$self}__date-picker {
+      padding-right: 5rem;
+    }
+
+    [class*="fa-calendar"] {
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $primary-color;
+    }
+  }
+
+  &__label {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+  }
+
+  &__checkbox {
+    .checkbox-label__main {
+      line-height: 1.1;
+      font-size: 1.8rem;
+      padding-left: 3.5rem;
+      // color: #b4b4b4;
+      transition: all .1s;
+    }
+
+    /*.checkbox-label__input:checked + .checkbox-label__main {
+      color: $font-base-color;
+    }*/
+  }
+
+  &__radio-rows {
+    @media (min-width: $md) {
+      padding: 1.8rem 0 0;
+    }
+  }
+
+  &__radio {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $sm) {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: 6rem;
+      }
+    }
+
+    .radio-label__main {
+      line-height: 1.1;
+      font-size: 1.8rem;
+      padding-left: 3.5rem;
+      color: #b4b4b4;
+      transition: all .1s;
+    }
+
+    .radio-label__input:checked + .radio-label__main {
+      color: $font-base-color;
+    }
+  }
+
+  &__tag {
+    .choices__inner {
+      min-height: 11rem;
+    }
+  }
+
+  &__tags-helper {
+    color: #cdcdcd;
+    font-size: 1.6rem;
+    padding-top: 1.5rem;
+  }
+
+  @media (max-width: $md--mw) {
+    [class*="col-md"] {
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+
+  &__summary {
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__submit-btn {
+    min-width: 25rem;
+    margin-top: 2.5rem;
+    width: 100%;
+
+    @media (min-width: $md) {
+      margin-top: 0;
+      width: auto;
+    }
+  }
+
+  &__user-picture {
+    margin-top: -12.5rem;
+    margin-bottom: 4rem;
+  }
+}

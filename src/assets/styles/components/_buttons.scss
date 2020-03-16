@@ -1,14 +1,13 @@
 .btn {
   display: inline-block;
-  padding: 1rem 1.5rem;
-  font-size: 1.6rem;
+  padding: 2rem 5rem;
+  font-size: 2rem;
   border: 2px solid transparent;
+  background: transparent;
   text-align: center;
   cursor: pointer;
   color: $btn-color;
-  transition: all .3s;
-  line-height: 1.4;
-  background: transparent;
+  line-height: 1.2;
   outline: none;
   vertical-align: middle;
   user-select: none;
@@ -17,14 +16,31 @@
   position: relative;
   font-weight: 500;
   width: auto;
+  transition: all .3s;
+
+  &:active {
+    transform: translateY(-.3rem);
+  }
 
   /* --- Buttons Types --- */
   &--primary {
-    color: $btn-main-color;
-    background: $btn-main-bg;
+    color: $btn-primary-color;
+    background: $btn-primary-bg;
 
     &:hover {
-      background: darken($btn-main-bg, 15%);
+      background: $btn-primary-hover;
+    }
+
+    &-reverse {
+      color: $btn-primary-bg;
+      // background: $btn-primary-color;
+      border-color: $btn-primary-bg;
+
+      &:hover {
+        color: $btn-primary-color;
+        background: $btn-primary-bg;
+        border-color: $btn-primary-bg;
+      }
     }
   }
 
@@ -33,7 +49,19 @@
     background: $btn-secondary-bg;
 
     &:hover {
-      background: darken($btn-secondary-bg, 15%);
+      background: $btn-secondary-hover;
+    }
+
+    &-reverse {
+      color: $btn-secondary-bg;
+      // background: $btn-secondary-color;
+      border-color: $btn-secondary-bg;
+
+      &:hover {
+        color: $btn-secondary-color;
+        background: $btn-secondary-bg;
+        border-color: $btn-secondary-bg;
+      }
     }
   }
 
@@ -42,70 +70,126 @@
     background: $btn-tertiary-bg;
 
     &:hover {
-      background: darken($btn-tertiary-bg, 15%);
-    }
-  }
-
-  &--reverse {
-    background: $btn-reverse-bg;
-    color: $btn-reverse-color;
-    border: 2px solid $btn-reverse-color;
-
-    &::after {
-      content: "+";
-      color: $primary-color;
-      background: $white;
-      width: 1.8rem;
-      height: 1.8rem;
-      text-align: center;
-      position: absolute;
-      right: -.9rem;
-      bottom: -.9rem;
-      font-weight: 500;
-      font-size: 2rem;
-      line-height: 2rem;
-      transition: all .3s;
+      background: $btn-tertiary-hover;
     }
 
-    &:hover {
-      background: $btn-reverse-color;
-      color: $white;
+    &-reverse {
+      color: $btn-tertiary-bg;
+      // background: $btn-tertiary-color;
+      border-color: $btn-tertiary-bg;
 
-      &::after {
-        background: transparent;
-        opacity: 0;
+      &:hover {
+        color: $btn-tertiary-color;
+        background: $btn-tertiary-bg;
+        border-color: $btn-tertiary-bg;
       }
     }
   }
 
   &--gray {
-    background: $gray;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: $black;
+    background: $btn-gray-bg;
+    color: $btn-gray-color;
 
     &:hover {
-      background: $gray--medium;
+      background: $btn-gray-hover;
+    }
+
+    &-reverse {
+      color: $btn-gray-bg;
+      // background: $btn-gray-color;
+      border-color: $btn-gray-bg;
+
+      &:hover {
+        color: $btn-gray-color;
+        background: $btn-gray-bg;
+        border-color: $btn-gray-bg;
+      }
     }
   }
+  
+  // Btn Statusses
+  &--danger {
+    background: $btn-danger-bg;
+    color: $btn-danger-color;
+
+    &:hover {
+      background: $btn-danger-hover;
+    }
+
+    &-reverse {
+      color: $btn-danger-bg;
+      // background: $btn-danger-color;
+      border-color: $btn-danger-bg;
+
+      &:hover {
+        color: $btn-danger-color;
+        background: $btn-danger-bg;
+        border-color: $btn-danger-bg;
+      }
+    }
+  }
+
+  &--grad {
+    background: $btn-grad-bg;
+    color: $btn-grad-color;
+    transition: none;
+    background-origin: border-box;
+
+    &:hover {
+      background: $btn-grad-hover;
+    }
+  }
+
+  /* --- Buttons Animated --- */
+  &--animated {
+    z-index: 1;
+    
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: $btn-radius;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .3s;
+      background: inherit;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  }
+  /* --- Buttons Animated --- */
   /* --- Buttons Types --- */
 
   /* --- Buttons Sizes --- */
-  &--xs {}
+  &--xs {
+    font-size: 1.6rem;
+    padding: 1rem 1rem;
+  }
 
   &--sm {
-    font-size: 1.4rem;
-    padding: .8rem 1rem;
+    font-size: 1.8rem;
+    padding: 1.4rem 3rem;
   }
 
-  &--md {}
+  &--md {} // default state
 
   &--lg {
-    font-size: 1.8rem;
-    padding: 1.2rem 2rem;
+    font-size: 2.2rem;
+    padding: 2.5rem 7rem;
   }
 
-  &--xg {}
+  &--xg {
+    font-size: 2.4rem;
+    padding: 3rem 8rem;
+  }
   /* --- Buttons Sizes --- */
 
   /* --- Buttons Icon --- */
@@ -116,15 +200,15 @@
     max-height: 1.5rem;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
   }
   /* --- Buttons Icon --- */
 
-  /* Disabled state */
+  /* --- Disabled state --- */
   &[disabled] {
     opacity: .7;
     cursor: default;
     filter: grayscale(50%);
   }
-  /* Disabled state */
+  /* --- Disabled state --- */
 }

@@ -1,0 +1,8 @@
+mixin params(data, mod)
+  // params
+  +b.DL.params(class=mod)
+    each param in data
+      +e.wrap
+        +e.DT.property= param.property
+        +e.DD.value= param.value
+  // /params

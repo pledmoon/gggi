@@ -1,0 +1,19 @@
+extends templates/main
+
+block variables
+  - const title = '404: Not found';
+  - const pageClass = 'error-page';
+  - const tinyNav = true;
+
+block content
+  .main-heading-wrap
+    .main-heading
+      .main-heading__body #[span.main-heading__first-letter O]ops! #[span.main-heading__accent error]
+
+  // Error Area
+  .error-area
+    .error-area__img-wrap
+      img.error-area__img.img-responsive(src="assets/images/404.png" alt="")
+    p.error-area__desc Quo cu sanctus corrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne.
+    a.error-area__btn.btn.btn--grad.btn--animated(href="#") Back to home page
+  // /Error Area

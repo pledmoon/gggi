@@ -1,9 +1,13 @@
 extends templates/main
 
 block variables
-  - let title = 'Главная страница';
-  - let pageClass = 'index-page';
+  - const title = 'Main page';
+  - const pageClass = 'index-page';
+  - const logoIndex = true;
 
 block content
   .container-fluid
-    main #[h2 MAIN]
+    main.content
+
+  .container-fluid
+

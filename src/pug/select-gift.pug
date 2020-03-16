@@ -1,0 +1,171 @@
+extends templates/main
+
+include components/params
+include components/product
+
+block variables
+  - const title = 'Select gift';
+  - const pageClass = 'inner-page';
+
+block header
+  +header-promo()
+
+block content
+  .main-heading-wrap.main-heading-wrap--left
+    .main-heading
+      .main-heading__body #[span.main-heading__first-letter S]elect #[span.main-heading__accent gift]
+        span.main-heading__more Valentine's day
+
+  .container-fluid
+    main.primary-content
+
+      .gift-choice
+
+        .secondary-heading Search information
+        
+        .row
+          .col-md-6
+            
+            +params([
+              {
+                property: 'Event',
+                value: 'Valentine\'s day'
+              },
+              {
+                property: 'Event Date',
+                value: '2020 / 02 / 14'
+              },
+              {
+                property: 'Budget',
+                value: '$200'
+              }
+            ], 'gift-params')
+
+          .col-md-6
+
+            +params([
+              {
+                property: 'Additional',
+                value: 'Gift wrap + Card'
+              },
+              {
+                property: 'Friend Birthday',
+                value: '1984 / 03 / 19'
+              },
+              {
+                property: 'Friend Gender',
+                value: 'Male'
+              }
+            ], 'gift-params')
+
+        +params([
+          {
+            property: 'Interest',
+            value: 'Home Repair,  Security,  Video,  Gadgets,  Movie,  Сars,  Сats',
+          },
+          {
+            property: 'Avoid',
+            value: 'Sport,  Dogs,  Theater'
+          }
+        ], 'gift-params')
+
+      .gift-choice
+
+        .secondary-heading Recommended gift
+
+        // product-recommended
+        +b.ARTICLE.product-recommended
+          +e.HEADER.header
+            +e.A.img-wrap(href="#")
+              +e.IMG.img(src="assets/images/media/product-1.jpg" alt="")
+            +e.score
+              +e.score-value 86
+              +e.score-desc score
+          +e.main
+            +e.A.brand(href="#")
+              +e.IMG.brand-img(src="assets/images/media/brand-4.png" alt="")
+            +e.heading
+              +e.A.heading-link(href="#") Ring Video Doorbell 2 with HD Video, Motion Activated Alerts, Easy Installation
+            +e.DL.params(class=mod)
+              +e.params-wrap
+                +e.DT.params-property Manufacter
+                +e.DD.params-value RING
+            +e.price $199.00
+            +e.A.btn.btn--primary.--animated(href="#") Buy It Now
+        // /product-recommended
+
+      .gift-choice
+
+        .secondary-heading Change gift
+
+        .products
+
+          .row
+            .col-sm-6.col-md-4
+
+              +product({
+                path: 'assets/images/media/product-2.jpg',
+                heading: 'Sun Star Vitesse 24010 Back To The Future Part II DeLorean 1:43 scale diecast model car',
+                price: '$122.70',
+                score: 78,
+                brandPath: 'assets/images/media/brand-3.png'
+              })
+
+            .col-sm-6.col-md-4
+
+              +product({
+                path: 'assets/images/media/product-3.jpg',
+                heading: 'Nike Men\'s Lunar Fingertrap Cross Trainer',
+                price: '$172.82',
+                score: 71,
+                brandPath: 'assets/images/media/brand-2.png'
+              })
+
+            .col-sm-6.col-md-4
+
+              +product({
+                path: 'assets/images/media/product-4.jpg',
+                heading: 'Apple AirPods with Charging Case (Latest Model)',
+                price: '$122.70',
+                score: 62,
+                brandPath: 'assets/images/media/brand-1.png'
+              })
+
+            .col-sm-6.col-md-4
+
+              +product({
+                path: 'assets/images/media/product-3.jpg',
+                heading: 'Nike Men\'s Lunar Fingertrap Cross Trainer',
+                price: '$172.82',
+                score: 71,
+                brandPath: 'assets/images/media/brand-2.png'
+              })
+              
+            .col-sm-6.col-md-4
+
+              +product({
+                path: 'assets/images/media/product-4.jpg',
+                heading: 'Apple AirPods with Charging Case (Latest Model)',
+                price: '$122.70',
+                score: 62,
+                brandPath: 'assets/images/media/brand-1.png'
+              })
+
+            .col-sm-6.col-md-4
+
+              +product({
+                path: 'assets/images/media/product-2.jpg',
+                heading: 'Sun Star Vitesse 24010 Back To The Future Part II DeLorean 1:43 scale diecast model car',
+                price: '$122.70',
+                score: 78,
+                brandPath: 'assets/images/media/brand-3.png'
+              })
+    
+    // primary-content-footer
+    .primary-content__footer.text-center
+      a.next-step-btn.btn.btn--grad.btn--animated(href="#") Next Step #[i.fa.fa-chevron-right]
+      div.next-step-stage Step 2 / 3
+    // /primary-content-footer
+
+block footer
+  +footer-promo()

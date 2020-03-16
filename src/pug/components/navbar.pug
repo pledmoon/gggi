@@ -1,0 +1,27 @@
+mixin navbar(data, mod)
+  // navbar
+  +b.NAV.navbar(class=mod)
+    +e.UL.list
+      each item in data
+        +e.LI.item(class=(item.active) ? 'active' : '')
+          +e.A.link(href="#")
+            if (item.icon)
+              +icon(item.icon, 'navbar__icon')
+            +e.SPAN.text= item.title
+            if (item.amount)
+              +e.SPAN.amount= item.amount
+            if (item.subnavbar)
+              +e.I.arr.fas.fa-chevron-down
+          if (item.subnavbar)
+            +subnavbar(item.subnavbar, 'sub')
+  // /navbar
+
+mixin subnavbar(data, prefix)
+  ul(class=`navbar__${prefix}list`)
+    each item in data
+      li(class=`navbar__${prefix}item`)
+        a(class=`navbar__${prefix}link` href="#")= item.title
+          if (item.subnavbar)
+            +e.I.arr.fas.fa-chevron-right
+        if (item.subnavbar)
+          +subnavbar(item.subnavbar, 'deep')

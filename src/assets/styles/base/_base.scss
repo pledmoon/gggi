@@ -34,14 +34,14 @@ html {
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 56.25%; // ppx
 
   @media (min-width: $md) {
-    font-size: 50%;
+    font-size: 50%; // 8px
   }
   
   @media (min-width: $lg) {
-    font-size: 62.5%;
+    font-size: 62.5%; // 10px
   }
   /*@media (min-width: 1200px) {
     font-size: 50%;
@@ -55,10 +55,6 @@ body {
   background: $body-bg;
   // min-height: 100%;
   height: 100%;
-}
-
-.wrapper {
-  min-height: 100%;
 }
 
 .container-fluid {
@@ -101,4 +97,20 @@ body {
 .js-custom-scroll {
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.js-dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+
+  .js-dropdown {
+    display: none;
+    cursor: default;
+    z-index: $dropdownZIndex;
+  }
+
+  &.opened .js-dropdown {
+    display: block;
+    animation: .3s fadeInUp;
+  }
 }

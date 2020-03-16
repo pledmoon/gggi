@@ -1,0 +1,11 @@
+mixin steps(data, mod)
+  // steps
+  .steps.d-none.d-sm-block
+    ul.steps__list(class=mod)
+      each step, ix in data
+        li.steps__item(class=step.active ? 'active' : '')
+          figure.steps__step
+            div.steps__icon-wrap
+              +icon(step.icon, 'steps__icon')
+            figcaption.steps__heading= step.heading
+  // /steps

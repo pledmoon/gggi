@@ -1,0 +1,27 @@
+include ../components/soc
+
+mixin footer-promo()
+  // footer
+  footer.footer.footer--promo(class=footerLogoHidde ? 'footer--promo-no-logo' : '')
+    .container-fluid
+      .footer__preview
+        +logo('', 'footer__preview-logo')
+        +soc('footer__preview-soc')
+
+      .footer__promo
+        .footer__promo-col.order-last.order-md-first
+          .footer__summary
+            small.copy Сopyright&copy; 2020 All rights reserved.
+            .dev
+              a(href="#").dev__link
+                img(src="assets/images/dev.png" alt="IT Works")
+        .footer__promo-col
+          +b.NAV.footer__nav
+            +e.UL.nav-list
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Privacy policy
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Terms and conditions
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Cookies policy
+  // /footer

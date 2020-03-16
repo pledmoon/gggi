@@ -1,5 +1,132 @@
 .header {
-  background: $gray--medium;
-  padding: 3rem 0;
-  border-bottom: 1px solid $gray;
+  margin-bottom: 4rem;
+
+  @media (min-width: $md) {
+    margin-bottom: 7rem;
+  }
+
+  &__main {
+    background: $white;
+    box-shadow: 0 0 3rem rgba($black, 0.1);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-left: 5rem;
+
+    @media (min-width: $md) {
+      padding-left: 0;
+    }
+
+    &-logo {
+      align-self: center;
+      padding-left: 1.5rem;
+      max-width: 15rem;
+      width: 100%;
+
+      @media (min-width: $md) {
+        padding-left: 3rem;
+      }
+
+      @media (min-width: $xlg) {
+        max-width: 29rem;
+      }
+
+      .logo__img {
+        max-width: 11.5rem;
+      }
+    }
+
+    &-navbar {
+      flex-grow: 1;
+
+      @media (min-width: $xlg) {
+        max-width: $layout-max-width;
+      }
+    }
+  }
+
+  &__promo {
+    padding: 3rem 0;
+    border-bottom: 1px solid $gray--medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-left: 5rem;
+
+    @media (min-width: $md) {
+      padding-left: 0;
+    }
+
+    .navbar-trigger {
+      left: 0;
+    }
+
+    &-logo {
+      max-width: 12rem;
+
+      @media (min-width: $md) {
+        max-width: 18rem;
+      }
+
+      .logo__img {
+        width: 100%;
+      }
+    }
+  
+    &-navbar {
+      flex-grow: 1;
+    }
+
+    &-auth-helpers {
+      white-space: nowrap;
+      padding-left: 1.5rem; 
+
+      @media (min-width: $md) {
+        padding-left: 0;
+      }
+      
+      .btn {
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+
+        @media (max-width: $md--mw) {
+          padding: 1.5rem 2rem;
+          font-size: 1.6rem;
+        }
+
+        @media (max-width: $sm--mw) {
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
+
+          padding: 1.5rem 2rem;
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &--no-nav {
+      padding-left: 0;
+    }
+  }
+
+  &--cropped {
+    padding: 5rem 0;
+    margin-bottom: 0;
+
+    @media (min-width: $md) {
+      padding: 7.5rem 0;
+    }
+
+    .logo {
+      max-width: 23rem;
+      margin: 0 auto;
+
+      &__img {
+        width: 100%;
+      }
+    }
+  }
 }
