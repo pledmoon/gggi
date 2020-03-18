@@ -65,6 +65,8 @@
 
 
 .user-picture {
+  $self: &;
+
   width: 17rem;
   height: 17rem;
   border: 1rem solid $white;
@@ -75,9 +77,13 @@
   position: relative;
   overflow: hidden;
 
-  &__img-wrap {
-
+  &:hover {
+    #{$self}__details {
+      transform: translateY(0);
+    }
   }
+
+  &__img-wrap {}
 
   &__img {
     max-width: 100%;
@@ -95,6 +101,8 @@
     height: 50%;
     background: rgba($black, .7);
     padding-top: 1rem;
+    transform: translateY(100%);
+    transition: all .3s;
   }
 
   &__add {

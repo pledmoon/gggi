@@ -1,7 +1,7 @@
 {
-  "name": "Pledmoon",
+  "name": "GGGI",
   "version": "1.0.0",
-  "description": "Pledmoon",
+  "description": "GoGoGiveIt",
   "main": "index.js",
   "author": "Damaskin Pavel",
   "scripts": {
@@ -17,6 +17,7 @@
     "gulp": "4.0",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
+    "gulp-beautify": "^3.0.0",
     "gulp-cache": "^1.0.2",
     "gulp-cached": "^1.1.1",
     "gulp-changed": "^4.0.2",

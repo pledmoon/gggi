@@ -248,7 +248,6 @@ function scrollWidth() {
 
 // Polyfill of pseudo-class :placeholder-shown
 (function(){
-
   (() => {
     const isCheck = () => {
       try {
@@ -274,5 +273,4 @@ function scrollWidth() {
 
     if (!isCheck()) window.addEventListener('load', placeholderShownPolyfill);
   })();
-
 })();

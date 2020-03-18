@@ -4,7 +4,8 @@ let plumber = require('gulp-plumber'),
     changed = require('gulp-changed'),
     cached = require('gulp-cached'),
     gulpif = require('gulp-if'),
-    filter = require('gulp-filter');
+    filter = require('gulp-filter'),
+    beautify = require('gulp-beautify');
 
 module.exports = function () {
   $.gulp.task('pug', () => {
@@ -14,10 +15,15 @@ module.exports = function () {
       .pipe(gulpif(global.isWatching, cached('pug')))
       .pipe(pugInheritance({basedir: './src/pug/', skip: 'node_modules'}))
       .pipe(filter(function (file) {
-          return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+        return !/\/_/.test(file.path) && !/^_/.test(file.relative);
       }))
       .pipe(pug({
-          // pretty: true
+        pretty: false,
+        doctype: 'html'
+      }))
+      .pipe(beautify.html({
+        indent_size: 2,
+        inline: []
       }))
       .pipe(plumber.stop())
       .pipe($.gulp.dest('./dist/'))
