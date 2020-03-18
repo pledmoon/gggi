@@ -43,16 +43,19 @@ block content
           +e.LEGEND.heading.secondary-heading Select event
           .row
             .col-md-5
+              //- +e.field
+              //-   +e.LABEL.label(for="event") Event #[span *]
+              //-   select(class="js-select-autocomplete" id="event" tabindex="1")
+              //-     option(value="event-1") Event Heading 1
+              //-     option(value="event-2") Event Heading 2
+              //-     option(value="event-3") Event Heading 3
+              //-     option(value="event-4") Event Heading 4
+              //-     option(value="event-5") Event Heading 5
+              //-     option(value="event-6") Event Heading 6
+              //-     option(value="event-7") Event Heading 7
               +e.field
                 +e.LABEL.label(for="event") Event #[span *]
-                select(class="js-select-autocomplete" id="event" tabindex="1")
-                  option(value="event-1") Event Heading 1
-                  option(value="event-2") Event Heading 2
-                  option(value="event-3") Event Heading 3
-                  option(value="event-4") Event Heading 4
-                  option(value="event-5") Event Heading 5
-                  option(value="event-6") Event Heading 6
-                  option(value="event-7") Event Heading 7
+                +e.INPUT(type="text" name="event" id="event" tabindex="1")
             .col-md-5
               +e.field
                 +e.LABEL.label(for="event-date") Event Date #[span *]
@@ -61,16 +64,19 @@ block content
                   //- +e.INPUT.date-picker.js-date-picker(id="event-date" type="text" name="event-date" placeholder="YYYY / MM / DD" data-inputmask="'mask': '99-9999999'")
                   i.fa.fa-calendar-alt
             .col-md-2
+              //- +e.field
+              //-   +e.LABEL.label(for="budget") Budget ($) #[span *]
+              //-   select(class="js-select-default" id="budget" tabindex="3")
+              //-     option(value="opt-1") 5$
+              //-     option(value="opt-2") 10$
+              //-     option(value="opt-3" disabled) 25$
+              //-     option(value="opt-5") 100$
+              //-     option(value="opt-6") 200$
+              //-     option(value="opt-7") 1000$
+              //-     option(value="opt-4" selected) Unlimited
               +e.field
                 +e.LABEL.label(for="budget") Budget ($) #[span *]
-                select(class="js-select-default" id="budget" tabindex="3")
-                  option(value="opt-1") 5$
-                  option(value="opt-2") 10$
-                  option(value="opt-3" disabled) 25$
-                  option(value="opt-5") 100$
-                  option(value="opt-6") 200$
-                  option(value="opt-7") 1000$
-                  option(value="opt-4" selected) Unlimited
+                +e.INPUT(type="text" name="budget" id="budget" value="10$" tabindex="3")
         // /set of fields 1
 
         // set of fields 2

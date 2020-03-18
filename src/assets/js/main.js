@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /* ========================= Tippy JS ========================= */
 
   /* ========================= Input Type File ========================= */
-  const fileInputs = document.querySelectorAll('input[type="file"]');
+  const fileInputs = document.querySelectorAll('input[type="file"].upload-file__upload');
 
   Array.prototype.forEach.call(fileInputs, function(input) {
     var label  = input.nextElementSibling,

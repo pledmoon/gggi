@@ -1,0 +1,99 @@
+extends templates/main
+
+block variables
+  - const title = 'Add Friend';
+  - const pageClass = 'profile-page';
+
+block content
+  .main-heading-wrap
+    .main-heading.main-heading--user-pic
+      .main-heading__body #[span.main-heading__first-letter A]dd #[span.main-heading__accent friend]
+
+  .container-fluid
+    main.primary-content
+      
+      // your-profile-form
+      +b.FORM.fast-search--gaps(name="fast-search" action="/" method="POST")
+
+        +e.FIGURE.user-picture.user-picture--authorized
+          .user-picture__img-wrap
+            img.user-picture__img(src="assets/images/media/ava-main-2.jpg" width="100" alt="")
+          figcaption.user-picture__details
+            label(for="user-picture-file").user-picture__add #[i.fas.fa-camera] #[span Add Photo]
+            input(type="file" name="user-picture" id="user-picture-file")
+        
+        +e.section
+          .user-picture__name Janne Brennan
+        
+        // set of fields 1
+        +e.FIELDSET.section(name="occasion")
+          +e.LEGEND.heading.secondary-heading.text-center Select Main Events
+
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="checked-event-1" id="checked-event-1" checked tabindex="1")
+              label.checkbox-label__main(for="checked-event-1") Birthday
+
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="checked-event-2" id="checked-event-2" tabindex="2")
+              label.checkbox-label__main(for="checked-event-2") Wedding Day
+
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="checked-event-3" id="checked-event-3" checked tabindex="3")
+              label.checkbox-label__main(for="checked-event-3") Christmas
+              
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="checked-event-4" id="checked-event-4" checked tabindex="4")
+              label.checkbox-label__main(for="checked-event-4") Valentine's Day
+        // /set of fields 1
+
+        // set of fields 2
+        +e.FIELDSET.section(name="more-options")
+          +e.LEGEND.heading.secondary-heading.text-center Select Additional Occasions
+        // /set of fields 2
+
+        // set of fields 3
+        +e.FIELDSET.section(name="more-options")
+          +e.LEGEND.heading.secondary-heading.text-center Additional Options
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="opts-1" id="opts-1" checked)
+              label.checkbox-label__main(for="opts-1") Gift wrap ($3-7 of budget)
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="opts-2" id="opts-2" checked)
+              label.checkbox-label__main(for="opts-2") Card ($5 of budger, shipped to you with a stamp to complete and send on)
+        // /set of fields 3
+
+        // set of fields 4
+        +e.section
+          +e.summary
+            +e.A.back(href="#") #[i.fas.fa-chevron-left]Back
+            +e.BUTTON.submit-btn.btn--grad.--animated(type="submit" name="send-data") Next Step
+        // /set of fields 4
+      // /your-profile-form
+
+block script
+  //-script(src="assets/js/inputmask.min.js")
+
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const datePickerMask = document.querySelectorAll('.js-date-picker');
+      
+      if (datePickerMask) {
+        datePickerMask.forEach((pickerField) => {
+          const userCodeMaskInstance = new Inputmask({
+            mask: '9999 / 99 / 99',
+            definitions: {},
+            autoUnmask: true,
+            placeholder: '_',
+            //- clearMaskOnLostFocus: false
+          });
+
+          userCodeMaskInstance.mask(pickerField);
+        });
+      }
+    });

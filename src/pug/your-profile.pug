@@ -6,7 +6,7 @@ block variables
 
 block content
   .main-heading-wrap
-    .main-heading
+    .main-heading.main-heading--user-pic
       .main-heading__body #[span.main-heading__first-letter Y]our #[span.main-heading__accent profile]
 
   .container-fluid
@@ -19,7 +19,8 @@ block content
           .user-picture__img-wrap
             img.user-picture__img(src="assets/images/avatar.svg" width="100" alt="")
           figcaption.user-picture__details
-            a.user-picture__add(href="#") #[i.fas.fa-camera] #[span Add Photo]
+            label(for="user-picture-file").user-picture__add #[i.fas.fa-camera] #[span Add Photo]
+            input(type="file" name="user-picture" id="user-picture-file")
         
         // set of fields 1
         +e.FIELDSET.section(name="occasion")
