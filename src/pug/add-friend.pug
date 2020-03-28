@@ -16,11 +16,12 @@ block content
       +b.FORM.fast-search--gaps(name="fast-search" action="/" method="POST")
 
         +e.FIGURE.user-picture.user-picture--authorized
-          .user-picture__img-wrap
-            img.user-picture__img(src="assets/images/media/ava-main-2.jpg" width="100" alt="")
-          figcaption.user-picture__details
-            label(for="user-picture-file").user-picture__add #[i.fas.fa-camera] #[span Add Photo]
-            input(type="file" name="user-picture" id="user-picture-file")
+          label.user-picture__label(for="user-picture-file")
+            .user-picture__img-wrap
+              img.user-picture__img(src="assets/images/media/ava-main-2.jpg" width="100" alt="")
+            figcaption.user-picture__details
+              div.user-picture__add #[i.fas.fa-camera] #[span Add Photo]
+              input(type="file" name="user-picture" id="user-picture-file")
         
         +e.section
           .user-picture__name Janne Brennan

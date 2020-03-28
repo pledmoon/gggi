@@ -21,15 +21,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if ( document.querySelector('.js-select-tags') ) {
     const selectTags = document.querySelectorAll('.js-select-tags');
+    let values = selectTags.value;
 
     selectTags.forEach((selectTag) => {
       const placeholderValue = selectTag.placeholder;
+      selectTag.value = selectTag.value.toLowerCase();
 
       new Choices(selectTag, {
         delimiter: ',',
         editItems: true,
         removeItemButton: true,
-        placeholderValue: placeholderValue
+        placeholderValue: placeholderValue,
+        duplicateItemsAllowed: false,
+
+        addItemFilter: (value) => {
+          if (!value) return false;
+
+          let values = selectTag.value.split(',');
+          let inputValue = value.toLowerCase();
+          
+          return !values.includes(inputValue);
+        },
       });
     });
   };
