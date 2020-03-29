@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     selectTags.forEach((selectTag) => {
       const placeholderValue = selectTag.placeholder;
-      selectTag.value = selectTag.value.toLowerCase();
 
       new Choices(selectTag, {
         delimiter: ',',
@@ -37,8 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
         addItemFilter: (value) => {
           if (!value) return false;
 
+          selectTag.value = selectTag.value.toLowerCase();
+
           let values = selectTag.value.split(',');
           let inputValue = value.toLowerCase();
+
+          console.log(values);
           
           return !values.includes(inputValue);
         },
@@ -227,6 +230,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   /* ========================= Calendars ========================= */
+
+  /* ------------ Radio Opt States ------------ */
+  let optStates = document.querySelectorAll('.radio-opt');
+
+  optStates.forEach(function(item) {
+    item.querySelector('input[type="radio"]').addEventListener('change', function() {
+      clearOptStates(optStates);
+      this.closest('.radio-opt').classList.add('active');
+    });
+  });
+
+  function clearOptStates(opts) {
+    opts.forEach(function(item) {
+      item.classList.remove('active');
+    });
+  }
+  /* ------------ Radio Opt States ------------ */
 });
 
 svg4everybody({});

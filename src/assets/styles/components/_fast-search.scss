@@ -15,9 +15,40 @@
   
   &__heading {}
 
+  &__subheading {
+    font-size: 1.8rem;
+  }
+
   &__field {
     &:not(:last-child) {
       margin-bottom: 2.5rem;
+    }
+
+    &--flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+
+      #{$self}__field-col {
+        flex-basis: 25%;
+        max-width: 25%;
+
+        &:first-child {
+          flex-basis: 70%;
+          max-width: 70%;
+        }
+      }
+    }
+  }
+
+  &__input {
+    &--sm {
+      padding: .8rem 1.5rem;
+    }
+
+    &--md {
+      padding: 1.5rem 1.5rem;
     }
   }
 
@@ -26,6 +57,11 @@
 
     #{$self}__date-picker {
       padding-right: 5rem;
+
+      &--md {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
     }
 
     [class*="fa-calendar"] {
@@ -49,6 +85,15 @@
       padding-left: 3.5rem;
       // color: #b4b4b4;
       transition: all .1s;
+
+      &::before {
+        background: $white;
+      }
+
+      span {
+        color: $font-base-color;
+        padding-left: 3.5rem;
+      }
     }
 
     /*.checkbox-label__input:checked + .checkbox-label__main {
@@ -153,6 +198,154 @@
     @media (min-width: $md) {
       padding-left: 6rem;
       padding-right: 6rem;
+    }
+  }
+
+  &__event-date {
+    font-size: 1.8rem;
+    color: #b4b4b4;
+    display: block;
+  }
+
+  &__user-event {
+    display: flex;
+    align-items: center;
+    margin: 0 -1.5rem;
+    flex-wrap: wrap;
+
+    @media (max-width: $sm--mw) {
+      padding: 2rem 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $gray--medium;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    
+    @media (min-width: $sm) {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-col {
+      flex-basis: 23.333%;
+      max-width: 23.333%;
+      padding: 0 1.5rem;
+
+      @media (min-width: $sm) {
+        &:first-child {
+          flex-basis: 30%;
+          max-width: 30%;
+        }
+      }
+
+      @media (max-width: $sm--mw) {
+        flex-basis: 50%;
+        max-width: 50%;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+      }
+
+      &--date {
+        padding: 0 3rem;
+      }
+
+      &--annual {
+        @media (min-width: $sm) {
+          text-align: center;
+        }
+
+        .checkbox-label {
+          display: inline-block;
+        }
+
+        .checkbox-label__main {
+          padding: 0;
+        }
+      }
+    }
+
+    &--add-event {
+      background: #fafafa;
+      padding: 2.5rem;
+      margin: 0 -4rem;
+
+      @media (max-width: $sm--mw) {
+        &:last-child {
+          padding-bottom: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &__rm-event {
+    &:hover svg {
+      fill: #f00;
+    }
+
+    &-icon {
+      width: 1.7rem;
+      height: 1.7rem;
+      fill: #cdcdcd;
+      transition: all .3s;
+    }
+  }
+
+  &__add-event {
+    background: $primary-color;
+    display: inline-block;
+    vertical-align: middle;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: relative;
+    transition: all .3s;
+
+    &:hover {
+      background: $secondary-color;
+    }
+
+    &::before {
+      content: "";
+      width: 0;
+      height: 1.5rem;
+      border-left: 2px solid $white;
+
+      @include absolute-center;
+    }
+
+    &::after {
+      content: "";
+      width: 1.5rem;
+      height: 0;
+      border-top: 2px solid $white;
+
+      @include absolute-center;
+    }
+  }
+
+  &__radio-opt {
+    border-radius: .5rem;
+    transition: all .3s;
+    border: 1px solid #e7e7e7;
+    padding: 2.5rem;
+    width: 100%;
+    text-align: left;
+
+    @media (min-width: $md) {
+      min-width: 26rem;
+      width: auto;
+      display: inline-block;
+    }
+
+    &.active {
+      box-shadow: 0 0 3rem rgba($black, 0.1);
+      border-color: transparent;
+      background: $white;
     }
   }
 }

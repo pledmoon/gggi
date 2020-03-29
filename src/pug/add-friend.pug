@@ -15,58 +15,116 @@ block content
       // your-profile-form
       +b.FORM.fast-search--gaps(name="fast-search" action="/" method="POST")
 
-        +e.FIGURE.user-picture.user-picture--authorized
+        +e.FIGURE.user-picture.user-picture
           label.user-picture__label(for="user-picture-file")
             .user-picture__img-wrap
-              img.user-picture__img(src="assets/images/media/ava-main-2.jpg" width="100" alt="")
+              img.user-picture__img(src="assets/images/avatar.svg" width="100" alt="")
             figcaption.user-picture__details
               div.user-picture__add #[i.fas.fa-camera] #[span Add Photo]
               input(type="file" name="user-picture" id="user-picture-file")
         
-        +e.section
-          .user-picture__name Janne Brennan
-        
         // set of fields 1
         +e.FIELDSET.section(name="occasion")
-          +e.LEGEND.heading.secondary-heading.text-center Select Main Events
-
+          +e.LEGEND.heading.secondary-heading.text-center Friend Personal Data
           +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="checked-event-1" id="checked-event-1" checked tabindex="1")
-              label.checkbox-label__main(for="checked-event-1") Birthday
-
+            .row
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-name") First Name #[span *]
+                  +e.INPUT.input(type="text" name="user-name" id="u-name" autofocus tabindex="1" placeholder="Your firstname")
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-lastname") Last Name #[span *]
+                  +e.INPUT.input(type="text" name="user-lastname" id="u-lastname" tabindex="2" placeholder="Your lastname")
           +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="checked-event-2" id="checked-event-2" tabindex="2")
-              label.checkbox-label__main(for="checked-event-2") Wedding Day
-
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="checked-event-3" id="checked-event-3" checked tabindex="3")
-              label.checkbox-label__main(for="checked-event-3") Christmas
-              
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="checked-event-4" id="checked-event-4" checked tabindex="4")
-              label.checkbox-label__main(for="checked-event-4") Valentine's Day
+            .row
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="birthday") Birthday #[span *]
+                  +e.field-datepicker
+                    +e.INPUT.date-picker.js-date-picker(id="birthday" type="text" name="birthday" placeholder="YYYY / MM / DD" tabindex="3")
+                    i.fa.fa-calendar-alt
+              .col-md-6
+                +e.field
+                  +e.LABEL.label Gender #[span *]
+                  +e.radio-rows
+                    +e.radio.radio-label
+                      input.radio-label__input(type="radio" name="sex" value="male" id="male" tabindex="4")
+                      label.radio-label__main(for="male") Male
+                    +e.radio.radio-label
+                      input.radio-label__input(type="radio" name="sex" value="female" checked id="female" tabindex="5")
+                      label.radio-label__main(for="female") Female
+                    +e.radio.radio-label
+                      input.radio-label__input(type="radio" name="sex" value="noset" id="noset" tabindex="6")
+                      label.radio-label__main(for="noset") N/A
         // /set of fields 1
 
         // set of fields 2
         +e.FIELDSET.section(name="more-options")
-          +e.LEGEND.heading.secondary-heading.text-center Select Additional Occasions
+          +e.LEGEND.heading.secondary-heading.text-center Delivery Information
+          +e.field
+            .row
+              .col-md-6.text-right
+                +e.radio-opt.radio-opt.active
+                  +e.radio.radio-label
+                    input.radio-label__input(type="radio" name="deliery-type" value="deliver-type-1" id="dlv-type-1" checked tabindex="7")
+                    label.radio-label__main(for="dlv-type-1") Ship to friend
+              .col-md-6
+                +e.radio-opt.radio-opt
+                  +e.radio.radio-label
+                    input.radio-label__input(type="radio" name="deliery-type" value="deliver-type-2" id="dlv-type-2" tabindex="8")
+                    label.radio-label__main(for="dlv-type-2") Ship to you
+          +e.field
+            .row
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-email") Email #[span *]
+                  +e.INPUT.input(type="email" name="user-email" id="u-email" tabindex="9")
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-tel") Phone #[span *]
+                  +e.INPUT.input(type="tel" name="user-tel" id="u-tel" tabindex="10")
+          +e.field
+            .row
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-main-addr") Address 1 #[span *]
+                  +e.INPUT.input(type="text" name="user-main-address" id="u-main-addr" tabindex="11")
+              .col-md-6
+                +e.field
+                  +e.LABEL.label(for="u-spare-addr") Address 2
+                  +e.INPUT.input(type="text" name="user-spare-address" id="u-spare-addr" tabindex="12")
+          .row
+            .col-md-6
+              +e.field
+                +e.LABEL.label(for="u-city") City #[span *]
+                +e.INPUT.input(type="text" name="user-city" id="u-city" tabindex="13")
+            .col-md-3
+              +e.field
+                +e.LABEL.label(for="u-state") State #[span *]
+                +e.INPUT.input(type="text" name="user-state" id="u-state" tabindex="14")
+            .col-md-3
+              +e.field
+                +e.LABEL.label(for="u-zip") Zip #[span *]
+                +e.INPUT.input(type="text" name="user-zip" id="u-zip" tabindex="15")
         // /set of fields 2
 
         // set of fields 3
         +e.FIELDSET.section(name="more-options")
-          +e.LEGEND.heading.secondary-heading.text-center Additional Options
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="opts-1" id="opts-1" checked)
-              label.checkbox-label__main(for="opts-1") Gift wrap ($3-7 of budget)
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="opts-2" id="opts-2" checked)
-              label.checkbox-label__main(for="opts-2") Card ($5 of budger, shipped to you with a stamp to complete and send on)
+          +e.LEGEND.heading.secondary-heading.text-center Personal Preferences
+          .row
+            .col-md-6
+              +e.field
+                +e.LABEL.label(for="interest") Interest
+                +e.tag.select-tag
+                  +e.INPUT.input.js-select-tags(id="interest" type="text" name="user-preferences" value="" placeholder="Enter his interest’s" tabindex="16")
+                  +e.tags-helper Examples: movie, cars, cats
+            .col-md-6
+              +e.field
+                +e.LABEL.label(for="avoid") Avoid
+                +e.tag.select-tag
+                  +e.INPUT.input.js-select-tags(id="avoid" type="text" name="user-avoids" value="" placeholder="Enter his avoid’s" tabindex="17")
+                  +e.tags-helper Examples: sport, dogs, theater
         // /set of fields 3
 
         // set of fields 4
