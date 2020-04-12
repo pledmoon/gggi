@@ -18,6 +18,7 @@
 @import "vendors/nouislider.scss";
 @import "vendors/drift-basic.scss";
 @import "vendors/simplebar.scss";
+@import "vendors/card.scss";
 
 // 3.Base stuff
 @import "base/base";      // maybe reset
@@ -38,6 +39,7 @@
 @import "layout/error-page";
 @import "layout/demo-styleguide";
 @import "layout/main-layout";
+@import "layout/friends-section";
 
 // 5.Components
 @import "components/buttons";
@@ -54,6 +56,11 @@
 @import "components/rounded-area";
 @import "components/params";
 @import "components/product";
+@import "components/add-card";
+@import "components/create-card";
+@import "components/add-friend-form";
+@import "components/friend";
+@import "components/occasion-table";
 
 // 6.Pages (page-specific styles)
 @import 'pages/forms-page';
@@ -61,9 +68,3 @@
 
 // 7.Themes
 // @import 'themes/default';
-
-
-
-
-
-

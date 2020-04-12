@@ -1,0 +1,58 @@
+.add-friend-form {
+  @media (min-width: $md) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    color: #9a9a9a;
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+      margin-right: 3rem;
+      flex: none;
+    }
+  }
+
+  &__field {
+    position: relative;
+
+    @media (min-width: $md) {
+      flex: 1;
+    }
+  }
+
+  &__input {
+    background-color: #ebf5f5;
+    border-color: #ebf5f5;
+
+    /* clears the 'X' from Internet Explorer */
+    &::-ms-clear {  display: none; width : 0; height: 0; }
+    &::-ms-reveal {  display: none; width : 0; height: 0; }
+
+    /* clears the 'X' from Chrome */
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration { display: none; }
+  }
+
+  &__send {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 1.5rem;
+    background: none;
+    border: none;
+  }
+
+  &__icon {
+    fill: $primary-color;
+    width: 3rem;
+    height: 3rem;
+  }
+}

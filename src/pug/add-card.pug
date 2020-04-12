@@ -1,0 +1,98 @@
+extends templates/main
+
+block variables
+  - const title = 'Add Card';
+  - const pageClass = 'add-card-page';
+
+block content
+  .main-heading-wrap
+    .main-heading.main-heading--create-card
+      .main-heading__body #[span.main-heading__first-letter A]dd #[span.main-heading__accent card]
+
+  .container-fluid
+    main.primary-content
+
+      form.fast-search.create-card(action="/" method="POST" name="create-card")
+
+        .fast-search__section
+
+          .create-card__main
+
+            .create-card__main-card
+
+            .create-card__field.forms-area__field
+              input.create-card__input.forms-area__input(type="tel" name="user-card-number" id="u-card-number" tabindex="1" placeholder="Card Number" autofocus)
+              label.create-card__label.forms-area__label(for="u-card-number") Card Number
+
+            .create-card__field.forms-area__field
+              input.create-card__input.forms-area__input(type="text" name="user-card-firstname" id="u-card-name" tabindex="2" placeholder="Card Name")
+              label.create-card__label.forms-area__label(for="u-card-name") Card Name
+
+            .create-card__field.forms-area__field
+              input.create-card__input.forms-area__input(type="text" name="user-card-lastname" id="u-card-lastname" tabindex="3" placeholder="Card Last Name")
+              label.create-card__label.forms-area__label(for="u-card-lastname") Card Last Name
+
+            .create-card__field
+              .row
+                .col-6
+                  .create-card__field.forms-area__field
+                    input.create-card__input.forms-area__input(type="text" name="user-card-expire" id="u-card-expire" tabindex="4" placeholder="MM/YY")
+                    label.create-card__label.forms-area__label(for="u-card-expire") MM/YY
+                .col-6
+                  .create-card__field.forms-area__field
+                    input.create-card__input.forms-area__input(type="tel" name="user-card-cvc" id="u-card-cvc" tabindex="5" placeholder="CVC")
+                    label.create-card__label.forms-area__label(for="u-card-cvc") CVC
+
+        .fast-search__section
+          .secondary-heading.text-center Billing address
+
+          .fast-search__field
+            label.fast-search__label(for="u-main-addr") Address 1 #[span *]
+            input.fast-search__input(type="text" name="user-main-address" id="u-main-addr" tabindex="6")
+
+          .fast-search__field
+            .row
+              .col-md-6
+                .fast-search__field
+                  label.fast-search__label(for="u-city") City #[span *]
+                  input.fast-search__input(type="text" name="user-city" id="u-city" tabindex="7")
+              .col-md-3
+                .fast-search__field
+                  label.fast-search__label(for="u-state") State #[span *]
+                  input.fast-search__input(type="text" name="user-state" id="u-state" tabindex="8")
+              .col-md-3
+                .fast-search__field
+                  label.fast-search__label(for="u-zip") Zip #[span *]
+                  input.fast-search__input(type="text" name="user-zip" id="u-zip" tabindex="9")
+
+        .fast-search__summary
+          .fast-search__checkbox.checkbox-label
+            input.checkbox-label__input(type="checkbox" name="save-card" checked id="save-card")
+            label.checkbox-label__main(for="save-card") Save for future use
+          button.fast-search__submit-btn.btn.btn--grad.btn--animated(type="submit" name="confirm-data") Save Card
+
+block script
+  script.
+    const userCard = new Card({
+      form: '.create-card',
+      container: '.create-card__main-card',
+
+      formSelectors: {
+        numberInput: 'input[name="user-card-number"]',
+        nameInput: 'input[name="user-card-firstname"], input[name="user-card-lastname"]',
+        expiryInput: 'input[name="user-card-expire"]',
+        cvcInput: 'input[name="user-card-cvc"]',
+      },
+
+      formatting: true,
+      width: 540,
+
+      placeholders: {
+        number: '•••• •••• •••• ••••',
+        name: 'Full Name',
+        expiry: 'MM/YY',
+        cvc: '•••'
+      },
+
+      debug: true
+    });

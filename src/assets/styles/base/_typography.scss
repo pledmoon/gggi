@@ -92,6 +92,8 @@ h6,.h6 {
   display: inline-block;
   position: relative;
   line-height: 1.2;
+  z-index: 2;
+  white-space: nowrap;
 
   @media (min-width: $md) {
     font-size: 4rem;
@@ -189,6 +191,30 @@ h6,.h6 {
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;
+    }
+  }
+
+  &__note {
+    color: #9a9a9a;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: none;
+    font-family: $font-base-stack;
+    display: block;
+    position: relative;
+    margin-top: 1rem;
+
+    @media (min-width: $sm) {
+      display: inline-block;
+      margin-left: 2rem;
+      padding-left: 2rem;
+      margin-top: 0;
+
+      &::before {
+        content: "/";
+        position: absolute;
+        left: 0;
+      }
     }
   }
 

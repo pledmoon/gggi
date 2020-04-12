@@ -36,6 +36,7 @@ button:focus {
 
 label {
   user-select: none;
+  cursor: pointer;
 
   span {
     color: $primary-color;

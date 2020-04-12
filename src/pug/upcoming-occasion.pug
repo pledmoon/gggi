@@ -1,0 +1,246 @@
+extends templates/main
+
+block variables
+  - const title = 'Upcoming Occasion';
+  - const pageClass = 'upcoming-occasion-page';
+
+block content
+  .main-heading-wrap
+    .main-heading
+      .main-heading__body #[span.main-heading__first-letter U]pcoming #[span.main-heading__accent occasion]
+
+  .container-fluid
+
+    main.primary-content.primary-content--gaps
+
+      .occasion-tabs
+        .occasion-tabs__tab
+          a.occasion-tabs__tab-link.active(href="#") 
+            +icon('calendar-upcoming', 'occasion-tabs__tab-icon')
+            span Upcoming
+        .occasion-tabs__tab
+          a.occasion-tabs__tab-link(href="#") 
+            +icon('calendar-completed', 'occasion-tabs__tab-icon')
+            span Completed
+
+      +b.occasion-table
+        table
+          thead
+            tr
+              th.occasion-friend-col
+                span.occasion-table__heading.sort-to-bottom Friend
+              th.occasion-date-col
+                span.occasion-table__heading.sort-to-top Date
+              th.occasion-col
+                span.occasion-table__heading Occasion
+              th.occasion-budget-col
+                span.occasion-table__heading Budget
+          tbody
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-1.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Aakash Parmar
+              td
+                time.occasion-table__time(datetime="") 02/14/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-1', 'occasion-table__occasion-icon')
+                  span St. Valentine's Day
+              td
+                span.occasion-table__budget $205
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-2.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Alexa Milway
+              td
+                time.occasion-table__time(datetime="") 02/09/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-2', 'occasion-table__occasion-icon')
+                  span National Pizza Day
+              td
+                span.occasion-table__budget $55
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-3.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Aston Leach
+              td
+                time.occasion-table__time(datetime="") 02/06/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-3', 'occasion-table__occasion-icon')
+                  span Chicago Auto Show
+              td
+                span.occasion-table__budget $20
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-4.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Ashley Collins
+              td
+                time.occasion-table__time(datetime="") 02/12/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-4', 'occasion-table__occasion-icon')
+                  span Lincoln's Birthday
+              td
+                span.occasion-table__budget $5
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-5.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Chris Brennan
+              td
+                time.occasion-table__time(datetime="") 02/17/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-4', 'occasion-table__occasion-icon')
+                  span Washington's Birthday
+              td
+                span.occasion-table__budget $35
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-6.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Christopher Stonebridge
+              td
+                time.occasion-table__time(datetime="") 02/25/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-5', 'occasion-table__occasion-icon')
+                  span.important Birthday
+              td
+                span.occasion-table__budget $75
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-7.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Lyra Lee
+              td
+                time.occasion-table__time(datetime="") 02/25/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-6', 'occasion-table__occasion-icon')
+                  span Mardi Grass Carnival
+              td
+                span.occasion-table__budget $100
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-8.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Janne Wag
+              td
+                time.occasion-table__time(datetime="") 02/12/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-7', 'occasion-table__occasion-icon')
+                  span St. Patrick's Day
+              td
+                span.occasion-table__budget $115
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-9.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Mirka Masic
+              td
+                time.occasion-table__time(datetime="") 03/28/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-6', 'occasion-table__occasion-icon')
+                  span Earth Hour
+              td
+                span.occasion-table__budget $305
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-10.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Hazel Jennings
+              td
+                time.occasion-table__time(datetime="") 03/29/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-8', 'occasion-table__occasion-icon')
+                  span Veterans Day
+              td
+                span.occasion-table__budget $550
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-11.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Lizzey Johnson
+              td
+                time.occasion-table__time(datetime="") 02/12/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-9', 'occasion-table__occasion-icon')
+                  span Fool's day
+              td
+                span.occasion-table__budget $15
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-12.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Lans Lebherman
+              td
+                time.occasion-table__time(datetime="") 04/10/2020
+              td
+                div.occasion-table__occasion
+                  +icon('event-6', 'occasion-table__occasion-icon')
+                  span Good Friday
+              td
+                span.occasion-table__budget $5
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+
+      footer.primary-content__summary
+
+        include components/pagination

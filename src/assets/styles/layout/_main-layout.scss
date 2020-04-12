@@ -32,6 +32,45 @@
     box-shadow: 0 0 3rem rgba($black, 0.1);
     padding: 4rem 3rem;
 
+    &__header {
+      position: relative;
+      padding-bottom: 4rem;
+      border-bottom: 1px dotted $gray--medium;
+      text-align: center;
+
+      @media (min-width: $sm) {
+        text-align: left;
+      }
+
+      .btn {
+        margin-top: 1.5rem;
+      }
+      
+      @media (min-width: $md) {
+        .btn {
+          position: absolute;
+          right: 0;
+          top: 1.3rem;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .main-heading-wrap {
+      margin-top: 0;
+      padding-left: 3rem;
+      padding-right: 3rem;
+
+      @media (min-width: $md) {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+    }
+
+    .main-heading {
+      margin-bottom: 0;
+    }
+
     &__footer {
       padding: 4rem 0;
 
@@ -50,6 +89,18 @@
       .next-step-stage {
         color: #cdcdcd;
         font-size: 1.8rem;
+      }
+    }
+
+    &__summary {
+      border-top: 1px dotted $gray--medium;
+      padding-top: 4rem;
+    }
+
+    &--gaps {
+      @media (min-width: $md) {
+        padding-left: 6.5rem;
+        padding-right: 6.5rem;
       }
     }
   }

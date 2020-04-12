@@ -1,16 +1,13 @@
 .pagination-wrap {
   text-align: center;
-  
-  @media (min-width: $md) {
-    text-align: right;
-  }
 }
 
 .pagination {
   position: relative;
   padding: 0 2.25rem;
   display: inline-block;
-  margin-bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 500;
 
   &__prev,
   &__next {
@@ -49,13 +46,13 @@
   &__item {
     font-size: 1.4rem;
     text-align: center;
-    color: $dark--medium;
+    color: #cdcdcd;
     display: inline-block;
-    margin: 0 .2rem;
+    margin: 0 .1rem;
   }
 
   &__link {
-    color: $dark;
+    color: #cdcdcd;
     padding: 1rem;
     display: block;
     line-height: 1;
@@ -63,9 +60,7 @@
 
     &:hover,
     &.active {
-      background: $primary-color;
-      color: $white;
-      text-decoration: none;
+      color: $primary-color;
     }
 
     &.active {

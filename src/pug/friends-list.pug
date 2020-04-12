@@ -1,0 +1,258 @@
+extends templates/main
+
+include components/friend
+
+block variables
+  - const title = 'List of friends';
+  - const pageClass = 'friends-list-page';
+  - const tinyNav = true;
+
+block content
+
+  .container-fluid
+
+    main.primary-content.primary-content--gaps
+
+      header.primary-content__header
+
+        .main-heading-wrap.main-heading-wrap--left
+          .main-heading
+            .main-heading__body #[span.main-heading__first-letter L]ist #[span.main-heading__accent of friends]
+          span.main-heading__note you have 256 friends
+
+        a.btn.btn--primary-reverse.btn--sm(href="#") + Add Friend
+
+      .friends-section
+
+        .friends-section__header
+
+          form.add-friend-form(action="/" name="add-friend-form" method="GET")
+            label.add-friend-form__label(for="friend-field") Find friends
+            .add-friend-form__field
+              input.add-friend-form__input(type="search" name="search-query" id="friend-field")
+              button(type="submit" name="send-data" class="add-friend-form__send")
+                +icon('search', 'add-friend-form__icon')
+
+        .friends-section__list
+
+          .row
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-1.jpg',
+                friendName: 'Aakash Parmar',
+                friendEventIcon: 'gift',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-2.jpg',
+                friendName: 'Alexa Milway',
+                friendEventIcon: 'gift',
+                friendEventDate: '15 Mar 1995'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-3.jpg',
+                friendName: 'Aston Leach',
+                friendEventIcon: 'gift',
+                friendEventDate: '15 Feb 1999'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-4.jpg',
+                friendName: 'Ashley Collins',
+                friendEventIcon: 'event-1',
+                friendEventDate: '21 Dec 2001'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-5.jpg',
+                friendName: 'Adam Banks',
+                friendEventIcon: 'event-2',
+                friendEventDate: '17 Sep 1979'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-7.jpg',
+                friendName: 'Chris Brennan',
+                friendEventIcon: 'event-3',
+                friendEventDate: '23 Apr 2002'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-6.jpg',
+                friendName: 'Christopher Stonebridge',
+                friendEventIcon: 'event-4',
+                friendEventDate: '7 Dec 1987'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-8.jpg',
+                friendName: 'Lyra Lee',
+                friendEventIcon: 'event-5',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-9.jpg',
+                friendName: 'Janne Wag',
+                friendEventIcon: 'event-6',
+                friendEventDate: '20 Jul 1965'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-10.jpg',
+                friendName: 'Mirka Masic',
+                friendEventIcon: 'event-7',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-11.jpg',
+                friendName: 'Hazel Jennings',
+                friendEventIcon: 'event-8',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-12.jpg',
+                friendName: 'Lizzey Johnson',
+                friendEventIcon: 'event-9',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-1.jpg',
+                friendName: 'Aakash Parmar',
+                friendEventIcon: 'gift',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-2.jpg',
+                friendName: 'Alexa Milway',
+                friendEventIcon: 'event-6',
+                friendEventDate: '15 Mar 1995'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-3.jpg',
+                friendName: 'Aston Leach',
+                friendEventIcon: 'event-4',
+                friendEventDate: '15 Feb 1999'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-4.jpg',
+                friendName: 'Ashley Collins',
+                friendEventIcon: 'event-1',
+                friendEventDate: '21 Dec 2001'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-5.jpg',
+                friendName: 'Adam Banks',
+                friendEventIcon: 'event-7',
+                friendEventDate: '17 Sep 1979'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-7.jpg',
+                friendName: 'Chris Brennan',
+                friendEventIcon: 'event-6',
+                friendEventDate: '23 Apr 2002'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-6.jpg',
+                friendName: 'Christopher Stonebridge',
+                friendEventIcon: 'event-2',
+                friendEventDate: '7 Dec 1987'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-8.jpg',
+                friendName: 'Lyra Lee',
+                friendEventIcon: 'event-3',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-9.jpg',
+                friendName: 'Janne Wag',
+                friendEventIcon: 'event-6',
+                friendEventDate: '20 Jul 1965'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-10.jpg',
+                friendName: 'Mirka Masic',
+                friendEventIcon: 'event-9',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-11.jpg',
+                friendName: 'Hazel Jennings',
+                friendEventIcon: 'gift',
+                friendEventDate: '21 Dec 1984'
+              })
+
+            .col-sm-6.col-md-4
+
+              +friend({
+                avatarPath: 'assets/images/media/user-12.jpg',
+                friendName: 'Lizzey Johnson',
+                friendEventIcon: 'event-1',
+                friendEventDate: '21 Dec 1984'
+              })
+
+      footer.primary-content__summary
+
+        include components/pagination

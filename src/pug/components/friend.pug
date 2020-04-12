@@ -1,0 +1,9 @@
+mixin friend(data)
+  +b.A.friend(href="#")
+    +e.FIGURE.figure
+      +e.img-wrap
+        +e.IMG.img(src=data.avatarPath alt="")
+      +e.FIGCAPTION.figcaption
+        +e.name= data.friendName
+        +icon(data.friendEventIcon, 'friend__icon')
+        +e.SPAN.event= data.friendEventDate

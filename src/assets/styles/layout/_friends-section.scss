@@ -1,0 +1,12 @@
+.friends-section {
+  padding: 3rem 0 0;
+
+  &__header {
+    border-bottom: 1px dotted $gray--medium;
+    padding-bottom: 3rem;
+  }
+
+  &__list {
+    padding: 3rem 0;
+  }
+}

@@ -18,7 +18,8 @@ module.exports = function () {
       'node_modules/pikaday/pikaday.js',
       'node_modules/simplebar/dist/simplebar.min.js',
       'src/assets/js/lib/Modal.js',
-      'src/assets/js/lib/inputmask.min.js'
+      'src/assets/js/lib/inputmask.min.js',
+      'node_modules/card/dist/card.js',
     ])
     .pipe(concat('libs.min.js'))
     .pipe($.gulp.dest(scriptsPATH.ouput));
@@ -35,7 +36,8 @@ module.exports = function () {
       'node_modules/pikaday/pikaday.js',
       'node_modules/simplebar/dist/simplebar.min.js',
       'src/assets/js/lib/Modal.js',
-      'src/assets/js/lib/inputmask.min.js'
+      'src/assets/js/lib/inputmask.min.js',
+      'node_modules/card/dist/card.js',
     ])
     .pipe(babel({
       presets: [ ['@babel/env', {modules: false}] ]

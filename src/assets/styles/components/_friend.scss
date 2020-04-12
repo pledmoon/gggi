@@ -1,0 +1,79 @@
+.friend {
+  $self: &;
+
+  display: block;
+  padding: 2rem 2.5rem;
+  transition: all .3s;
+  
+  &:hover {
+    border-radius: .5rem;
+    box-shadow: 0 0 3rem rgba($black, 0.1);
+
+    #{$self}__name {
+      color: $primary-color;
+    }
+  }
+
+  &__figure {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img-wrap {
+    width: 6.5rem;
+    height: 6.5rem;
+    position: relative;
+    flex: none;
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 100%;
+
+    @include absolute-center;
+  }
+
+  &__figcaption {
+    padding-left: 2.5rem;
+    flex: 1;
+    line-height: 1.2;
+    overflow: hidden;
+  }
+
+  &__name {
+    color: $secondary-color;
+    font-size: 1.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all .3s;
+    position: relative;
+    margin-bottom: .2rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 2rem;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    }
+  }
+
+  &__icon {
+    fill: #cdcdcd;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+
+  &__event {
+    color: #cdcdcd;
+    font-size: 1.4rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
