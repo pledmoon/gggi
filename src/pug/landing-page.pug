@@ -1,0 +1,246 @@
+extends templates/main
+
+include components/logo
+include components/navbar
+include components/soc
+
+block variables
+  - const title = 'Landing Page';
+  - const pageClass = 'landing-page';
+
+block header
+  // header
+  header.header.land-header
+    .container-fluid
+      .header__promo
+        +logo(logoIndex, 'header__promo-logo')
+
+        +b.BUTTON.navbar-trigger.d-md-none.order-first(type="button")
+          +e.SPAN.line
+          +e.SPAN.line
+
+        .navbar-bg
+
+        +navbar([
+          {
+            title: 'Get Started',
+            active: true
+          },
+          {
+            title: 'How it work'
+          },
+          {
+            title: 'Testemonials'
+          },
+          {
+            title: 'Gift ideas'
+          },
+          {
+            title: 'Who we are'
+          },
+        ], 'navbar--promo header__promo-navbar')
+
+        .header__promo-auth-helpers
+          a.header__login.btn.btn--grad.btn--sm.btn--animated(href="#") Sign Up
+          a.header__signup.btn.btn--primary-reverse.btn--sm.btn--animated(href="#") Log In
+  // /header
+
+block content
+  
+  .container-fluid
+    
+    // hero-promo
+    section.hero-promo.land-section
+      .row.no-gutters
+        .col-md-6
+          .hero-promo__heading 
+            .hero-promo__heading-text We #[span.hero-promo__heading-lead help you] find the #[div perfect #[span.hero-promo__heading-important gift]] at the #[br] right price
+          a.hero-promo__btn.btn.btn--grad.btn--animated(href="#") Get Started #[i.fa.fa-chevron-right]
+        .col-md-6.d-none.d-md-block
+          img.hero-promo__img.img-responsive(src="assets/images/robot-hero.png" alt="")
+      +soc('hero-promo__soc')
+      .next-helper How it works?
+    // /hero-promo
+
+    // how-it-works
+    section.stages-section.land-section
+
+      .main-heading-wrap.main-heading-wrap--left.land-section__heading
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter H]ow it #[span.main-heading__accent works?]
+
+      .stages-section__stages
+
+        +b.FIGURE.stage
+          +e.img-wrap
+            +e.IMG.img(src="assets/images/step-1.png" alt="")
+          +e.FIGCAPTION.figcaption
+            +e.heading.active Sign up
+            +e.desc It takes no more than a minute
+
+        +b.FIGURE.stage
+          +e.img-wrap
+            +e.IMG.img(src="assets/images/step-2.png" alt="")
+          +e.FIGCAPTION.figcaption
+            +e.heading Add friends
+            +e.desc Add everyone you want to congratulate
+
+        +b.FIGURE.stage
+          +e.img-wrap
+            +e.IMG.img(src="assets/images/step-3.png" alt="")
+          +e.FIGCAPTION.figcaption
+            +e.heading Setup occasions
+            +e.desc Birthdays, holidays or just significant dates
+
+        +b.FIGURE.stage
+          +e.img-wrap
+            +e.IMG.img(src="assets/images/step-4.png" alt="")
+          +e.FIGCAPTION.figcaption
+            +e.heading Relax
+            +e.desc We’ll send you reminders, gift ideas, look for the best price, and even take care of ordering
+
+        .stage-dec.stage-dec-one
+        .stage-dec.stage-dec-two
+        .stage-dec.stage-dec-three
+        .stage-dec.stage-dec-four
+
+      .next-helper Testemonials
+    // /how-it-works
+
+    // opinions
+    section.opinions-section.land-section
+      
+      .main-heading-wrap.main-heading-wrap--left.land-section__heading
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter C]ommunity #[span.main-heading__accent love]
+
+      .row.no-gutters
+
+        .col-md-4.d-none.d-md-block
+          
+          img.img-responsive(src="assets/images/robot-testimony.png" alt="")
+
+        .col-md-8
+
+          .opinions-carousel
+            .swiper-container.opinions-carousel__container.js-opinions-carousel
+              .swiper-wrapper
+
+                .swiper-slide
+
+                  article.opinion
+                    figure.opinion__author
+                      .opinion__author-img-wrap
+                        img.opinion__author-img(src="assets/images/media/user-review.jpg" alt="")
+                      figcaption.opinion__caption
+                        .opinion__author-name Claudia Raidulyan
+                        p.opinion__desc Quo cu sanctus corrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne. Quo an agam apeirian singulis, nec harrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne. Quo an agaant sit ne. Quo an agm apeirian singulis, nec ha beo animal docendi ea.
+                        i.fas.fa-quotes-right
+                        i.fas.fa-quotes-left
+
+                .swiper-slide
+
+                  article.opinion
+                    figure.opinion__author
+                      .opinion__author-img-wrap
+                        img.opinion__author-img(src="assets/images/media/user-6.jpg" alt="")
+                      figcaption.opinion__caption
+                        .opinion__author-name Christopher Stonebridge
+                        p.opinion__desc Quo cu sanctus corrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne. Quo an agam apeirian singulis, nec harrumpit comprehensam.
+                        i.fas.fa-quotes-right
+                        i.fas.fa-quotes-left
+
+                .swiper-slide
+
+                  article.opinion
+                    figure.opinion__author
+                      .opinion__author-img-wrap
+                        img.opinion__author-img(src="assets/images/media/ava.png" alt="")
+                      figcaption.opinion__caption
+                        .opinion__author-name Janne Wag
+                        p.opinion__desc Quo cu sanctus corrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne. Quo an agam apeirian singulis, nec harrumpit comprehensam. Quo cu sanctus corrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne. Quo an agam apeirian singulis, nec harrumpit comprehensam.
+                        i.fas.fa-quotes-right
+                        i.fas.fa-quotes-left
+
+                .swiper-slide
+
+                  article.opinion
+                    figure.opinion__author
+                      .opinion__author-img-wrap
+                        img.opinion__author-img(src="assets/images/media/user-7.jpg" alt="")
+                      figcaption.opinion__caption
+                        .opinion__author-name Lyra Lee
+                        p.opinion__desc Quo cu sanctus corrumpit comprehensam. Te nec docendi sententiae sadipscing, amet malis erant sit ne. Quo an agam apeirian singulis, nec harrumpit comprehensam.
+                        i.fas.fa-quotes-right
+                        i.fas.fa-quotes-left
+
+              .opinions__nav
+                .opinions-carousel__prev
+                  i.fa.fa-chevron-left
+                .swiper-pagination
+                .opinions-carousel__next
+                  i.fa.fa-chevron-right
+    // /opinions
+
+    // fast-search-section
+    section.fast-search-section.land-section
+      .rounded-area
+        .rounded-area__wrap
+          .rounded-area__main
+            .rounded-area__centered
+              +icon('surprise', 'rounded-area__header-icon')
+              .main-heading-wrap.main-heading-wrap--left.land-section__heading
+                .main-heading
+                  .main-heading__body #[span.main-heading__first-letter G]ift ideas #[span.main-heading__accent in a hurry]
+              p.rounded-area__desc Need a quick gift idea in a hurry and not part of the GGGI community, try our #[strong “Fast search”]  You’ll have the option to sign-up at the end to save you time in the future.
+              .rounded-area__btn-wrap
+                a.rounded-area__btn.btn.btn--grad.btn--animated(href="#") Fast Search
+                +icon('zoom', 'rounded-area__btn-icon')
+      .next-helper Who we are?
+        img(src="assets/images/robot-decoration.png" alt="")
+    // /fast-search-section
+
+    // about-section
+    section.about-section.land-section
+
+      .main-heading-wrap.main-heading-wrap--left.land-section__heading
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter W]ho we #[span.main-heading__accent are?]
+
+      p.about-section__desc You like us are on the go - as a busy student, professional and parent living hectic modern lives.  Our family and friends are important to us and we found ourselves scrambling (even late) on important occasions, disappointed in the gifts we gave, and knowing we were overpaying.  We wanted a solution to help us remember events, find those special gifts, and make sure we did not overpay.  After searching and not finding anything to help, we went about building GoGoGiveIt to help people like you and me gift better to those we love.
+    // /about-section
+
+block footer
+  // footer
+  footer.footer.footer--promo.land-footer
+    .container-fluid
+
+      .row.align-items-end
+
+        .col-sm-4
+
+          .footer__preview
+            +logo('', 'footer__preview-logo')
+
+            +b.NAV.footer__nav
+              +e.UL.nav-list
+                +e.LI.nav-item
+                  +e.A.nav-link(href="") Privacy policy
+                +e.LI.nav-item
+                  +e.A.nav-link(href="") Terms and conditions
+                +e.LI.nav-item
+                  +e.A.nav-link(href="") Cookies policy
+
+            +soc('footer__preview-soc')
+
+          .footer__promo
+            .footer__summary
+              small.copy Сopyright&copy; 2020 All rights reserved.
+              .dev
+                a(href="#").dev__link
+                  img(src="assets/images/dev.png" alt="IT Works")
+
+        .col-sm-8.d-none.d-sm-block
+
+          img.img-responsive(src="assets/images/robot-gift.png" alt="")
+  // /footer

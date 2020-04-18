@@ -97,6 +97,7 @@
     font-size: 16px;
     padding-top: 2rem;
     border-top: 1px solid #e7e7e7;
+    margin-top: 3.5rem;
 
     span,
     i {
@@ -138,10 +139,15 @@
     font-weight: 500;
     font-size: 1.6rem;
     color: $primary-color;
+    min-height: 17rem;
 
     &:hover {
       border-color: $primary-color;
     }
+  }
+
+  &__figure {
+    padding-top: .5rem;
   }
 
   &__icon {

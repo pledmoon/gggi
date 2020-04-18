@@ -11,6 +11,11 @@
       padding-bottom: 0;
       border-bottom: none;
     }
+
+    &--crop {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
   }
   
   &__heading {}
@@ -434,3 +439,23 @@
     }
   }
 }
+
+/* Forms Stuff */
+.fast-search {
+  > .user-picture__name {
+    margin-bottom: 5rem;
+  }
+
+  .primary-content__footer {
+    padding: 0;
+  }
+
+  .next-step-wrap {
+    .next-step-stage {
+      i {
+        margin-right: .5rem;
+      }
+    }
+  }
+}
+/* Forms Stuff */

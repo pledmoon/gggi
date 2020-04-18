@@ -40,6 +40,7 @@
 @import "layout/demo-styleguide";
 @import "layout/main-layout";
 @import "layout/friends-section";
+@import "layout/landing-page";
 
 // 5.Components
 @import "components/buttons";
@@ -61,10 +62,12 @@
 @import "components/add-friend-form";
 @import "components/friend";
 @import "components/occasion-table";
+@import "components/opinion-carousel";
 
 // 6.Pages (page-specific styles)
 @import 'pages/forms-page';
 @import 'pages/inner-page';
+@import 'pages/landing-page';
 
 // 7.Themes
 // @import 'themes/default';

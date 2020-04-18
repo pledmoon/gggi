@@ -247,6 +247,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   /* ------------ Radio Opt States ------------ */
+
+  /* ------------ Opinions Carousel ------------ */
+  const opinionsCarousel = new Swiper('.js-opinions-carousel', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: false,
+    autoHeight: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
+
+    navigation: {
+      prevEl: '.opinions-carousel__prev',
+      nextEl: '.opinions-carousel__next',
+    },
+  });
+  /* ------------ Opinions Carousel ------------ */
 });
 
 svg4everybody({});
