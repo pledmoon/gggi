@@ -4,13 +4,15 @@
 
 .pagination {
   position: relative;
-  padding: 0 2.25rem;
+  padding: 0 4.25rem;
   display: inline-block;
   font-size: 1.8rem;
   font-weight: 500;
 
   &__prev,
-  &__next {
+  &__next,
+  &__first,
+  &__last {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -20,10 +22,18 @@
   }
 
   &__prev {
-    left: 0;
+    left: 2.25rem;
   }
 
   &__next {
+    right: 2.25rem;
+  }
+
+  &__first {
+    left: 0;
+  }
+
+  &__last {
     right: 0;
   }
 
