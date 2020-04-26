@@ -83,16 +83,24 @@
       border-bottom: 2px dotted #e6e6e6;
       padding: 0;
       position: relative;
-
+      
       &:not(:first-child) {
-        &::before {
-          content: "";
-          position: absolute;
-          left: 0;
-          border-left: 2px dotted #e6e6e6;
-          top: 50%;
-          transform: translate(-1px, -50%);
-          height: calc(100% - 2rem);
+        border-left: 2px dotted #e6e6e6;
+      }
+      
+      @media (min-width: $md) {
+        &:not(:first-child) {
+          border-left: none;
+          
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            border-left: 2px dotted #e6e6e6;
+            top: 50%;
+            transform: translate(-1px, -50%);
+            height: calc(100% - 2rem);
+          }
         }
       }
     }
