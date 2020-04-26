@@ -1,0 +1,285 @@
+.occasion-calendar {
+  $self: &;
+
+  &__header {
+    text-align: center;
+    padding: 3rem 0 3rem;
+  }
+
+  &__month {
+    font-family: $headings-fonts-stack;
+    text-transform: uppercase;
+    color: $primary-color;
+    padding: 0 4rem;
+    display: inline-block;
+    line-height: 1.1;
+    position: relative;
+
+    &-next,
+    &-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 1;
+
+      &:hover {
+        svg {
+          fill: $primary-color;
+        }
+      }
+    }
+
+    &-next {
+      right: 0;
+    }
+
+    &-prev {
+      left: 0;
+    }
+
+    &-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      fill: #ccc;
+      transition: all .3s;
+      transform: translateY(-.3rem);
+    }
+  }
+
+  &__table {
+    font-size: 1.4rem;
+    color: #e6e6e6;
+    table-layout: fixed;
+    width: 100%;
+
+    @media (min-width: $sm) {
+      font-size: 2rem;
+    }
+
+    tr {
+      &:hover th,
+      &:hover td {
+        background: transparent;
+
+        &::before {
+          background: transparent;
+        }
+      }
+    }
+
+    th {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $secondary-color;
+      border-bottom: 2px dotted #e6e6e6;
+      padding: 1rem;
+
+      @media (min-width: $sm) {
+        font-size: 2rem;
+      }
+    }
+
+    td {
+      border-bottom: 2px dotted #e6e6e6;
+      padding: 0;
+      position: relative;
+
+      &:not(:first-child) {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          border-left: 2px dotted #e6e6e6;
+          top: 50%;
+          transform: translate(-1px, -50%);
+          height: calc(100% - 2rem);
+        }
+      }
+    }
+
+    &-date {
+      min-height: 7rem;
+      padding: 1rem;
+      position: relative;
+
+      @media (min-width: $sm) {
+        min-height: 8.5rem;
+      }
+
+      &-day {
+        color: $primary-color;
+      }
+
+      &.has-occasion {
+        background: $btn-grad-bg;
+
+        #{$self}__table-date-day {
+          color: $white;
+          font-weight: bold;
+        }
+
+        #{$self}__table-add {
+          border-color: $white;
+          color: $white;
+          font-weight: normal;
+        }
+
+        &::after {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: none solid solid solid;
+          border-color: transparent transparent $white transparent;
+          border-width: 0 1rem 1rem 1rem;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          opacity: 0;
+          transition: all .3s;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+
+          #{$self}__dropdown {
+            opacity: 1;
+            visibility: visible;
+            animation: .2s scaleIn;
+          }
+        }
+      }
+
+      &--disabled {
+        #{$self}__table-date-day {
+          color: #e6e6e6;
+        }
+      }
+    }
+
+    &-add {
+      width: 2.6rem;
+      height: 2.6rem;
+      display: block;
+      border: 1px solid #f0f0f0;
+      border-radius: 50%;
+      color: #e7e7e7;
+      text-align: center;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      margin-left: auto;
+
+      @media (min-width: $sm) {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 35rem;
+    z-index: $dropdownZIndex;
+    background: $white;
+    transition: all .3s;
+
+    opacity: 0;
+    visibility: hidden;
+
+    border-radius: .5rem;
+    box-shadow: 0 0 3rem rgba($black, 0.1);
+
+    &-friend {
+      padding: 2rem;
+      transition: all .3s;
+      position: relative;
+
+      &::after {
+        content: "\f054";
+        font-family: fa;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: all .3s;
+      }
+
+      &:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 2rem;
+        right: 2rem;
+        bottom: -1px;
+        border-bottom: 2px dotted #eaeaea;
+      }
+
+      &:hover {
+        background: #fafafa;
+        box-shadow: none;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      .friend__name {}
+
+      .friend__figcaption {
+        padding-left: 5.5rem;
+        position: relative;
+      }
+
+      .friend__event {
+        font-size: 1.4rem;
+        color: $primary-color;
+        font-weight: 500;
+        display: block;
+      }
+
+      .friend__icon {
+        position: absolute;
+        left: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2.4rem;
+        height: 2.4rem;
+        fill: #cdcdcd;
+      }
+    }
+  }
+}
+
+@media (max-width: $md--mw) {
+  .occasion-calendar {
+    position: relative;
+
+    td,
+    .occasion-calendar__table-date {
+      position: static;
+    }
+
+    .occasion-calendar__dropdown {
+      left: 0;
+      right: 0;
+      top: auto;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}

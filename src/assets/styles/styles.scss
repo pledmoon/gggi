@@ -41,6 +41,7 @@
 @import "layout/main-layout";
 @import "layout/friends-section";
 @import "layout/landing-page";
+@import "layout/user-dashboard-section";
 
 // 5.Components
 @import "components/buttons";
@@ -63,6 +64,10 @@
 @import "components/friend";
 @import "components/occasion-table";
 @import "components/opinion-carousel";
+@import "components/user-dashboard-picture";
+@import "components/user-dashboard-tags";
+@import "components/user-dashboard-friends";
+@import "components/occasion-calendar";
 
 // 6.Pages (page-specific styles)
 @import 'pages/forms-page';

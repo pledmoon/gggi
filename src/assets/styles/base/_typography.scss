@@ -194,7 +194,8 @@ h6,.h6 {
     }
   }
 
-  &__note {
+  &__note,
+  &__link {
     color: #9a9a9a;
     font-size: 1.6rem;
     font-weight: normal;
@@ -215,6 +216,18 @@ h6,.h6 {
         position: absolute;
         left: 0;
       }
+    }
+  }
+
+  &__link {
+    color: $primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::before {
+      color: #9a9a9a;
     }
   }
 

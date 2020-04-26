@@ -1,0 +1,118 @@
+.user-dashboard-friends {
+  padding: 1.5rem 0 0;
+  border-top: 2px dotted #e7e7e7;
+
+  &__header {
+    position: relative;
+    padding-right: 9rem;
+  }
+
+  &__heading {
+    margin-bottom: 1.5rem;
+
+    span {
+      color: #cdcdcd;
+      font-size: 1.4rem;
+      font-family: $font-base-stack;
+      
+      &::before {
+        content: " · ";
+        padding: 0 .3rem;
+      }
+    }
+  }
+
+  &__add {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: $primary-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+
+    &-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      fill: #cdcdcd;
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-top: 1rem;
+    
+    @media (min-width: $md) {
+      max-width: 26rem;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: space-around;
+    }
+  }
+
+  &__friend {
+    flex: none;
+    margin: 1rem;
+    
+    @media (min-width: $md) {
+      margin: 0;
+
+      &:not(:nth-child(-n+3)) {
+        margin-top: 2.5rem;
+      }
+    }
+
+    @media (max-width: 310px) {
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+  }
+}
+
+.friend-card {
+  $self: &;
+
+  text-align: center;
+  font-size: 1.2rem;
+  width: 7rem;
+  display: block;
+
+  &:hover {
+    #{$self}__figcaption {
+      color: $primary-color;
+    }
+  }
+
+  &__img-wrap {
+    width: 7rem;
+    height: 7rem;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+
+    @include absolute-center;
+  }
+
+  &__figcaption {
+    color: $secondary-color;
+    line-height: 1.2;
+  }
+}

@@ -1,0 +1,67 @@
+.user-dashboard-picture {
+  $self: &;
+
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+
+  &__img-wrap {
+    height: 100%;
+    position: relative;
+
+    width: 17rem;
+    height: 17rem;
+    border: 1rem solid $white;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+
+    @include absolute-center;
+  }
+
+  &__details {
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: $secondary-color;
+    font-family: $headings-fonts-stack;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__edit {
+    font-size: 1.2rem;
+    color: $primary-color;
+    margin-left: 1rem;
+    display: inline-block;
+    transform: translate(0, -.3rem);
+    transition: all .3s;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__birthday {
+    font-size: 1.4rem;
+    color: $primary-color;
+  }
+
+  &__event-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: #cdcdcd;
+    vertical-align: bottom;
+    margin-right: 1rem;
+  }
+}

@@ -1,13 +1,499 @@
 extends templates/main
 
 block variables
-  - const title = 'Main page';
+  - const title = 'Home page';
   - const pageClass = 'index-page';
   - const logoIndex = true;
 
 block content
-  .container-fluid
-    main.content
 
   .container-fluid
+    
+    // user-dashboard-section
+    .user-dashboard-section
 
+      .row
+
+        .col-md-4
+
+          .primary-content
+            
+            // user-dashboard-picture
+            +b.FIGURE.user-dashboard-picture
+              +e.img-wrap
+                +e.IMG.img(src="assets/images/media/ava-user-main.jpg" width="150" alt="Alexandra Mironova")
+              +e.FIGCAPTION.details
+                +e.name Alexandra Mironova
+                  +e.A.edit(href="#") #[i.fas.fa-pen]
+                +e.TIME.birthday(datetime="2012-12-23") 
+                  +icon('event-5', 'user-dashboard-picture__event-icon')
+                  | 09 Feb 1996
+            // /user-dashboard-picture
+
+            // user-dashboard-tags
+            .user-dashboard-tags
+              .user-dashboard-tags__header
+                .user-dashboard-tags__heading.secondary-heading Interest
+                a.user-dashboard-tags__add(href="#") +
+              ul.user-dashboard-tags__list
+                li.user-dashboard-tags__item Sport
+                li.user-dashboard-tags__item Cars
+                li.user-dashboard-tags__item Movie
+                li.user-dashboard-tags__item Games
+                li.user-dashboard-tags__item Lego
+                li.user-dashboard-tags__item Astrology
+                li.user-dashboard-tags__item Cibernetica
+            // /user-dashboard-tags
+            
+            // user-dashboard-tags
+            .user-dashboard-tags
+              .user-dashboard-tags__header
+                .user-dashboard-tags__heading.secondary-heading Avoid
+                a.user-dashboard-tags__add(href="#") +
+              ul.user-dashboard-tags__list
+                li.user-dashboard-tags__item Outdoor
+                li.user-dashboard-tags__item Parties
+                li.user-dashboard-tags__item Animals
+                li.user-dashboard-tags__item Hunting
+                li.user-dashboard-tags__item Traveling
+                li.user-dashboard-tags__item Flowers
+            // /user-dashboard-tags
+
+            // user-dashboard-friends
+            .user-dashboard-friends
+              .user-dashboard-friends__header
+                .user-dashboard-friends__heading.secondary-heading Friends
+                  span 256
+                a(href="#").user-dashboard-friends__add 
+                  +icon('add-user', 'user-dashboard-friends__add-icon')
+                  span Add Friend
+              .user-dashboard-friends__list
+
+                a.user-dashboard-friends__friend.friend-card(href="#")
+                  figure.friend-card__figure
+                    .friend-card__img-wrap
+                      img.friend-card__img(src="assets/images/media/friendzone-1.jpg" alt="")
+                    figcaption.friend-card__figcaption Natalia Jaeger
+
+                a.user-dashboard-friends__friend.friend-card(href="#")
+                  figure.friend-card__figure
+                    .friend-card__img-wrap
+                      img.friend-card__img(src="assets/images/media/friendzone-2.jpg" alt="")
+                    figcaption.friend-card__figcaption Daria Bukreieva
+
+                a.user-dashboard-friends__friend.friend-card(href="#")
+                  figure.friend-card__figure
+                    .friend-card__img-wrap
+                      img.friend-card__img(src="assets/images/media/friendzone-3.jpg" alt="")
+                    figcaption.friend-card__figcaption Konstantin Konkov
+
+                a.user-dashboard-friends__friend.friend-card(href="#")
+                  figure.friend-card__figure
+                    .friend-card__img-wrap
+                      img.friend-card__img(src="assets/images/media/friendzone-4.jpg" alt="")
+                    figcaption.friend-card__figcaption Dan Rosenheim
+
+                a.user-dashboard-friends__friend.friend-card(href="#")
+                  figure.friend-card__figure
+                    .friend-card__img-wrap
+                      img.friend-card__img(src="assets/images/media/friendzone-5.jpg" alt="")
+                    figcaption.friend-card__figcaption Aileen Schwihel
+
+                a.user-dashboard-friends__friend.friend-card(href="#")
+                  figure.friend-card__figure
+                    .friend-card__img-wrap
+                      img.friend-card__img(src="assets/images/media/friendzone-6.jpg" alt="")
+                    figcaption.friend-card__figcaption Anastasia Wagner
+            // /user-dashboard-friends
+
+        .col-md-8
+
+          .primary-content
+
+            header.primary-content__header
+
+              .main-heading-wrap.main-heading-wrap--left.land-section__heading
+                .main-heading
+                  .main-heading__body #[span.main-heading__first-letter O]ccasions #[span.main-heading__accent calendar]
+
+              a.btn.btn--grad.btn--sm.btn--animated(href="#") + Add Occasion
+
+            // occasion-calendar
+            .occasion-calendar
+              .occasion-calendar__header
+                .occasion-calendar__month February 2020
+                  a.occasion-calendar__month-next(href="#")
+                    +icon('arrow-right', 'occasion-calendar__month-icon')
+                  a.occasion-calendar__month-prev(href="#")
+                    +icon('arrow-left', 'occasion-calendar__month-icon')
+              table.occasion-calendar__table
+                thead
+                  tr
+                    th Sun
+                    th Mon
+                    th Tue
+                    th Wed
+                    th Thu
+                    th Fri
+                    th Sat
+                tbody
+                  tr
+                    td
+                      .occasion-calendar__table-date.occasion-calendar__table-date--disabled
+                        .occasion-calendar__table-date-day 26
+                    td
+                      .occasion-calendar__table-date.occasion-calendar__table-date--disabled
+                        .occasion-calendar__table-date-day 27
+                    td
+                      .occasion-calendar__table-date.occasion-calendar__table-date--disabled
+                        .occasion-calendar__table-date-day 28
+                    td
+                      .occasion-calendar__table-date.occasion-calendar__table-date--disabled
+                        .occasion-calendar__table-date-day 29
+                    td
+                      .occasion-calendar__table-date.occasion-calendar__table-date--disabled
+                        .occasion-calendar__table-date-day 30
+                    td
+                      .occasion-calendar__table-date.occasion-calendar__table-date--disabled
+                        .occasion-calendar__table-date-day 31
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 1
+                        a.occasion-calendar__table-add(href="#") +
+                  tr
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 2
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 3
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 4
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 5
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 6
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 7
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 8
+                        a.occasion-calendar__table-add(href="#") +
+                  tr
+                    td
+                      .occasion-calendar__table-date.has-occasion
+                        .occasion-calendar__table-date-day 9
+                        a.occasion-calendar__table-add(href="#") +
+
+                        .occasion-calendar__dropdown
+                          
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-1.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Aakash Parmar
+                                +icon('event-1', 'friend__icon')
+                                +e.SPAN.event St. Valentine's Day
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-2.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Alexa Milway
+                                +icon('event-6', 'friend__icon')
+                                +e.SPAN.event Wedding
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-3.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Ashley Collins
+                                +icon('event-5', 'friend__icon')
+                                +e.SPAN.event.important Birthday
+
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 10
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 11
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 12
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 13
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date.has-occasion
+                        .occasion-calendar__table-date-day 14
+                        a.occasion-calendar__table-add(href="#") +
+
+                        .occasion-calendar__dropdown
+                          
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-6.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Christopher Stonebridge
+                                +icon('event-7', 'friend__icon')
+                                +e.SPAN.event Mardi Grass Carnival
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-3.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Ashley Collins
+                                +icon('event-5', 'friend__icon')
+                                +e.SPAN.event.important Birthday
+
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 15
+                        a.occasion-calendar__table-add(href="#") +
+                  tr
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 16
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 17
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 18
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 19
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 20
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 21
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 22
+                        a.occasion-calendar__table-add(href="#") +
+                  tr
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 23
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 24
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date.has-occasion
+                        .occasion-calendar__table-date-day 25
+                        a.occasion-calendar__table-add(href="#") +
+
+                        .occasion-calendar__dropdown
+                          
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-5.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Janne Wag
+                                +icon('event-8', 'friend__icon')
+                                +e.SPAN.event Earth Hour
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-9.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Ashley Collins
+                                +icon('event-6', 'friend__icon')
+                                +e.SPAN.event Veterans Day
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-11.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Lizzey Johnson
+                                +icon('event-9', 'friend__icon')
+                                +e.SPAN.event Fool's day
+                          +b.A.friend.occasion-calendar__dropdown-friend(href="#")
+                            +e.FIGURE.figure
+                              +e.img-wrap
+                                +e.IMG.img(src='assets/images/media/user-3.jpg' alt="")
+                              +e.FIGCAPTION.figcaption
+                                +e.name Aston Leach
+                                +icon('event-1', 'friend__icon')
+                                +e.SPAN.event Chicago Auto Show
+
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 26
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 27
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 28
+                        a.occasion-calendar__table-add(href="#") +
+                    td
+                      .occasion-calendar__table-date
+                        .occasion-calendar__table-date-day 29
+                        a.occasion-calendar__table-add(href="#") +
+            // /occasion-calendar
+    // /user-dashboard-section
+
+    .primary-content.primary-content--main
+
+      header.primary-content__header
+
+        .main-heading-wrap.main-heading-wrap--left
+          .main-heading
+            .main-heading__body #[span.main-heading__first-letter U]pcoming #[span.main-heading__accent occasions]
+          a.main-heading__link(href="#") View All
+
+        a.btn.btn--grad.btn--sm.btn--animated(href="#") + Add Occasion
+      
+      // occasion-table
+      +b.occasion-table--no-margin
+        table
+          +e.CAPTION.caption Friends with occasions in February 2020
+          colgroup
+            col.occasion-friend-col
+            col.occasion-date-col
+            col.occasion-col
+            col.occasion-budget-col
+          tbody
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-1.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Aakash Parmar
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/14/2020
+              td
+                div.occasion-table__occasion
+                  span St. Valentine's Day
+              td
+                span.occasion-table__budget $205
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-2.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Alexa Milway
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/09/2020
+              td
+                div.occasion-table__occasion
+                  span National Pizza Day
+              td
+                span.occasion-table__budget $55
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-3.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Aston Leach
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/06/2020
+              td
+                div.occasion-table__occasion
+                  span Chicago Auto Show
+              td
+                span.occasion-table__budget $20
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-4.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Ashley Collins
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/12/2020
+              td
+                div.occasion-table__occasion
+                  span Lincoln's Birthday
+              td
+                span.occasion-table__budget $5
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-5.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Chris Brennan
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/17/2020
+              td
+                div.occasion-table__occasion
+                  span Washington's Birthday
+              td
+                span.occasion-table__budget $35
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-6.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Christopher Stonebridge
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/25/2020
+              td
+                div.occasion-table__occasion
+                  span.important Birthday
+              td
+                span.occasion-table__budget $75
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+            tr
+              td
+                +e.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src='assets/images/media/user-7.jpg' alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Lyra Lee
+              td
+                time.occasion-table__time(datetime="2012-12-23") 02/25/2020
+              td
+                div.occasion-table__occasion
+                  span Mardi Grass Carnival
+              td
+                span.occasion-table__budget $100
+                a.occasion-table__edit-occasion(href="#") #[i.fas.fa-pen]
+      // /occasion-table

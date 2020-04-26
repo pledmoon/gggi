@@ -1,0 +1,64 @@
+.user-dashboard-section {
+  padding-top: 4rem;
+
+  @media (min-width: $md) {
+    margin: 0 0 3rem;
+  }
+
+  > .row > [class*="col-"] {
+    margin: 0 0 3rem;
+
+    @media (min-width: $md) {
+      margin: 0;
+    }
+  }
+
+  .primary-content {
+    height: 100%;
+  }
+
+  .primary-content__header {
+    border-width: .2rem;
+
+    @media (min-width: $md) {
+      padding-bottom: 7rem;
+    }
+  }
+
+  .main-heading-wrap {
+    margin: 0 0 4rem;
+
+    @media (min-width: $md) {
+      margin: 0;
+    }
+
+    .main-heading {
+      line-height: 1;
+      white-space: normal;
+      margin-bottom: 0;
+
+      &::after {
+        top: -.5rem;
+      }
+
+      &__body::after {
+        left: 3rem;
+        transform: translateY(3.5rem);
+      }
+
+      &__accent {
+        display: block;
+        position: absolute;
+        left: 2.7rem;
+        top: 100%;
+        margin-top: -2rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .user-dashboard-picture {
+    margin-top: -11.5rem;
+    margin-bottom: 2rem;
+  }
+}

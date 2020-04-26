@@ -1,0 +1,44 @@
+.user-dashboard-tags {
+  padding: 1.5rem 0 1rem;
+  border-top: 2px dotted #e7e7e7;
+
+  &__header {
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  &__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  &__add {
+    color: #e7e7e7;
+    font-size: 2.6rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s;
+    line-height: 1;
+    font-weight: 500;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__list {
+    margin-left: -.5rem;
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    color: $secondary-color;
+    background-color: #e9f4f6;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+  }
+}

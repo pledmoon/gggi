@@ -47,22 +47,6 @@
     font-size: 1.8rem;
     color: $gray;
     font-family: $headings-fonts-stack;
-
-    &.occasion-friend-col {
-      width: 30%;
-    }
-
-    &.occasion-date-col {
-      width: 20%;
-    }
-
-    &.occasion-col {
-      width: 30%;
-    }
-
-    &.occasion-budget-col {
-      width: 20%;
-    }
   }
 
   td {
@@ -105,6 +89,35 @@
       &:last-child::after {
         display: none;
       }
+    }
+  }
+
+  .occasion-friend-col {
+    width: 30%;
+  }
+
+  .occasion-date-col {
+    width: 20%;
+  }
+
+  .occasion-col {
+    width: 30%;
+  }
+
+  .occasion-budget-col {
+    width: 20%;
+  }
+
+  &__caption {
+    text-align: left;
+    font-size: 2rem;
+    color: $primary-color;
+    font-family: $headings-fonts-stack;
+    padding: 0 2.5rem 2rem;
+    line-height: 1.2;
+
+    @media (min-width: $md) {
+      padding: 0 0 2rem;
     }
   }
 
@@ -241,7 +254,7 @@
   }
 
   @media (max-width: $md--mw) {
-    table, thead, tbody, th, td, tr { 
+    table, caption, thead, tbody, th, td, tr { 
       display: block; 
     }
 
@@ -262,10 +275,11 @@
   
     td:before { 
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       width: 45%; 
       white-space: nowrap;
+      transform: translateY(-50%);
 
       padding: 2rem 2.5rem;
       line-height: 1.3;
@@ -289,6 +303,12 @@
       &::before {
         background: none;
       }
+    }
+  }
+
+  &--no-margin {
+    @media (min-width: $md) {
+      margin: 0;
     }
   }
 }
