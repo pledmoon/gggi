@@ -1,0 +1,236 @@
+extends templates/main
+
+include components/params
+include components/product
+
+block variables
+  - const title = 'Occasion Detail';
+  - const pageClass = 'occasion-detail-page';
+
+block content
+  .main-heading-wrap
+    .main-heading.main-heading--user-pic
+      .main-heading__body #[span.main-heading__first-letter O]ccasion #[span.main-heading__accent detail]
+
+  .container-fluid
+    main.primary-content
+
+      .user-picture-wrap
+
+        +e.FIGURE.user-picture.user-picture--authorized.fast-search__user-picture
+          label.user-picture__label(for="user-picture-file")
+            .user-picture__img-wrap
+              img.user-picture__img(src="assets/images/media/user-13.jpg" width="100" alt="")
+            figcaption.user-picture__details
+              div.user-picture__add #[i.fas.fa-camera] #[span Add Photo]
+              input(type="file" name="user-picture" id="user-picture-file")
+
+        .user-picture__name Ivanov Nickolay
+
+        a.btn.btn--grad.btn--animated(href="#") #[i.fa.fa-chevron-left] Back
+
+      .gift-choice.gift-choice--bordered
+
+        .secondary-heading Occasion
+        
+        .row
+          .col-md-6
+            
+            +params([
+              {
+                property: 'Event',
+                value: 'Valentine\'s day'
+              },
+              {
+                property: 'Event Date',
+                value: '02/14/2020'
+              }
+            ], 'gift-params')
+
+          .col-md-6
+
+            +params([
+              {
+                property: 'Budget',
+                value: '$20'
+              },
+              {
+                property: 'Additional',
+                value: 'Gift wrap + Card'
+              }
+            ], 'gift-params')
+
+          .col-md-6
+
+            .secondary-heading Shipping Address
+
+            .gift-params
+
+              p.gift-params__address 612 N COLONIAL AVE STE F PESOTO LLC MLD27474 WILMINGTON, DE 19805-1904 United States
+
+          .col-md-6
+
+            .secondary-heading Payment Method
+
+            .gift-params
+
+              .add-card__number
+                .add-card__radio-img-wrap
+                  img.add-card__radio-img(src="assets/images/visa.png" alt="" width="55" height="40")
+                span · · · ·
+                span · · · ·
+                span · · · ·
+                span 0008
+
+      .gift-choice
+
+        .secondary-heading Recommended gift
+
+        // product-recommended
+        +b.ARTICLE.product-recommended
+          +e.HEADER.header
+            +e.A.img-wrap(href="#")
+              +e.IMG.img(src="assets/images/media/product-default.jpg" alt="")
+          +e.main
+            +e.heading
+              +e.A.heading-link(href="#") Just Wait! #[br] Will be available later. 5 days before the event
+            // countdown
+            +b.countdown.product-recommended__countdown
+              +e.heading Time Left
+              +e.main
+                +e.entity
+                  +e.SPAN.hours 43 
+                  +e.SMALL.label hours
+                +e.entity
+                  +e.SPAN.minutes 22 
+                  +e.SMALL.label minutes
+                +e.entity
+                  +e.SPAN.seconds 47 
+                  +e.SMALL.label seconds
+            script.
+              document.addEventListener('DOMContentLoaded', function () {
+                const countdownTime = (43 * 60 * 60) + (60 * 22) + 47,
+                      display = document.querySelector('.countdown');
+                
+                startTimer(countdownTime, display);
+              });
+
+              function startTimer(duration, display) {
+                let timer = duration,
+                            hours,
+                            minutes, 
+                            seconds;
+
+                setInterval(function () {
+                  hours = parseInt(timer / 60 / 60, 10);
+                  minutes = parseInt(timer / 60 % 60, 10)
+                  seconds = parseInt(timer % 60, 10);
+
+                  hours = hours < 10 ? "0" + hours : hours;
+                  minutes = minutes < 10 ? "0" + minutes : minutes;
+                  seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                  display.querySelector('.countdown__hours').textContent = hours;
+                  display.querySelector('.countdown__minutes').textContent = minutes;
+                  display.querySelector('.countdown__seconds').textContent = seconds;
+
+                  if (--timer < 0) {
+                    timer = duration;
+                  }
+                }, 1000);
+              }
+            // /countdown
+            +e.A.btn.btn--gray.--animated(href="#") Buy It Now
+        // /product-recommended
+
+      .gift-choice
+
+        .secondary-heading Change gift
+
+        .products
+
+          .row
+            .col-sm-6.col-md-4
+
+              // product
+              +b.ARTICLE.product
+                +e.HEADER.header
+                  +e.A.img-wrap(href="#")
+                    +e.IMG.img(src="assets/images/media/product-default.jpg" alt="product")
+                +e.heading--two-rows
+                  +e.heading-link(href="#") Will be available later. 5 days before the event
+                +b.rate.product__rate
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 75%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                +e.price $0.00
+                +e.A.btn.btn--gray-reverse.btn--sm(href="#") Select
+              // /product
+
+            .col-sm-6.col-md-4
+
+              // product
+              +b.ARTICLE.product
+                +e.HEADER.header
+                  +e.A.img-wrap(href="#")
+                    +e.IMG.img(src="assets/images/media/product-default.jpg" alt="product")
+                +e.heading--two-rows
+                  +e.heading-link(href="#") Will be available later. 5 days before the event
+                +b.rate.product__rate
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 0%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                +e.price $0.00
+                +e.A.btn.btn--gray-reverse.btn--sm(href="#") Select
+              // /product
+
+            .col-sm-6.col-md-4
+
+              // product
+              +b.ARTICLE.product
+                +e.HEADER.header
+                  +e.A.img-wrap(href="#")
+                    +e.IMG.img(src="assets/images/media/product-default.jpg" alt="product")
+                +e.heading--two-rows
+                  +e.heading-link(href="#") Will be available later. 5 days before the event
+                +b.rate.product__rate
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 100%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                +e.price $0.00
+                +e.A.btn.btn--gray-reverse.btn--sm(href="#") Select
+              // /product
+      
+        .products-summary.text-right
+          a.btn.btn--grad.btn--animated(href="#") #[i.fa.fa-chevron-left] Back
+    // /primary-content-footer

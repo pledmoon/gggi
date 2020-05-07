@@ -48,4 +48,9 @@
 
 .gift-params {
   margin-bottom: 3rem;
+
+  &__address {
+    max-width: 29rem;
+    line-height: 1.4;
+  }
 }

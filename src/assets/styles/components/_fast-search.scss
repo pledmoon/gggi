@@ -459,3 +459,33 @@
   }
 }
 /* Forms Stuff */
+
+.user-picture-wrap {
+  position: relative;
+  margin-bottom: 2.5rem;
+
+  .btn {
+    font-size: 1.6rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    max-width: 19rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 1.5rem;
+
+    @media (min-width: $md) {
+      position: absolute;
+      right: 0;
+      bottom: 4rem;
+      margin-top: 0;
+    }
+
+    i {
+      position: absolute;
+      left: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

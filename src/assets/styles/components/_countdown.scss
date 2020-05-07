@@ -1,0 +1,56 @@
+.countdown {
+  line-height: 1.2;
+
+  &__heading {
+    font-size: 1.8rem;
+    color: #cdcdcd;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__main {}
+
+  &__entity {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-left: 3rem;
+      position: relative;
+
+      @media (min-width: $sm) {
+        margin-left: 5rem;
+      }
+
+      &::before {
+        content: ":";
+        position: absolute;
+        left: -1.5rem;
+        font-size: 4rem;
+        color: $primary-color;
+        font-family: $headings-fonts-stack;
+        transform: translateX(-50%);
+
+        @media (min-width: $sm) {
+          left: -2.5rem;
+        }
+      }
+    }
+
+    span {
+      font-family: $headings-fonts-stack;
+      font-size: 4rem;
+      color: $primary-color;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #cdcdcd;
+    display: block;
+    margin-top: .5rem;
+  }
+}

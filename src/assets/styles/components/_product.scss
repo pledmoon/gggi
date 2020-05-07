@@ -90,6 +90,18 @@
         text-decoration: underline;
       }
     }
+
+    &--two-rows {
+      height: 4rem;
+      max-width: 22rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__rate {
+    text-align: center;
+    margin-bottom: 2.5rem;
   }
 
   &__price {
@@ -136,6 +148,12 @@
 
   .product-recommended {
     margin-bottom: 3rem;
+  }
+
+  &--bordered {
+    border: 1px solid #e6e6e6;
+    padding: 3rem;
+    border-radius: 1rem;
   }
 }
 
@@ -279,5 +297,38 @@
     font-family: $headings-fonts-stack;
   }
 
+  &__countdown {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
   &__btn {}
+}
+
+.products-summary {
+  padding: 2.5rem 0 0;
+
+  .btn {
+    font-size: 1.6rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    min-width: 19rem;
+
+    i {
+      position: absolute;
+      left: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.gift-params {
+  .add-card__radio-img-wrap {
+    margin: 0;
+  }
+
+  .add-card__number {
+    max-width: 28rem;
+  }
 }
