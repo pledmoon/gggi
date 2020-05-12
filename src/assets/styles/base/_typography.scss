@@ -313,7 +313,8 @@ p.small {
       }
 
       &::before {
-        content: "·";
+        //content: "·";
+        content: "\0387";
         color: #b4b4b4;
         font-size: 2rem;
         margin-right: 1.5rem;
