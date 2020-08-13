@@ -47,13 +47,25 @@ block content
               })
 
             .col-sm-6.col-md-4
-
-              +friend({
-                avatarPath: 'assets/images/media/user-2.jpg',
-                friendName: 'Alexa Milway',
-                friendEventIcon: 'gift',
-                friendEventDate: '15 Mar 1995'
-              })
+              
+              .friend-wrap
+                +b.A.friend(href="#")
+                  +e.FIGURE.figure
+                    +e.img-wrap
+                      +e.IMG.img(src="assets/images/media/user-2.jpg" alt="")
+                    +e.FIGCAPTION.figcaption
+                      +e.name Alexa Milway
+                      +icon('gift', 'friend__icon')
+                      +e.SPAN.event 15 Mar 1995'
+                .friend__helpers
+                  a.friend__helper(href="#")
+                    i.fas.fa-pen
+                  a.friend__helper(href="#")
+                    i.fas.fa-plus
+                  a.friend__helper(href="#")
+                    i.fas.fa-minus
+                  a.friend__helper.friend__helper--warning(href="#")
+                    i.fas.fa-times
 
             .col-sm-6.col-md-4
 

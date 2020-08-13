@@ -77,3 +77,37 @@
     vertical-align: middle;
   }
 }
+
+.friend-wrap {
+  position: relative;
+}
+
+.friend__helpers {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  max-width: 2rem;
+}
+
+.friend__helper {
+  line-height: 1.1;
+  text-align: center;
+  display: block;
+
+  &:not(:first-child) {
+    margin-top: .5rem;
+  }
+
+  i {
+    font-size: 1.4rem;
+    transition: all .3s;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &--warning {
+    color: #900;
+  }
+}

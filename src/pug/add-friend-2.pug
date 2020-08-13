@@ -24,7 +24,20 @@ block content
               input(type="file" name="user-picture" id="user-picture-file")
         
         +e.section
-          .user-picture__name Janne Brennan
+          .user-picture__name Janne 
+
+        // set of fields 3
+        +e.FIELDSET.section(name="more-options")
+          +e.LEGEND.heading.secondary-heading.text-center Additional Options
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="opts-1" id="opts-1" checked)
+              label.checkbox-label__main(for="opts-1") Gift wrap ($3-7 of budget)
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="opts-2" id="opts-2")
+              label.checkbox-label__main(for="opts-2") Card ($5 of budger, shipped to you with a stamp to complete and send on)
+        // /set of fields 3
         
         // set of fields 1
         +e.FIELDSET.section(name="occasion")
@@ -252,19 +265,6 @@ block content
                 +e.field-col
                   +e.A.add-event(href="#")
         // /set of fields 2
-
-        // set of fields 3
-        +e.FIELDSET.section(name="more-options")
-          +e.LEGEND.heading.secondary-heading.text-center Additional Options
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="opts-1" id="opts-1" checked)
-              label.checkbox-label__main(for="opts-1") Gift wrap ($3-7 of budget)
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="opts-2" id="opts-2")
-              label.checkbox-label__main(for="opts-2") Card ($5 of budger, shipped to you with a stamp to complete and send on)
-        // /set of fields 3
 
         // set of fields 4
         +e.section

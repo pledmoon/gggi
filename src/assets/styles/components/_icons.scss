@@ -84,10 +84,22 @@
   content: "\f10d";
 }
 
+.fa-times::before {
+  content: "\f00d";
+}
+
 .fa-times-circle::before {
   content: "\f057";
 }
 
 .fa-star::before {
   content: "\f005";
+}
+
+.fa-plus::before {
+  content: "\f067";
+}
+
+.fa-minus::before {
+  content: "\f068";
 }

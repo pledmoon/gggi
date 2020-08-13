@@ -56,10 +56,10 @@
     padding-top: 1rem;
     
     @media (min-width: $md) {
-      max-width: 26rem;
+      max-width: 28rem;
       margin-left: auto;
       margin-right: auto;
-      justify-content: space-around;
+      //justify-content: space-around;
     }
   }
 
@@ -69,6 +69,9 @@
     
     @media (min-width: $md) {
       margin: 0;
+      max-width: 33.333%;
+      flex-basis: 33.333%;
+      padding: 0 1rem;
 
       &:not(:nth-child(-n+3)) {
         margin-top: 2.5rem;
@@ -96,11 +99,13 @@
     }
   }
 
+  &__figure {}
+
   &__img-wrap {
     width: 7rem;
     height: 7rem;
     position: relative;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
   }
 
   &__img {
@@ -114,5 +119,6 @@
   &__figcaption {
     color: $secondary-color;
     line-height: 1.2;
+    transition: all .3s;
   }
 }
