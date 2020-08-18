@@ -259,7 +259,8 @@
         padding: 0 3rem;
       }
 
-      &--annual {
+      &--annual,
+      &--extra-option {
         @media (min-width: $sm) {
           text-align: center;
         }

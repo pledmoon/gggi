@@ -54,6 +54,47 @@ h6,.h6 {
   margin-bottom: 1rem;
 }
 
+.main-heading-area {
+  position: relative;
+  text-align: center;
+
+  @media (min-width: $sm) {
+    text-align: left;
+  }
+
+  .main-heading-wrap {
+    margin-top: 0;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    @media (min-width: $md) {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+  }
+
+  .main-heading {
+    @media (max-width: $md--mw) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .btn {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  @media (min-width: $md) {
+    .btn {
+      position: absolute;
+      right: 0;
+      top: 1.3rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
 .main-heading-wrap {
   text-align: center;
   margin-top: 4rem;

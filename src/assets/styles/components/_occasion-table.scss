@@ -398,6 +398,17 @@
       vertical-align: middle;
     }
   }
+
+  &__notification {
+    width: .8rem;
+    height: .8rem;
+    background: $primary-color;
+    border-radius: 50%;
+    position: absolute;
+    left: 100%;
+    top: 2rem;
+    transform: translateX(-1rem);
+  }
 }
 
 .primary-content {

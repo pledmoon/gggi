@@ -24,26 +24,13 @@ block content
               input(type="file" name="user-picture" id="user-picture-file")
         
         +e.section
-          .user-picture__name Janne 
-
-        // set of fields 3
-        +e.FIELDSET.section(name="more-options")
-          +e.LEGEND.heading.secondary-heading.text-center Additional Options
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="opts-1" id="opts-1" checked)
-              label.checkbox-label__main(for="opts-1") Gift wrap ($3-7 of budget)
-          +e.field
-            +e.checkbox.checkbox-label
-              input.checkbox-label__input(type="checkbox" name="opts-2" id="opts-2")
-              label.checkbox-label__main(for="opts-2") Card ($5 of budger, shipped to you with a stamp to complete and send on)
-        // /set of fields 3
+          .user-picture__name Janne
         
         // set of fields 1
         +e.FIELDSET.section(name="occasion")
           +e.LEGEND.heading.secondary-heading.text-center Select Main Events
 
-          +e.user-event.d-none.d-sm-flex
+          +e.user-event.d-none.d-sm-flex.flex-sm-nowrap
             
             +e.user-event-col
 
@@ -61,7 +48,15 @@ block content
 
               +e.subheading Budget ($)
 
-          +e.user-event
+            +e.user-event-col--extra-option
+
+              +e.subheading Gift card
+
+            +e.user-event-col--extra-option
+
+              +e.subheading Gift wrap
+
+          +e.user-event.flex-sm-nowrap
 
             +e.user-event-col
 
@@ -84,8 +79,20 @@ block content
 
               +e.field
                 +e.INPUT.input--sm(type="text" name="event-budget-1" value="$5")
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-1" id="is-gift-card-1" checked)
+                label.checkbox-label__main(for="is-gift-card-1") #[span.d-sm-none Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-1" id="is-gift-wrap-1" checked)
+                label.checkbox-label__main(for="is-gift-wrap-1") #[span.d-sm-none Gift wrap]
           
-          +e.user-event
+          +e.user-event.flex-sm-nowrap
 
             +e.user-event-col
 
@@ -108,8 +115,20 @@ block content
 
               +e.field
                 +e.INPUT.input--sm(type="text" name="event-budget-2" value="$155")
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-2" id="is-gift-card-2")
+                label.checkbox-label__main(for="is-gift-card-2") #[span.d-sm-none Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-2" id="is-gift-wrap-2")
+                label.checkbox-label__main(for="is-gift-wrap-2") #[span.d-sm-none Gift wrap]
           
-          +e.user-event
+          +e.user-event.flex-sm-nowrap
 
             +e.user-event-col
 
@@ -132,8 +151,20 @@ block content
 
               +e.field
                 +e.INPUT.input--sm(type="text" name="event-budget-3" value="$200")
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-3" id="is-gift-card-3" checked)
+                label.checkbox-label__main(for="is-gift-card-3") #[span.d-sm-none Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-3" id="is-gift-wrap-3" checked)
+                label.checkbox-label__main(for="is-gift-wrap-3") #[span.d-sm-none Gift wrap]
           
-          +e.user-event
+          +e.user-event.flex-sm-nowrap
 
             +e.user-event-col
 
@@ -156,6 +187,18 @@ block content
 
               +e.field
                 +e.INPUT.input--sm(type="text" name="event-budget-4" value="$130")
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-4" id="is-gift-card-4" checked)
+                label.checkbox-label__main(for="is-gift-card-4") #[span.d-sm-none Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-4" id="is-gift-wrap-4" checked)
+                label.checkbox-label__main(for="is-gift-wrap-4") #[span.d-sm-none Gift wrap]
 
         // /set of fields 1
 
@@ -265,6 +308,19 @@ block content
                 +e.field-col
                   +e.A.add-event(href="#")
         // /set of fields 2
+
+        // set of fields 3
+        +e.FIELDSET.section(name="more-options")
+          +e.LEGEND.heading.secondary-heading.text-center Additional Options
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="opts-1" id="opts-1" checked)
+              label.checkbox-label__main(for="opts-1") Gift wrap ($3-7 of budget)
+          +e.field
+            +e.checkbox.checkbox-label
+              input.checkbox-label__input(type="checkbox" name="opts-2" id="opts-2")
+              label.checkbox-label__main(for="opts-2") Card ($5 of budger, shipped to you with a stamp to complete and send on)
+        // /set of fields 3
 
         // set of fields 4
         +e.section

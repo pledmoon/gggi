@@ -1,0 +1,131 @@
+.user-info {
+  &__main {
+    border: 1px solid #e6e6e6;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__section {
+    border-bottom: 1px dashed #e6e6e6;
+    padding-bottom: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  &__field {
+    margin-bottom: 2.5rem;
+  }
+
+  &__address {
+    color: #526070;
+    font-size: 1.8rem;
+    max-width: 40rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  &__params {
+    .params__property {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__occasions {
+    [class*="col-"]:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: $md) {
+      [class*="col-"]:not(:first-child) {
+        margin-top: 0;
+      }
+
+      [class*="col-"]:not(:nth-child(-n+2)) {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  &__footer {
+    @media (max-width: $sm--mw) {
+      [class*="col-"] {
+        text-align: center;
+      }
+    }
+
+    a {
+      margin: 1rem 0;
+
+      @media (min-width: $sm) {
+        margin: 0;
+      }
+    }
+
+    i {
+      margin-right: 1rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__back {
+    color: #00b0b3;
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+}
+
+.occasion {
+  border: 1px solid #e6e6e6;
+  border-radius: .5rem;
+  padding: 2.5rem;
+  height: 100%;
+
+  &__caption {
+    margin-bottom: 2rem;
+    color: $primary-color;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    &-text {
+      vertical-align: middle;
+    }
+  }
+
+  &__icon {
+    fill: #cdcdcd;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
+
+  &__params {
+    .params__property {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+.select-tag {
+  &__tag {
+    background: #e9f4f6;
+    font-size: 1.4rem;
+    color: #005f7a;
+    border: none;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin-right: .6rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

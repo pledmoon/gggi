@@ -1,0 +1,187 @@
+extends templates/main
+
+include components/params
+
+block variables
+  - const title = 'Your friend';
+  - const pageClass = 'profile-page';
+
+block content
+  .main-heading-wrap
+    .main-heading.main-heading--user-pic
+      .main-heading__body #[span.main-heading__first-letter Y]our #[span.main-heading__accent friend]
+
+  .container-fluid
+    main.primary-content
+
+      // user-dashboard-picture
+      +b.FIGURE.user-dashboard-picture.fast-search__user-picture
+        +e.img-wrap
+          +e.IMG.img(src="assets/images/media/ava-main-2.jpg" width="150" alt="Alexandra Mironova")
+        +e.FIGCAPTION.details
+          +e.name Alexandra Mironova
+            //+e.sex(href="#") #[i.fas.fa-mars]
+            +e.sex(href="#") #[i.fas.fa-venus]
+          +e.TIME.birthday(datetime="2012-12-23") 
+            +icon('event-5', 'user-dashboard-picture__event-icon')
+            | 09 Feb 1996
+      // /user-dashboard-picture
+
+      section.user-info
+        .user-info__main
+
+          .user-info__section
+
+            .row
+
+              .col-sm-6
+
+                .user-info__field
+                  .user-info__heading.secondary-heading Interest
+                  .select-tag
+                    .select-tag__tag Sport
+                    .select-tag__tag Cars
+                    .select-tag__tag Movie
+                    .select-tag__tag Games
+                    .select-tag__tag Lego
+                    .select-tag__tag Astrology
+                    .select-tag__tag Cibernetica
+
+              .col-sm-6
+
+                .user-info__field
+                  .user-info__heading.secondary-heading Avoid
+                  .select-tag
+                    .select-tag__tag Outdoor
+                    .select-tag__tag Parties
+                    .select-tag__tag Animals
+                    .select-tag__tag Hunting
+                    .select-tag__tag Traveling
+                    .select-tag__tag Flowers
+
+            .user-info__field
+              .user-info__heading.secondary-heading Delivery Information
+              .row
+                .col-md-6
+                  p.user-info__address 
+                    span 612 N COLONIAL AVE STE F PESOTO
+                    span LLC MLD27474
+                    span WILMINGTON, DE 19805-1904
+                    span United States
+                .col-md-6
+                  +params([
+                    {
+                      property: 'Ship to',
+                      value: 'Friend'
+                    },
+                    {
+                      property: 'Phone',
+                      value: '7 555 223 45 84'
+                    },
+                    {
+                      property: 'Email',
+                      value: 'alexamiron@gmail.com'
+                    }
+                  ], 'user-info__params')
+
+          .user-info__occasions
+            .user-info__heading.secondary-heading Occasions
+
+            .row
+
+              .col-md-6
+
+                .user-info__occasion.occasion
+                  .occasion__caption 
+                    +icon('event-1', 'occasion__icon')
+                    span.occasion__caption-text Valentine's day
+                  +params([
+                    {
+                      property: 'Event Date',
+                      value: '14 / 02 / 2020'
+                    },
+                    {
+                      property: 'Budget',
+                      value: '$20'
+                    },
+                    {
+                      property: 'Additional',
+                      value: 'Gift wrap + Card'
+                    }
+                  ], 'occasion__params')
+
+              .col-md-6
+            
+                .user-info__occasion.occasion
+                  .occasion__caption 
+                    +icon('event-2', 'occasion__icon')
+                    span.occasion__caption-text National Pizza Day
+                  +params([
+                    {
+                      property: 'Event Date',
+                      value: '09 / 02 / 2020'
+                    },
+                    {
+                      property: 'Budget',
+                      value: '$14'
+                    },
+                    {
+                      property: 'Additional',
+                      value: 'Gift wrap'
+                    }
+                  ], 'occasion__params')
+
+              .col-md-6
+            
+                .user-info__occasion.occasion
+                  .occasion__caption 
+                    +icon('event-14', 'occasion__icon')
+                    span.occasion__caption-text Mardi Gras Carnival
+                  +params([
+                    {
+                      property: 'Event Date',
+                      value: '25 / 02 / 2020'
+                    },
+                    {
+                      property: 'Budget',
+                      value: '$25'
+                    },
+                    {
+                      property: 'Additional',
+                      value: 'Card'
+                    }
+                  ], 'occasion__params')
+
+              .col-md-6
+            
+                .user-info__occasion.occasion
+                  .occasion__caption 
+                    +icon('event-13', 'occasion__icon')
+                    span.occasion__caption-text Woman's day
+                  +params([
+                    {
+                      property: 'Event Date',
+                      value: '08 / 03 / 2020'
+                    },
+                    {
+                      property: 'Budget',
+                      value: '$50'
+                    },
+                    {
+                      property: 'Additional',
+                      value: 'Gift wrap + Card'
+                    }
+                  ], 'occasion__params')
+
+        footer.user-info__footer
+          .row.align-items-center
+            .col-sm-4
+              a.user-info__back(href="#") 
+                i.fas.fa-chevron-left
+                | Back
+            .col-sm-4.text-center
+              a.btn.btn--primary-reverse.btn--sm(href="#")
+                i.fas.fa-pen
+                | Edit
+            .col-sm-4.text-right
+              a.btn.btn--grad.btn--animated.btn--sm(href="#") + Add Occasion

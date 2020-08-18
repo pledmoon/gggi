@@ -267,6 +267,54 @@ document.addEventListener('DOMContentLoaded', function() {
     },
   });
   /* ------------ Opinions Carousel ------------ */
+
+
+
+  /* ------------ Tabs ------------ */
+  document.querySelectorAll('.tabs').forEach(function(item) {
+
+    item.querySelectorAll('.tabs__link').forEach(function(item, i) {
+
+      item.addEventListener('click', function(e) {
+        let target = e.target.closest('a');
+
+        e.preventDefault();
+
+        if ( target.classList.contains('active') ) return;
+
+        let hash = target.getAttribute('href');
+        if (hash != '#') {
+          window.location.hash = hash;
+        }
+
+        let root = target.closest('.tabs');
+        clearTabClasses(root, i);
+      });
+
+    });
+
+  });
+
+  function clearTabClasses(root, i) {
+    root.querySelectorAll('.tabs__item').forEach(function(item) {
+      item.querySelector('.tabs__link').classList.remove('active');
+    });
+
+    root.querySelectorAll('.tabs__tab-pane').forEach(function(item) {
+      item.classList.remove('active');
+    });
+
+    root.querySelector('.tabs__item:nth-child(' + (i+1) + ') .tabs__link').classList.add('active');
+    root.querySelector('.tabs__tab-pane:nth-child(' + (i+1) + ')').classList.add('active');
+  }
+
+  let currentHash = window.location.hash;
+  let hashTab = document.querySelector('.tabs__link[href="' + currentHash + '"]');
+  if (hashTab) {
+    let ev = new Event('click');
+    hashTab.dispatchEvent(ev);
+  }
+  /* ------------ Tabs ------------ */
 });
 
 svg4everybody({});

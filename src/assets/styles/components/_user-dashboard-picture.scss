@@ -52,6 +52,16 @@
     }
   }
 
+  &__sex {
+    .fa-mars {
+      color: skyblue;
+    }
+
+    .fa-venus {
+      color: #ff84af;
+    }
+  }
+
   &__birthday {
     font-size: 1.4rem;
     color: $primary-color;

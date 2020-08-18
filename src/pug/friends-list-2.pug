@@ -1,0 +1,332 @@
+extends templates/main
+
+include components/friend
+
+block variables
+  - const title = 'List of friends';
+  - const pageClass = 'friends-list-page';
+  - const tinyNav = true;
+
+block content
+
+  .container-fluid
+    .main-heading-area
+      .main-heading-wrap.main-heading-wrap--left
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter L]ist #[span.main-heading__accent of friends]
+        span.main-heading__note you have 256 friends
+      a.btn.btn--primary-reverse.btn--sm(href="#") + Add Friend
+
+  .container-fluid
+
+    main.primary-content.primary-content--gaps
+      
+      .tabs.occasion-tabs
+
+        .tabs__header
+
+          .table-responsive
+
+            ul.tabs__list
+              li.tabs__item.occasion-tabs__tab
+                a.tabs__link.occasion-tabs__tab-link.active(href="#your-friends") 
+                  +icon('team-leader', 'occasion-tabs__tab-icon')
+                  span Your Friends
+              li.tabs__item.occasion-tabs__tab
+                a.tabs__link.occasion-tabs__tab-link(href="#friends-request") 
+                  +icon('add-group', 'occasion-tabs__tab-icon')
+                  span Friends Request
+                  i.occasion-tabs__notification
+              li.tabs__item.occasion-tabs__tab
+                a.tabs__link.occasion-tabs__tab-link(href="#find-friends") 
+                  +icon('search-friend', 'occasion-tabs__tab-icon')
+                  span Find Friends
+
+        .tabs__panes
+
+          .tabs__tab-pane.active
+
+            .friends-section
+
+              .friends-section__list
+
+                .row
+
+                  .col-sm-6.col-md-4
+
+                    +friend({
+                      avatarPath: 'assets/images/media/user-1.jpg',
+                      friendName: 'Aakash Parmar',
+                      friendEventIcon: 'event-10',
+                      friendEventDate: '21 Dec 1984'
+                    })
+
+                  .col-sm-6.col-md-4
+
+                    +friend({
+                      avatarPath: 'assets/images/media/user-3.jpg',
+                      friendName: 'Aston Leach',
+                      friendEventIcon: 'event-12',
+                      friendEventDate: '15 Feb 1999'
+                    })
+
+                  .col-sm-6.col-md-4
+
+                    +friend({
+                      avatarPath: 'assets/images/media/user-4.jpg',
+                      friendName: 'Ashley Collins',
+                      friendEventIcon: 'event-1',
+                      friendEventDate: '21 Dec 2001'
+                    })
+
+                  .col-sm-6.col-md-4
+
+                    +friend({
+                      avatarPath: 'assets/images/media/user-5.jpg',
+                      friendName: 'Adam Banks',
+                      friendEventIcon: 'event-2',
+                      friendEventDate: '17 Sep 1979'
+                    })
+
+                  .col-sm-6.col-md-4
+
+                    +friend({
+                      avatarPath: 'assets/images/media/user-7.jpg',
+                      friendName: 'Chris Brennan',
+                      friendEventIcon: 'event-3',
+                      friendEventDate: '23 Apr 2002'
+                    })
+
+                  .col-sm-6.col-md-4
+
+                    +friend({
+                      avatarPath: 'assets/images/media/user-6.jpg',
+                      friendName: 'Christopher Stonebridge',
+                      friendEventIcon: 'event-4',
+                      friendEventDate: '7 Dec 1987'
+                    })
+
+              include components/pagination
+
+          .tabs__tab-pane
+
+            .friends-request
+
+              .row
+
+                .col-sm-6.col-md-4
+
+                  +b.friend--shadow
+                    +e.FIGURE.figure
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-3.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="") Aston Leach]
+                        +icon('event-4', 'friend__icon')
+                        +e.SPAN.event 15 Feb 1999
+                    +e.btns
+                      .row
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary(href="#") Confirm
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary-reverse(href="#") Not Now
+
+                .col-sm-6.col-md-4
+
+                  +b.friend--shadow
+                    +e.FIGURE.figure
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-7.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="") Lyra Lee]
+                        +icon('event-4', 'friend__icon')
+                        +e.SPAN.event 21 Dec 1984
+                    +e.btns
+                      .row
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary(href="#") Confirm
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary-reverse(href="#") Not Now
+
+                .col-sm-6.col-md-4
+
+                  +b.friend--shadow
+                    +e.FIGURE.figure
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-8.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="") Lizzey Johnson]
+                        +icon('event-4', 'friend__icon')
+                        +e.SPAN.event 21 Dec 1997
+                    +e.btns
+                      .row
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary(href="#") Confirm
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary-reverse(href="#") Not Now
+
+                .col-sm-6.col-md-4
+
+                  +b.friend--shadow
+                    +e.FIGURE.figure
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-5.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="") Hazel Jennings]
+                        +icon('event-4', 'friend__icon')
+                        +e.SPAN.event 16 Dec 1985
+                    +e.btns
+                      .row
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary(href="#") Confirm
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary-reverse(href="#") Not Now
+
+                .col-sm-6.col-md-4
+
+                  +b.friend--shadow
+                    +e.FIGURE.figure
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-9.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="") Mirka Masic]
+                        +icon('event-4', 'friend__icon')
+                        +e.SPAN.event 17 Dec 1987
+                    +e.btns
+                      .row
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary(href="#") Confirm
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary-reverse(href="#") Not Now
+
+                .col-sm-6.col-md-4
+
+                  +b.friend--shadow
+                    +e.FIGURE.figure
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-6.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="") Christopher Stonebridge]
+                        +icon('event-4', 'friend__icon')
+                        +e.SPAN.event 7 Dec 1987
+                    +e.btns
+                      .row
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary(href="#") Confirm
+                        .col-sm-6
+                          +e.A.btn.btn.btn--primary-reverse(href="#") Not Now
+
+          .tabs__tab-pane
+
+            .friends-section
+
+              .friends-section__header
+
+                form.add-friend-form(action="/" name="add-friend-form" method="GET")
+                  label.add-friend-form__label(for="friend-field") Find friends
+                  .add-friend-form__field
+                    input.add-friend-form__input(type="search" name="search-query" id="friend-field")
+                    button(type="submit" name="send-data" class="add-friend-form__send")
+                      +icon('search', 'add-friend-form__icon')
+
+              .secondary-heading Search results
+
+              .friends-search
+
+                .row
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-7.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Alex Milway]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 7 Dec 1995
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-2.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Aston Leac]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 7 Dec 1999
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-5.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Adam Banks]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 27 Dec 1987
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-8.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Aston Collins]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 7 Dec 1987
+                        +e.A.add.btn.btn--primary-reverse.btn--sm.disabled(href="#") Added
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-7.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Hazel Jennings]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 27 Dec 1984
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-1.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Aakash Parmar]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 7 Dec 1998
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-2.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Lyra Lee]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 7 Dec 1987
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
+
+                  .col-sm-6.col-md-4.col-lg-3
+
+                    +b.FIGURE.friend-promo
+                      +e.A.img-wrap(href="#")
+                        +e.IMG.img(src="assets/images/media/user-6.jpg" alt="")
+                      +e.FIGCAPTION.figcaption
+                        +e.name #[a(href="#") Christopher Stonebridge]
+                        +e.event-wrap
+                          +icon('event-4', 'friend__icon')
+                          +e.SPAN.event 7 Dec 1987
+                        +e.A.add.btn.btn--primary-reverse.btn--sm(href="#") Add Friend
