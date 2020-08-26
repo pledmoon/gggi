@@ -30,7 +30,7 @@ block content
         +e.FIELDSET.section(name="occasion")
           +e.LEGEND.heading.secondary-heading.text-center Select Main Events
 
-          +e.user-event.d-none.d-sm-flex.flex-sm-nowrap
+          +e.user-event.d-none.d-md-flex.flex-md-nowrap
             
             +e.user-event-col
 
@@ -44,10 +44,6 @@ block content
 
               +e.subheading Annual
 
-            +e.user-event-col
-
-              +e.subheading Budget ($)
-
             +e.user-event-col--extra-option
 
               +e.subheading Gift card
@@ -56,7 +52,11 @@ block content
 
               +e.subheading Gift wrap
 
-          +e.user-event.flex-sm-nowrap
+            +e.user-event-col
+
+              +e.subheading Budget ($)
+
+          +e.user-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -73,26 +73,26 @@ block content
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-1" id="is-annual-1" checked)
-                label.checkbox-label__main(for="is-annual-1") #[span.d-sm-none Annual]
-
-            +e.user-event-col
-
-              +e.field
-                +e.INPUT.input--sm(type="text" name="event-budget-1" value="$5")
+                label.checkbox-label__main(for="is-annual-1") #[span.d-md-none Annual]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-card-1" id="is-gift-card-1" checked)
-                label.checkbox-label__main(for="is-gift-card-1") #[span.d-sm-none Gift card]
+                label.checkbox-label__main(for="is-gift-card-1") #[span.d-md-none Gift card]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-wrap-1" id="is-gift-wrap-1" checked)
-                label.checkbox-label__main(for="is-gift-wrap-1") #[span.d-sm-none Gift wrap]
+                label.checkbox-label__main(for="is-gift-wrap-1") #[span.d-md-none Gift wrap]
+
+            +e.user-event-col
+
+              +e.field
+                +e.INPUT.input--sm(type="text" name="event-budget-1" value="$5")
           
-          +e.user-event.flex-sm-nowrap
+          +e.user-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -109,26 +109,26 @@ block content
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-2" id="is-annual-2" checked)
-                label.checkbox-label__main(for="is-annual-2") #[span.d-sm-none Annual]
-
-            +e.user-event-col
-
-              +e.field
-                +e.INPUT.input--sm(type="text" name="event-budget-2" value="$155")
+                label.checkbox-label__main(for="is-annual-2") #[span.d-md-none Annual]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-card-2" id="is-gift-card-2")
-                label.checkbox-label__main(for="is-gift-card-2") #[span.d-sm-none Gift card]
+                label.checkbox-label__main(for="is-gift-card-2") #[span.d-md-none Gift card]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-wrap-2" id="is-gift-wrap-2")
-                label.checkbox-label__main(for="is-gift-wrap-2") #[span.d-sm-none Gift wrap]
+                label.checkbox-label__main(for="is-gift-wrap-2") #[span.d-md-none Gift wrap]
+
+            +e.user-event-col
+
+              +e.field
+                +e.INPUT.input--sm(type="text" name="event-budget-2" value="$155")
           
-          +e.user-event.flex-sm-nowrap
+          +e.user-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -145,26 +145,26 @@ block content
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-3" id="is-annual-3")
-                label.checkbox-label__main(for="is-annual-3") #[span.d-sm-none Annual]
-
-            +e.user-event-col
-
-              +e.field
-                +e.INPUT.input--sm(type="text" name="event-budget-3" value="$200")
+                label.checkbox-label__main(for="is-annual-3") #[span.d-md-none Annual]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-card-3" id="is-gift-card-3" checked)
-                label.checkbox-label__main(for="is-gift-card-3") #[span.d-sm-none Gift card]
+                label.checkbox-label__main(for="is-gift-card-3") #[span.d-md-none Gift card]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-wrap-3" id="is-gift-wrap-3" checked)
-                label.checkbox-label__main(for="is-gift-wrap-3") #[span.d-sm-none Gift wrap]
+                label.checkbox-label__main(for="is-gift-wrap-3") #[span.d-md-none Gift wrap]
+
+            +e.user-event-col
+
+              +e.field
+                +e.INPUT.input--sm(type="text" name="event-budget-3" value="$200")
           
-          +e.user-event.flex-sm-nowrap
+          +e.user-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -181,24 +181,24 @@ block content
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-4" id="is-annual-4")
-                label.checkbox-label__main(for="is-annual-4") #[span.d-sm-none Annual]
-
-            +e.user-event-col
-
-              +e.field
-                +e.INPUT.input--sm(type="text" name="event-budget-4" value="$130")
+                label.checkbox-label__main(for="is-annual-4") #[span.d-md-none Annual]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-card-4" id="is-gift-card-4" checked)
-                label.checkbox-label__main(for="is-gift-card-4") #[span.d-sm-none Gift card]
+                label.checkbox-label__main(for="is-gift-card-4") #[span.d-md-none Gift card]
 
             +e.user-event-col--extra-option
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-gift-wrap-4" id="is-gift-wrap-4" checked)
-                label.checkbox-label__main(for="is-gift-wrap-4") #[span.d-sm-none Gift wrap]
+                label.checkbox-label__main(for="is-gift-wrap-4") #[span.d-md-none Gift wrap]
+
+            +e.user-event-col
+
+              +e.field
+                +e.INPUT.input--sm(type="text" name="event-budget-4" value="$130")
 
         // /set of fields 1
 
@@ -206,7 +206,7 @@ block content
         +e.FIELDSET.section(name="more-options")
           +e.LEGEND.heading.secondary-heading.text-center Select Additional Occasions
 
-          +e.user-event.d-none.d-sm-flex
+          +e.user-event.d-none.d-md-flex.flex-md-nowrap
             
             +e.user-event-col
 
@@ -220,11 +220,19 @@ block content
 
               +e.subheading Annual
 
+            +e.user-event-col--extra-option
+
+              +e.subheading Gift card
+
+            +e.user-event-col--extra-option
+
+              +e.subheading Gift wrap
+
             +e.user-event-col
 
               +e.subheading Budget ($)
 
-          +e.user-event
+          +e.user-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -241,7 +249,19 @@ block content
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-5" id="is-annual-5" checked)
-                label.checkbox-label__main(for="is-annual-5") #[span.d-sm-none Annual]
+                label.checkbox-label__main(for="is-annual-5") #[span.d-md-none Annual]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-5" id="is-gift-card-5")
+                label.checkbox-label__main(for="is-gift-card-5") #[span.d-md-none Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-5" id="is-gift-wrap-5")
+                label.checkbox-label__main(for="is-gift-wrap-5") #[span.d-md-none Gift wrap]
 
             +e.user-event-col
 
@@ -252,7 +272,7 @@ block content
                   +e.A.rm-event(href="#")
                     +icon('trash-alt', 'fast-search__rm-event-icon')
           
-          +e.user-event
+          +e.user-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -269,7 +289,19 @@ block content
 
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-6" id="is-annual-6")
-                label.checkbox-label__main(for="is-annual-6") #[span.d-sm-none Annual]
+                label.checkbox-label__main(for="is-annual-6") #[span.d-md-none Annual]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-6" id="is-gift-card-6" checked)
+                label.checkbox-label__main(for="is-gift-card-6") #[span.d-md-none Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-6" id="is-gift-wrap-6")
+                label.checkbox-label__main(for="is-gift-wrap-6") #[span.d-md-none Gift wrap]
 
             +e.user-event-col
 
@@ -280,7 +312,7 @@ block content
                   +e.A.rm-event(href="#")
                     +icon('trash-alt', 'fast-search__rm-event-icon')
           
-          +e.user-event--add-event
+          +e.user-event--add-event.flex-md-nowrap
 
             +e.user-event-col
 
@@ -299,6 +331,18 @@ block content
               +e.checkbox.checkbox-label
                 input.checkbox-label__input(type="checkbox" name="is-annual-7" id="is-annual-7")
                 label.checkbox-label__main(for="is-annual-7") #[span Annual]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-card-7" id="is-gift-card-7")
+                label.checkbox-label__main(for="is-gift-card-7") #[span Gift card]
+
+            +e.user-event-col--extra-option
+
+              +e.checkbox.checkbox-label
+                input.checkbox-label__input(type="checkbox" name="is-gift-wrap-7" id="is-gift-wrap-7")
+                label.checkbox-label__main(for="is-gift-wrap-7") #[span Gift wrap]
 
             +e.user-event-col
 

@@ -98,6 +98,7 @@
       span {
         color: $font-base-color;
         padding-left: 3.5rem;
+        white-space: nowrap;
       }
     }
 
@@ -119,7 +120,7 @@
       margin-bottom: 0;
     }
 
-    @media (min-width: $sm) {
+    @media (min-width: $md) {
       display: inline-block;
 
       &:not(:first-child) {
@@ -218,7 +219,7 @@
     margin: 0 -1.5rem;
     flex-wrap: wrap;
 
-    @media (max-width: $sm--mw) {
+    @media (max-width: $md--mw) {
       padding: 2rem 0;
 
       &:not(:last-child) {
@@ -230,10 +231,16 @@
       }
     }
     
-    @media (min-width: $sm) {
+    @media (min-width: $md) {
+      margin: 0 -.5rem;
+
       &:not(:last-child) {
         margin-bottom: 2rem;
       }
+    }
+    
+    @media (min-width: $md) {
+      margin: 0 -1.5rem;
     }
 
     &-col {
@@ -241,14 +248,26 @@
       max-width: 23.333%;
       padding: 0 1.5rem;
 
-      @media (min-width: $sm) {
+      @media (min-width: $md) {
+        padding: 0 .5rem;
+
+        &:first-child {
+          flex-basis: 20%;
+          max-width: 20%;
+          flex-shrink: 0;
+        }
+      }
+
+      @media (min-width: $lg) {
+        padding: 0 1.5rem;
+
         &:first-child {
           flex-basis: 30%;
           max-width: 30%;
         }
       }
 
-      @media (max-width: $sm--mw) {
+      @media (max-width: $md--mw) {
         flex-basis: 50%;
         max-width: 50%;
         padding-top: .5rem;
@@ -261,7 +280,7 @@
 
       &--annual,
       &--extra-option {
-        @media (min-width: $sm) {
+        @media (min-width: $md) {
           text-align: center;
         }
 
@@ -280,7 +299,7 @@
       padding: 2.5rem;
       margin: 0 -4rem;
 
-      @media (max-width: $sm--mw) {
+      @media (max-width: $md--mw) {
         &:last-child {
           padding-bottom: 2.5rem;
         }
