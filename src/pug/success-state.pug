@@ -1,0 +1,59 @@
+extends templates/main
+
+block variables
+  - const title = 'Thank you for your feedback!';
+  - const pageClass = 'state-page';
+  - const tinyNav = true;
+
+block content
+
+  // Success Area
+  .success-state
+
+    .success-state__heading.main-heading-wrap.main-heading-wrap--left
+      .main-heading
+        .main-heading__body #[span.main-heading__first-letter T]hank you #[span.main-heading__accent for your feedback#[span !]]
+
+    .success-state__main
+      .success-state__img-wrap
+        img.success-state__img.img-responsive(src="assets/images/success-image.png" alt="")
+
+      form.success-state__rating.rating
+
+        .rating__heading Rate our service
+
+        .success-state__stars.rating__main
+          label.rating__label
+            input.rating__radio(type="radio" name="rating" value="5" title="5 stars") 
+            | 5
+          label.rating__label
+            input.rating__radio(type="radio" name="rating" value="4" title="4 stars") 
+            | 4
+          label.rating__label.selected
+            input.rating__radio(type="radio" name="rating" value="3" title="3 stars") 
+            | 3
+          label.rating__label
+            input.rating__radio(type="radio" name="rating" value="2" title="2 stars") 
+            | 2
+          label.rating__label
+            input.rating__radio(type="radio" name="rating" value="1" title="1 star") 
+            | 1
+
+        .rating__current-state Good!
+
+        button.rating__btn.btn.btn--grad.btn--animated(href="#" type="submit") Send
+
+        script.
+          document.querySelectorAll('.rating input').forEach((input) => {
+            input.addEventListener('change', function(e) {
+              let self = this;
+              
+              document.querySelectorAll('.rating .selected').forEach((input) => {
+                input.classList.remove('selected');
+              });
+          
+              self.closest('label').classList.add('selected');
+            });
+          });
+
+  // /Success Area

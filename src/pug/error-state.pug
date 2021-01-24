@@ -1,0 +1,24 @@
+extends templates/main
+
+block variables
+  - const title = 'Oops, something went wrong!';
+  - const pageClass = 'state-page';
+  - const tinyNav = true;
+
+block content
+
+  // Error Area
+  .error-state
+    .error-state__about
+
+      .error-state__heading.main-heading-wrap.main-heading-wrap--left
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter O]ops, #[span.main-heading__accent something went wrong#[span !]]
+
+      .error-state__info
+        p.error-state__desc We are already got a notification and fixing it!
+        p.error-state__desc If you need any support, please contact us at #[br] #[a(href="mailto:support@gogogivit.com") support@gogogivit.com]
+    
+    .error-state__img-wrap
+      img.error-state__img.img-responsive(src="assets/images/error-image.png" alt="")
+  // /Error Area

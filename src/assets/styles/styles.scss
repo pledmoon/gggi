@@ -72,6 +72,7 @@
 @import "components/countdown";
 @import "components/user-info";
 @import "components/tabs";
+@import "components/rating";
 
 // 6.Pages (page-specific styles)
 @import 'pages/forms-page';
@@ -80,3 +81,153 @@
 
 // 7.Themes
 // @import 'themes/default';
+
+.main-heading__body span span {
+  color: $primary-color;
+}
+
+.error-state {
+  @media (min-width: $md) {
+    display: flex;
+  }
+
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  &__about {
+    margin-bottom: 3rem;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+      max-width: 38rem;
+    }
+  }
+
+  &__img-wrap {
+    @media (min-width: $md) {
+      flex: 1;
+      margin-top: 3rem;
+    }
+  }
+
+  @media (min-width: $md) {
+    &__heading {
+      padding-right: 0;
+      padding-left: 4rem;
+    }
+
+    .main-heading {
+      line-height: 1;
+      white-space: normal;
+
+      &::before {
+        top: .5rem;
+        transform: translate(3rem, 0);
+      }
+
+      &__accent {
+        display: block;
+        padding-left: 3rem;
+      }
+
+      &__body {
+        &::after {
+          top: 100%;
+          bottom: auto;
+          transform: translate(0, 1.5rem);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $md--mw) {
+    .main-heading-wrap {
+      padding: 0 0 0 3rem;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .main-heading {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__info {
+    padding-left: 7rem;
+    line-height: 1.2;
+    max-width: 28rem;
+  }
+
+  &__desc {
+    color: #57606f;
+    font-size: 1.8rem;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5rem;
+    }
+
+    a {
+      color: #0caeb1;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.success-state {
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media (min-width: $md) {
+    &__heading {
+      padding-right: 0;
+      padding-left: 4rem;
+      max-width: 40rem;
+      margin: 0;
+    }
+
+    .main-heading {
+      line-height: 1;
+      white-space: normal;
+      margin-bottom: 0;
+
+      &::before {
+        top: .5rem;
+        transform: translate(3rem, 0);
+      }
+
+      &__accent {
+        display: block;
+        padding-left: 3rem;
+      }
+    }
+  }
+
+  @media (max-width: $md--mw) {
+    .main-heading-wrap {
+      padding: 0 0 0 3rem;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .main-heading {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__img-wrap {
+    margin: 0 0 4rem;
+
+    @media (min-width: $md) {
+      margin-top: -5rem;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+  }
+}

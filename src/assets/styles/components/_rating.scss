@@ -1,0 +1,57 @@
+.rating {
+  text-align: center;
+
+  &__heading {
+    font-size: 2rem;
+    color: #1a5f78;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    font-family: $headings-fonts-stack;
+  }
+
+  &__main {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    margin-bottom: .5rem;
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 0;
+    cursor: pointer;
+    margin: 0 .4rem;
+
+    &::before {
+      position: relative;
+      font: 3rem / 1 fa;
+      display: block;
+      content: "\f005";
+      color: #dedede;
+      font-weight: 400;
+    }
+
+    &.selected::before,
+    &.selected ~ label::before,
+    &:hover::before,
+    &:hover ~ label::before {
+      color: #fcb54f;
+      font-weight: 900;
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    left: -999999px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__current-state {
+    display: block;
+    color: #fcb54f;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: $headings-fonts-stack;
+    margin-bottom: 4rem;
+  }
+}
