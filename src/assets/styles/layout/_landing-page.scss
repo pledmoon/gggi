@@ -335,7 +335,7 @@ Layout Main Sections
   @media (min-width: $lg) {
     margin-bottom: 25rem;
     padding: 0 6rem;
-    margin-top: 10rem;
+    margin-top: 8rem;
   }
 
   .main-heading {
@@ -787,3 +787,26 @@ Layout Main Sections
               url("../images/stage-decor-4.png") no-repeat 48rem 85rem;
 }*/
 /* Stages Waves */
+
+.section-video {
+  max-width: 80rem;
+  margin: 0 auto;
+  
+  &__main {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 56.25%;
+    }
+
+    iframe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
