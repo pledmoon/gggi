@@ -23,17 +23,14 @@ block header
 
         +navbar([
           {
-            title: 'Get Started',
+            title: 'Search by Occasion',
             active: true
           },
           {
-            title: 'How it work'
+            title: 'Meet your Digital Assistant'
           },
           {
-            title: 'Testemonials'
-          },
-          {
-            title: 'Gift ideas'
+            title: 'Community Love'
           },
           {
             title: 'Who we are'
@@ -54,19 +51,65 @@ block content
       .row.no-gutters
         .col-md-6
           .hero-promo__heading 
-            .hero-promo__heading-text We #[span.hero-promo__heading-lead help you] find the #[div perfect #[span.hero-promo__heading-important gift]] at the #[br] right price
-          a.hero-promo__btn.btn.btn--grad.btn--animated(href="#") Get Started #[i.fa.fa-chevron-right]
+            .hero-promo__heading-text We #[span.hero-promo__heading-lead help you] find the #[div perfect #[span.hero-promo__heading-important gift]] for any #[br] occasion
+          //- a.hero-promo__btn.btn.btn--grad.btn--animated(href="#") Get Started #[i.fa.fa-chevron-right]
         .col-md-6.d-none.d-md-block
           img.hero-promo__img.img-responsive(src="assets/images/robot-hero.png" alt="")
       +soc('hero-promo__soc')
-      .next-helper How it works?
+      //- .next-helper How it works?
     // /hero-promo
 
-    // promo-video
-    section.section-video
-      .section-video__main
-        iframe(width="560" height="315" src="https://www.youtube.com/embed/N-ByeUGD6dU?controls=0&modestbranding=0&rel=0&showinfo=0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen)
-    // /promo-video
+    // promo-features
+    section.promo-features-section.land-section
+      .row.justify-content-center
+
+        .col-sm-6.col-md-4
+
+          a.promo-feature(href="#")
+            .promo-feature__img-wrap
+              img.promo-feature__img(src="assets/images/promo-feature-1.png" alt="" width="300" height="300")
+            .promo-feature__heading Winter holidays
+            p.promo-feature__desc Our curated selection of the standout gifts for Christmas to help you find the perfect match for the special someone on your list.
+            span.promo-feature__btn.btn.btn--grad
+              i.fa.fa-chevron-right
+        
+        .col-sm-6.col-md-4
+
+          a.promo-feature(href="#")
+            .promo-feature__img-wrap
+              img.promo-feature__img(src="assets/images/promo-feature-2.png" alt="" width="300" height="300")
+            .promo-feature__heading Browse all Occasions
+            p.promo-feature__desc Find the perfect gift for any occasion – birthdays, anniversaries, furry friends and more.
+            span.promo-feature__btn.btn.btn--grad
+              i.fa.fa-chevron-right
+        
+        .col-sm-6.col-md-4
+
+          a.promo-feature(href="#")
+            .promo-feature__img-wrap
+              img.promo-feature__img(src="assets/images/promo-feature-3.png" alt="" width="300" height="300")
+            .promo-feature__heading Sign Up
+            p.promo-feature__desc Create an account to get custom event reminders and gift recommendations for any occasion.
+            span.promo-feature__btn.btn.btn--grad
+              i.fa.fa-chevron-right
+    // /promo-features
+
+    // subscribe-section
+    section.home-subscribe-section.land-section
+      .home-subscribe
+        .home-subscribe__header
+          .home-subscribe__heading.main-heading-wrap.main-heading-wrap--left
+            .main-heading
+              .main-heading__body #[span.main-heading__first-letter S]tay in #[span.main-heading__accent the know!]
+          p.home-subscribe__desc Join our mailing list and get reminders of upcoming occasions and the hottest trending gifts
+        form.home-subscribe__form(action="/" method="POST" name="subscribe")
+          .home-subscribe__field
+            input.home-subscribe__input(type="email" name="email" placeholder="You Email")
+            button.home-subscribe__btn.btn.btn--grad(type="submit")
+              +icon('paper-plane', 'home-subscribe__btn-icon')
+
+      .next-helper How it works?
+    // /subscribe-section
 
     // how-it-works
     section.stages-section.land-section
@@ -110,15 +153,24 @@ block content
         .stage-dec.stage-dec-three
         .stage-dec.stage-dec-four
 
-      .next-helper Testemonials
+      //- .next-helper Testemonials
     // /how-it-works
+
+    // promo-video
+    section.section-video.land-section
+      .section-video__main-wrapper
+        .section-video__main
+          iframe(width="560" height="315" src="https://www.youtube.com/embed/N-ByeUGD6dU?controls=0&modestbranding=0&rel=0&showinfo=0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen)
+
+      .next-helper Testemonials
+    // /promo-video
 
     // opinions
     section.opinions-section.land-section
       
       .main-heading-wrap.main-heading-wrap--left.land-section__heading
         .main-heading
-          .main-heading__body #[span.main-heading__first-letter C]ommunity #[span.main-heading__accent love]
+          .main-heading__body #[span.main-heading__first-letter C]lients #[span.main-heading__accent testimonials]
 
       .row.no-gutters
 
@@ -197,7 +249,7 @@ block content
               +icon('surprise', 'rounded-area__header-icon')
               .main-heading-wrap.main-heading-wrap--left.land-section__heading
                 .main-heading
-                  .main-heading__body #[span.main-heading__first-letter G]ift ideas #[span.main-heading__accent in a hurry]
+                  .main-heading__body #[span.main-heading__first-letter G]ift ideas #[span.main-heading__accent try it for free]
               p.rounded-area__desc Need a quick gift idea in a hurry and not part of the GGGI community, try our #[strong “Fast search”]  You’ll have the option to sign-up at the end to save you time in the future.
               .rounded-area__btn-wrap
                 a.rounded-area__btn.btn.btn--grad.btn--animated(href="#") Fast Search
@@ -213,7 +265,10 @@ block content
         .main-heading
           .main-heading__body #[span.main-heading__first-letter W]ho we #[span.main-heading__accent are?]
 
-      p.about-section__desc You like us are on the go - as a busy student, professional and parent living hectic modern lives.  Our family and friends are important to us and we found ourselves scrambling (even late) on important occasions, disappointed in the gifts we gave, and knowing we were overpaying.  We wanted a solution to help us remember events, find those special gifts, and make sure we did not overpay.  After searching and not finding anything to help, we went about building GoGoGiveIt to help people like you and me gift better to those we love.
+      .about-section__main
+        .about-section__img-wrap
+          img.about-section__img(src="assets/images/about-photo.png" alt="" width="350" height="350")
+        p.about-section__desc You like us are on the go - as a busy student, professional and parent living hectic modern lives.  Our family and friends are important to us and we found ourselves scrambling (even late) on important occasions, disappointed in the gifts we gave, and knowing we were overpaying.  We wanted a solution to help us remember events, find those special gifts, and make sure we did not overpay.  After searching and not finding anything to help, we went about building GoGoGiveIt to help people like you and me gift better to those we love.
     // /about-section
 
 block footer
@@ -248,5 +303,5 @@ block footer
 
         .col-sm-8.d-none.d-sm-block
 
-          img.img-responsive(src="assets/images/robot-gift.png" alt="")
+          img.img-responsive(src="assets/images/robot-gift-2.png" alt="")
   // /footer

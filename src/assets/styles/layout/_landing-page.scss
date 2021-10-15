@@ -573,6 +573,37 @@ Layout Main Sections
       transform: translateX(10rem);
     }
   }
+
+  .main-heading-wrap {
+    transform: translateX(-4rem);
+
+    @media (min-width: $md) {
+      transform: none;
+    }
+  }
+
+  .main-heading__accent {
+    display: block;
+    position: absolute;
+    left: 3rem;
+    top: 100%;
+    margin-top: -2rem;
+    white-space: nowrap;
+  }
+
+  .main-heading__body {
+    &::after {
+      top: 100%;
+      bottom: auto;
+      transform: translateY(1rem);
+      left: 5rem;
+
+      @media (min-width: $md) {
+        transform: translateY(2.5rem);
+        left: 3.5rem;
+      }
+    }
+  }
 }
 /* Opinions */
 
@@ -584,6 +615,11 @@ Layout Main Sections
 
   .main-heading-wrap {
     margin: 0;
+    transform: translateX(-4rem);
+
+    @media (min-width: $md) {
+      transform: none;
+    }
 
     .main-heading {
       line-height: 1;
@@ -597,6 +633,7 @@ Layout Main Sections
 
       @media (min-width: $md) {
         margin-bottom: 8rem;
+        margin-left: -9rem;
       }
 
       &::before {
@@ -617,7 +654,7 @@ Layout Main Sections
 
           @media (min-width: $md) {
             transform: translateY(2.5rem);
-            left: 7rem;
+            left: 3.5rem;
           }
         }
       }
@@ -632,7 +669,7 @@ Layout Main Sections
         white-space: nowrap;
 
         @media (min-width: $md) {
-          left: 7rem;
+          left: 3.5rem;
         }
       }
     }
@@ -717,16 +754,51 @@ Layout Main Sections
   padding: 0 2.5rem;
 
   @media (min-width: $md) {
-    padding: 0 6rem;
+    padding: 0 7rem;
   }
 
   @media (min-width: $lg) {
     margin-bottom: 10rem;
   }
 
+  &__main {
+    @media (min-width: $md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__img-wrap {
+    margin-bottom: 2.5rem;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    backface-visibility: hidden;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
   &__desc {
     line-height: 1.4;
     max-width: 72rem;
+    color: #57606f;
+    flex: 1;
+
+    @media (min-width: $md) {
+      padding-left: 3rem;
+    }
 
     @media (min-width: $lg) {
       padding-left: 6rem;
@@ -789,11 +861,36 @@ Layout Main Sections
 /* Stages Waves */
 
 .section-video {
-  max-width: 80rem;
   margin: 0 auto;
+  background: url('../images/promo-video-overlay.png') no-repeat center / contain;
+  position: relative;
+
+  @media (min-width: 840px) {
+    padding: 0 8rem;
+  }
+
+  @media (min-width: $lg) {
+    padding: 0 6rem;
+  }
+
+  &__main-wrapper {
+    max-width: 86rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 67%;
+    }
+  }
   
   &__main {
-    position: relative;
+    position: absolute;
+    top: 5.4%;
+    left: 3.4%;
+    right: 3.4%;
 
     &::before {
       content: '';
@@ -807,6 +904,7 @@ Layout Main Sections
       top: 0;
       width: 100%;
       height: 100%;
+      border: none;
     }
   }
 }
