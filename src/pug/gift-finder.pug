@@ -1,0 +1,286 @@
+extends templates/main
+
+include components/friend
+
+block variables
+  - const title = 'List of friends';
+  - const pageClass = 'gifts-page';
+
+block content
+
+  .container-fluid
+
+    .gift-finder-hero
+      .gift-finder-hero__col
+        .gift-finder-hero__img-wrap
+          img.gift-finder-hero__img(src="assets/images/finder-hero.png" alt="" width="500" height="500")
+      .gift-finder-hero__col
+        h1.gift-finder-hero__heading.heading-promo
+          span.heading-promo__sm The
+          .heading-promo__main winter holidays are here!
+      .gift-finder-hero__col
+        a.gift-finder-hero__btn.btn.btn--grad.btn--animated(href="#") Browse collection #[i.fa.fa-chevron-right]
+
+    section.primary-content.primary-content--gaps.finder-events-section
+
+      .main-heading-wrap.main-heading-wrap--left
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter O]ccasions
+
+      .finder-events
+        .row
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-1.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Christmas
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-2.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Valentine's Day
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-3.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Mother's Day
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-4.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Father's Day
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-5.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Birthday for Her
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-6.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Birthday for Him
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-7.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Birthday for children
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-8.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Birthday for young adults
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-9.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Graduation
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-10.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Halloween
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-11.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Assistant's Day
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+          .col-6.col-sm-4.col-md-3
+            a.event-card(href="#")
+              figure.event-card__main
+                .event-card__img-wrap
+                  img.event-card__img(src="assets/images/media/event-card-12.jpg" alt="" width="500" height="500")
+                figcaption.event-card__bottom 
+                  .event-card__heading Teacher's Day
+                  span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+    // finder-categories
+    section.finder-categories-section
+      .row
+        .col-sm-6
+          a.finder-categories-section__category.finder-category.finder-category--woman(href="#")
+            .finder-category__main
+              .finder-category__col
+                .finder-category__heading-wrap
+                  .finder-category__heading Gifts #[span for her]
+        .col-sm-6
+          a.finder-categories-section__category.finder-category.finder-category--man(href="#")
+            .finder-category__main
+              .finder-category__col
+                .finder-category__heading-wrap
+                  .finder-category__heading Gifts #[span for him]
+    // /finder-categories
+
+    section.primary-content.primary-content--gaps.gift-children-section
+
+      .main-heading-wrap.main-heading-wrap--left
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter G]ifts for children #[span.main-heading__accent and young adults]
+
+      .gift-children-categories
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-1.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading Newborns
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-2.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading 1-3 years
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-3.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading 3-5 years
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-4.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading 5-9 years
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-5.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading 9-12 years
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-6.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading Highschool
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+        .gift-children-categories__col
+
+          a.event-card.event-card--child.gift-children-categories__category(href="#")
+            figure.event-card__main
+              .event-card__img-wrap
+                img.event-card__img(src="assets/images/child-icon-7.png" alt="" width="350" height="350")
+              figcaption.event-card__bottom 
+                .event-card__heading Young Adult
+                span.event-card__btn.btn.btn--grad.btn--animated #[i.fa.fa-chevron-right]
+
+  // subscribe-section
+  section.subscribe-widget-section
+    .container-fluid
+      .subscribe-widget
+        .subscribe-widget__col.col-xl-5
+          .subscribe-widget__header
+            .subscribe-widget__heading.main-heading-wrap.main-heading-wrap--left
+              .main-heading
+                .main-heading__body #[span.main-heading__first-letter S]tay in #[span.main-heading__accent the know!]
+        .subscribe-widget__col.col-xl-7
+          form.subscribe-widget__form.subscribe-form(action="/" method="POST" name="subscribe")
+            .subscribe-form__field
+              input.subscribe-form__input(type="email" name="email" placeholder="You Email")
+              button.subscribe-form__btn.btn.btn--grad(type="submit")
+                +icon('paper-plane', 'subscribe-form__btn-icon')
+          p.subscribe-widget__desc Join our mailing list and get reminders of upcoming occasions and the hottest trending gifts
+  // /subscribe-section
+
+block footer
+  // footer-invite
+  .footer-invite
+
+    .container-fluid
+
+      .footer-invite__body
+
+        .row.align-items-center
+
+          .col-md-6.col-lg-5
+
+            .footer-invite__main
+              .footer-invite__heading Join the #[span community]
+              p.footer-invite__desc Setup custom event reminders for birthdays, anniversaries and more and get personalized gift recommendations
+              a.footer-invite__btn.btn.btn--grad.btn--animated(href="#") Get Started
+          
+          .col-md-6.col-lg-7.d-none.d-md-block
+
+            .footer-invite__img-wrap
+              img.footer-invite__img(src="assets/images/finder-footer-invite.png" width="800" height="600" alt="")
+  // /footer-invite
+
+  // footer
+  footer.footer
+    .container-fluid
+      .footer__main
+        .footer__main-col.order-last.order-md-first
+          .footer__summary
+            small.copy Сopyright&copy; 2020 All rights reserved.
+            .dev
+              a(href="#").dev__link
+                img(src="assets/images/dev.png" alt="IT Works")
+        .footer__main-col
+          +b.NAV.footer__nav
+            +e.UL.nav-list
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Privacy policy
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Terms and conditions
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Cookies policy
+        .footer__main-col
+          +soc('footer__soc')
+  // /footer
