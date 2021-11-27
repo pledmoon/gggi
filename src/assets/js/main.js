@@ -168,6 +168,115 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   /* ========================= Navbar ========================= */
 
+  /* ------------ Product-Main ------------ */
+  const galleryThumbs = new Swiper('.js-thumbs-list', {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    navigation: {
+      prevEl: '.js-thumbs-prev',
+      nextEl: '.js-thumbs-next'
+    },
+
+    breakpoints: {
+      350: {
+        slidesPerView: 4,
+      },
+      480: {
+        slidesPerView: 5,
+      },
+      576: {
+        slidesPerView: 7,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      992: {
+        slidesPerView: 5
+      },
+      1200: {
+        slidesPerView: 6
+      }
+    },
+  });
+
+  const galleryMain = new Swiper('.js-promo-main', {
+    spaceBetween: 10,
+
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
+
+  lightGallery(document.querySelector('.js-promo-main'), {
+    selector: ".product-main-gallery__img-wrap",
+    download: false
+  });
+
+  /* Drift Zoom */
+  if ( window.matchMedia('(min-width: 992px)').matches ) {
+    let driftPaneContainer = document.querySelector(".product-main-gallery__zoom-pane");
+    let driftInstance = null;
+
+    initDriftZoom(document.querySelector(".js-promo-main .swiper-slide-active img"), driftPaneContainer);
+
+    galleryMain.on('slideChange', function() {
+      setTimeout(function() {
+        driftInstance.destroy();
+        initDriftZoom(document.querySelector(".js-promo-main .swiper-slide-active img"), driftPaneContainer);
+      });
+    });
+
+    function initDriftZoom(driftTriggerElement, driftPaneContainer) {
+      if ( !driftTriggerElement ) return;
+      
+      driftInstance = new Drift(driftTriggerElement, {
+        paneContainer: driftPaneContainer,
+        hoverBoundingBox: true,
+        zoomFactor: 4,
+        inlinePane: false,
+        handleTouch: false
+      });
+    }
+  }
+  /* Drift Zoom */
+  /* ------------ Product-Main ------------ */
+
+  /* ------------ Product-Reviews ------------ */
+  const productGalleries = document.querySelectorAll('.js-review-gallery');
+
+  if (productGalleries.length) {
+    productGalleries.forEach((productGallery) => {
+      const reviewThumbs = new Swiper(productGallery.querySelector('.js-review-list'), {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+
+        navigation: {
+          prevEl: productGallery.querySelector('.js-review-prev'),
+          nextEl: productGallery.querySelector('.js-review-next')
+        },
+      });
+
+      const reviewMain = new Swiper(productGallery.querySelector('.js-review-main'), {
+        spaceBetween: 10,
+
+        thumbs: {
+          swiper: reviewThumbs
+        }
+      });
+
+      lightGallery(productGallery.querySelector('.js-review-main'), {
+        selector: ".product-main-gallery__img-wrap",
+        download: false
+      });
+    });
+  }
+  /* ------------ Product-Reviews ------------ */
+
   /* ========================= JS Password Field Toggle ========================= */
   const pswFieldToggles = document.querySelectorAll('.js-psw-field-toggle');
 
@@ -268,7 +377,44 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   /* ------------ Opinions Carousel ------------ */
 
+  /* ------------ Opinions Carousel ------------ */
+  const giftCarousels = document.querySelectorAll('.js-gifts-carousel');
 
+  if (giftCarousels) {
+    giftCarousels.forEach((instance) => {
+      const parentSection = instance.parentNode;
+
+      const prev = parentSection.querySelector('.js-gifts-carousel-prev');
+      const next = parentSection.querySelector('.js-gifts-carousel-next');
+
+      const isLoop = instance.querySelectorAll('.swiper-slide').length > 2;
+
+      new Swiper(instance, {
+        loop: isLoop,
+        slidesPerView: 1,
+        spaceBetween: 15,
+        autoHeight: true,
+
+        navigation: {
+          prevEl: prev,
+          nextEl: next,
+        },
+
+        breakpoints: {
+          480: {
+            autoHeight: false,
+            slidesPerView: 1,
+            spaceBetween: 20
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          }
+        }
+      });
+    });
+  }
+  /* ------------ Opinions Carousel ------------ */
 
   /* ------------ Tabs ------------ */
   document.querySelectorAll('.tabs').forEach(function(item) {

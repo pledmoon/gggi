@@ -46,6 +46,18 @@
   clip: auto;
 }
 
+@mixin media($breakpoint, $mobileFirst: true) {
+  @if $mobileFirst {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint - 1) {
+      @content;
+    }
+  }
+}
+
 @mixin truncate-text {
   overflow: hidden;
   white-space: nowrap;

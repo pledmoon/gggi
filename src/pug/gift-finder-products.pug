@@ -1,0 +1,569 @@
+extends templates/main
+
+include components/friend
+
+block variables
+  - const title = 'List of friends';
+  - const pageClass = 'gifts-page';
+
+block content
+
+  .container-fluid
+
+    .gift-finder-hero.gift-finder-hero--inner
+      .gift-finder-hero__col
+        .gift-finder-hero__img-wrap
+          img.gift-finder-hero__img(src="assets/images/finder-hero.png" alt="" width="500" height="500")
+      .gift-finder-hero__col
+        h1.gift-finder-hero__heading.heading-promo
+          span.heading-promo__sm The
+          .heading-promo__main winter holidays are here!
+
+    .gifts-section-wrap
+
+      // gifts-section
+      section.primary-content.primary-content--gaps.gifts-section
+
+        .main-heading-wrap.main-heading-wrap--left
+          .main-heading
+            .main-heading__body #[span.main-heading__first-letter G]ender #[span.main-heading__accent neutral]
+
+        .gift-section-carousel
+          .gift-section-carousel__main.js-gifts-carousel.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-2.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $122.70
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 100%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 5.0
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-1.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $22.00
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 50%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 2.5
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-3.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $342.30
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 80%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 4.5
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-4.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $102.60
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 100%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 5.0
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+          .gift-section-carousel__controls
+            button.gift-section-carousel__prev.gift-section-carousel__button.js-gifts-carousel-prev
+              +icon('chevron-left', 'gift-section-carousel__button-icon')
+            button.gift-section-carousel__next.gift-section-carousel__button.js-gifts-carousel-next
+              +icon('chevron-right', 'gift-section-carousel__button-icon')
+      // /gifts-section
+
+      // gifts-section
+      section.primary-content.primary-content--gaps.gifts-section
+
+        .main-heading-wrap.main-heading-wrap--left
+          .main-heading
+            .main-heading__body #[span.main-heading__first-letter F]or #[span.main-heading__accent her]
+
+        .gift-section-carousel
+          .gift-section-carousel__main.js-gifts-carousel.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-3.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $342.30
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 80%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 4.5
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-2.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $122.70
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 100%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 5.0
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-4.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $102.60
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 100%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 5.0
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-1.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $22.00
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 50%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 2.5
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+          .gift-section-carousel__controls
+            button.gift-section-carousel__prev.gift-section-carousel__button.js-gifts-carousel-prev
+              +icon('chevron-left', 'gift-section-carousel__button-icon')
+            button.gift-section-carousel__next.gift-section-carousel__button.js-gifts-carousel-next
+              +icon('chevron-right', 'gift-section-carousel__button-icon')
+      // /gifts-section
+
+      // gifts-section
+      section.primary-content.primary-content--gaps.gifts-section
+
+        .main-heading-wrap.main-heading-wrap--left
+          .main-heading
+            .main-heading__body #[span.main-heading__first-letter F]or #[span.main-heading__accent him]
+
+        .gift-section-carousel
+          .gift-section-carousel__main.js-gifts-carousel.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-1.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $22.00
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 50%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 2.5
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-4.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $102.60
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 100%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 5.0
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-3.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $342.30
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 80%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 4.5
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+              .swiper-slide
+                article.gift-product
+                  .gift-product__main
+                    header.gift-product__header
+                      .gift-product__heading
+                        a.gift-product__heading-link(href="#") Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+                    .gift-product__body
+                      .gift-product__preview
+                        a.gift-product__preview-img-wrap(href="#")
+                          img.gift-product__preview-img(src="assets/images/media/product-2.jpg" alt="")
+                      .gift-product__about
+                        .gift-product__subheading Description
+                        p.gift-product__desc Authentically licensed product from Back To the Future. As seen in Back To the Future Part III,the Time Machine has been taken directly from the big screen and brought to you in a 1:24 scale die - cast model.
+                  footer.gift-product__footer.product-info
+                    .product-info__row
+                      .product-info__col
+                        .product-info__price $122.70
+                        +b.rate.product-info__rate
+                          +e.wrap
+                            +e.SPAN.stars-active(style="width: 100%")
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                              +e.I.icon.fas.fa-star
+                            +e.SPAN.stars-inactive
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                              +e.I.icon.fa.fa-star
+                          +e.value 5.0
+                        .product-info__brand
+                          img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+                      .product-info__col
+                        a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+          .gift-section-carousel__controls
+            button.gift-section-carousel__prev.gift-section-carousel__button.js-gifts-carousel-prev
+              +icon('chevron-left', 'gift-section-carousel__button-icon')
+            button.gift-section-carousel__next.gift-section-carousel__button.js-gifts-carousel-next
+              +icon('chevron-right', 'gift-section-carousel__button-icon')
+      // /gifts-section
+
+  // subscribe-section
+  section.subscribe-widget-section
+    .container-fluid
+      .subscribe-widget
+        .subscribe-widget__col.col-xl-5
+          .subscribe-widget__header
+            .subscribe-widget__heading.main-heading-wrap.main-heading-wrap--left
+              .main-heading
+                .main-heading__body #[span.main-heading__first-letter S]tay in #[span.main-heading__accent the know!]
+        .subscribe-widget__col.col-xl-7
+          form.subscribe-widget__form.subscribe-form(action="/" method="POST" name="subscribe")
+            .subscribe-form__field
+              input.subscribe-form__input(type="email" name="email" placeholder="You Email")
+              button.subscribe-form__btn.btn.btn--grad(type="submit")
+                +icon('paper-plane', 'subscribe-form__btn-icon')
+          p.subscribe-widget__desc Join our mailing list and get reminders of upcoming occasions and the hottest trending gifts
+  // /subscribe-section
+
+block footer
+  // footer-invite
+  .footer-invite
+
+    .container-fluid
+
+      .footer-invite__body
+
+        .row.align-items-center
+
+          .col-md-6.col-lg-5
+
+            .footer-invite__main
+              .footer-invite__heading Join the #[span community]
+              p.footer-invite__desc Setup custom event reminders for birthdays, anniversaries and more and get personalized gift recommendations
+              a.footer-invite__btn.btn.btn--grad.btn--animated(href="#") Get Started
+          
+          .col-md-6.col-lg-7.d-none.d-md-block
+
+            .footer-invite__img-wrap
+              img.footer-invite__img(src="assets/images/finder-footer-invite.png" width="800" height="600" alt="")
+  // /footer-invite
+
+  // footer
+  footer.footer
+    .container-fluid
+      .footer__main
+        .footer__main-col.order-last.order-md-first
+          .footer__summary
+            small.copy Сopyright&copy; 2020 All rights reserved.
+            .dev
+              a(href="#").dev__link
+                img(src="assets/images/dev.png" alt="IT Works")
+        .footer__main-col
+          +b.NAV.footer__nav
+            +e.UL.nav-list
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Privacy policy
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Terms and conditions
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Cookies policy
+        .footer__main-col
+          +soc('footer__soc')
+  // /footer

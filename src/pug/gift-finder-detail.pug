@@ -1,0 +1,432 @@
+extends templates/main
+
+include components/friend
+
+block variables
+  - const title = 'List of friends';
+  - const pageClass = 'gifts-page';
+
+block content
+
+  .container-fluid
+
+    // product-detail
+    section.primary-content.primary-content--gaps.product-detail
+
+      header.product-detail__header
+        h1.product-detail__heading Jada 1:24 Diecast Back to The Future 2 Time Machine with Lights
+        +b.rate.product-detail__rate
+          +e.wrap
+            +e.SPAN.stars-active(style="width: 85%")
+              +e.I.icon.fas.fa-star
+              +e.I.icon.fas.fa-star
+              +e.I.icon.fas.fa-star
+              +e.I.icon.fas.fa-star
+              +e.I.icon.fas.fa-star
+            +e.SPAN.stars-inactive
+              +e.I.icon.fa.fa-star
+              +e.I.icon.fa.fa-star
+              +e.I.icon.fa.fa-star
+              +e.I.icon.fa.fa-star
+              +e.I.icon.fa.fa-star
+          +e.value 4.4
+
+      .product-detail__main
+
+        // product-gallery
+        .product-main-gallery.product-detail__gallery
+
+          .product-main-gallery__main
+
+            .js-promo-main.swiper-container
+
+              .swiper-wrapper
+
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-1.jpg" data-sub-html="Product Caption 1")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-1.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-1.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-2.jpg" data-sub-html="Product Caption 2")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-2.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-2.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-3.jpg" data-sub-html="Product Caption 3")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-3.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-3.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-4.jpg" data-sub-html="Product Caption 4")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-4.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-4.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-5.jpg" data-sub-html="Product Caption 5")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-5.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-5.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-6.jpg" data-sub-html="Product Caption 6")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-6.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-6.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-7.jpg" data-sub-html="Product Caption 7")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-7.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-7.jpg")
+                .swiper-slide
+                  a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-8.jpg" data-sub-html="Product Caption 8")
+                    img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-8.jpg" alt="Product" data-zoom="assets/images/media/product-main-promo-zoom-8.jpg")
+
+            .product-main-gallery__thumbs
+
+              .js-thumbs-list.swiper-container
+
+                .swiper-wrapper
+
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-1.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-2.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-3.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-4.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-5.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-6.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-7.jpg" alt="Product Thumb")
+                  .swiper-slide
+                    span.product-main-gallery__thumb
+                      img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-8.jpg" alt="Product Thumb")
+
+              .product-main-gallery__th-prev.js-thumbs-prev
+                +icon('arrow-left', 'product-main-gallery__th-prev-icon')
+              .product-main-gallery__th-next.js-thumbs-next
+                +icon('arrow-right', 'product-main-gallery__th-next-icon')
+
+          .product-main-gallery__zoom-pane
+        // /product-gallery
+
+        // product-detail-info
+        .product-detail__info
+          .product-detail__about
+            .product-detail__subheading Description
+            ul.product-detail__params
+              li.product-detail__param Country Of Origin: United States
+              li.product-detail__param As Seen In Back To The Future Part Ii,The Time Machine Has Been Taken Directly From The Big Screen And Brought To You In A 1:24 Scale Die - Cast Model
+              li.product-detail__param Relive Your Favorite Scenes From The Movie, Help Doc And Marty Save The Day
+              li.product-detail__param Crafted From Durable Materials Such As 100% Die - Cast Metal And Premium Rubber Tires.
+
+          footer.product-detail__footer.product-info
+            .product-info__row
+              .product-info__col
+                .product-info__price $122.70
+                +b.rate.product-info__rate
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 100%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                  +e.value 5.0
+                .product-info__brand
+                  img.product-info__brand-img(src="assets/images/media/amazon.png" alt="" width="55" height="20")
+              .product-info__col
+                a.product-info__btn.btn.btn--animated.btn--grad(href="#") Buy it Now
+        // /product-detail-info
+    // /product-detail
+
+    // reviews-section
+    section.primary-content.primary-content--gaps.reviews-section
+
+      .main-heading-wrap.main-heading-wrap--left
+        .main-heading
+          .main-heading__body #[span.main-heading__first-letter R]eviews
+
+      .reviews
+
+        // review
+        .reviews__review.review
+
+          .review__header
+            .review__user
+              .review__user-avatar
+                img.review__user-avatar-img(src="assets/images/media/ava.png" alt="" width="35" height="35")
+              .review__user-name Ceasar Rodriguez
+            .review__rating
+              .review__rating-main
+                +b.rate.review__rating-stars
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 80%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                .review__rating-heading Don't break it!
+              small.review__rating-location Reviewed in the United States on June 6, 2020
+            .review__status Verified Purchase
+
+          .review__main
+
+            .review__gallery
+
+              // product-gallery-review
+              .product-main-gallery.review__gallery-main.js-review-gallery
+                .product-main-gallery__main
+
+                  .js-review-main.swiper-container
+
+                    .swiper-wrapper
+                      
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-5.jpg" data-sub-html="Product Caption 5")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-5.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-7.jpg" data-sub-html="Product Caption 7")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-7.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-8.jpg" data-sub-html="Product Caption 8")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-8.jpg" alt="Product")
+
+                  .product-main-gallery__thumbs
+
+                    .js-review-list.swiper-container
+
+                      .swiper-wrapper
+
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-5.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-7.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-8.jpg" alt="Product Thumb")
+
+                    .product-main-gallery__th-prev.js-review-prev
+                      +icon('arrow-left', 'product-main-gallery__th-prev-icon')
+                    .product-main-gallery__th-next.js-review-next
+                      +icon('arrow-right', 'product-main-gallery__th-next-icon')
+              // /product-gallery-review
+
+            .review__info
+
+              p.review__desc GREAT SCOTT !!!! This car is beautiful ! If you're a big fan of Back To The Future, then you love this Jada version of it ! Love how it lights up and wheels folds to turn into a hover conversion and I noticed they don't have the logo on the front of the car cause I heard due of the license issues and all but still this toy car is amazing ! Plus it is the best way to add this to your collection!
+        // /review
+
+        // review
+        .reviews__review.review
+
+          .review__header
+            .review__user
+              .review__user-avatar
+                img.review__user-avatar-img(src="assets/images/media/ava-main-2.jpg" alt="" width="35" height="35")
+              .review__user-name Brent Hettick
+            .review__rating
+              .review__rating-main
+                +b.rate.review__rating-stars
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 100%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                .review__rating-heading Great gift!!
+              small.review__rating-location Reviewed in the United States on June 6, 2020
+            .review__status Verified Purchase
+
+          .review__main
+
+            .review__info
+
+              p.review__desc I didn't realize the wheels flip to flying mode, nice smooth snap action. Gull wing doors open with smooth ease, line up very clean with body when closed..
+              p.review__desc The hood does not open, not a deal breaker, no one cared about the engine ha!!
+              p.review__desc The lights worked (blue timewarp glow exterior)
+              p.review__desc I'd say they stay on about 5 seconds per button push.
+              p.review__desc Looks as though it could sit on the angled stand, has a larger than normal plastic base. Idon't keep the box,, but it is packaged well along with anything else I have purchased from Jada, comming close to 25+ cars now in just a matter of months. I'm over the moon as far as my expectations go for this particular model.
+              p.review__desc Thank you Jada!! Great Hero Car!! Can't wait to add it to my "museum" at work lol!!
+        // /review
+
+        // review
+        .reviews__review.review
+
+          .review__header
+            .review__user
+              .review__user-avatar
+                img.review__user-avatar-img(src="assets/images/media/user-7.jpg" alt="" width="35" height="35")
+              .review__user-name Ceasar Rodriguez
+            .review__rating
+              .review__rating-main
+                +b.rate.review__rating-stars
+                  +e.wrap
+                    +e.SPAN.stars-active(style="width: 100%")
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                      +e.I.icon.fas.fa-star
+                    +e.SPAN.stars-inactive
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                      +e.I.icon.fa.fa-star
+                .review__rating-heading Awesome!
+              small.review__rating-location Reviewed in the United States on June 6, 2020
+            .review__status Verified Purchase
+
+          .review__main
+
+            .review__gallery
+
+              // product-gallery-review
+              .product-main-gallery.review__gallery-main.js-review-gallery
+                .product-main-gallery__main
+
+                  .js-review-main.swiper-container
+
+                    .swiper-wrapper
+
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-3.jpg" data-sub-html="Product Caption 3")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-3.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-6.jpg" data-sub-html="Product Caption 6")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-6.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-2.jpg" data-sub-html="Product Caption 2")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-2.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-1.jpg" data-sub-html="Product Caption 1")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-1.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-5.jpg" data-sub-html="Product Caption 5")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-5.jpg" alt="Product")
+                      .swiper-slide
+                        a.product-main-gallery__img-wrap(href="assets/images/media/product-main-promo-zoom-4.jpg" data-sub-html="Product Caption 4")
+                          img.product-main-gallery__img(src="assets/images/media/product-main-promo-slider-4.jpg" alt="Product")
+
+                  .product-main-gallery__thumbs
+
+                    .js-review-list.swiper-container
+
+                      .swiper-wrapper
+
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-3.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-6.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-2.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-1.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-5.jpg" alt="Product Thumb")
+                        .swiper-slide
+                          span.product-main-gallery__thumb
+                            img.product-main-gallery__thumb-img.img-responsive(src="assets/images/media/product-main-promo-thumb-4.jpg" alt="Product Thumb")
+
+                    .product-main-gallery__th-prev.js-review-prev
+                      +icon('arrow-left', 'product-main-gallery__th-prev-icon')
+                    .product-main-gallery__th-next.js-review-next
+                      +icon('arrow-right', 'product-main-gallery__th-next-icon')
+              // /product-gallery-review
+
+            .review__info
+
+              p.review__desc I didn't realize the wheels flip to flying mode, nice smooth snap action. Gull wing doors open with smooth ease, line up very clean with body when closed..
+              p.review__desc The hood does not open, not a deal breaker, no one cared about the engine ha!!
+              p.review__desc The lights worked (blue timewarp glow exterior)
+              p.review__desc I'd say they stay on about 5 seconds per button push.
+        // /review
+    // /reviews-section
+
+  // subscribe-section
+  section.subscribe-widget-section
+    .container-fluid
+      .subscribe-widget
+        .subscribe-widget__col.col-xl-5
+          .subscribe-widget__header
+            .subscribe-widget__heading.main-heading-wrap.main-heading-wrap--left
+              .main-heading
+                .main-heading__body #[span.main-heading__first-letter S]tay in #[span.main-heading__accent the know!]
+        .subscribe-widget__col.col-xl-7
+          form.subscribe-widget__form.subscribe-form(action="/" method="POST" name="subscribe")
+            .subscribe-form__field
+              input.subscribe-form__input(type="email" name="email" placeholder="You Email")
+              button.subscribe-form__btn.btn.btn--grad(type="submit")
+                +icon('paper-plane', 'subscribe-form__btn-icon')
+          p.subscribe-widget__desc Join our mailing list and get reminders of upcoming occasions and the hottest trending gifts
+  // /subscribe-section
+
+block footer
+  // footer-invite
+  .footer-invite
+
+    .container-fluid
+
+      .footer-invite__body
+
+        .row.align-items-center
+
+          .col-md-6.col-lg-5
+
+            .footer-invite__main
+              .footer-invite__heading Join the #[span community]
+              p.footer-invite__desc Setup custom event reminders for birthdays, anniversaries and more and get personalized gift recommendations
+              a.footer-invite__btn.btn.btn--grad.btn--animated(href="#") Get Started
+          
+          .col-md-6.col-lg-7.d-none.d-md-block
+
+            .footer-invite__img-wrap
+              img.footer-invite__img(src="assets/images/finder-footer-invite.png" width="800" height="600" alt="")
+  // /footer-invite
+
+  // footer
+  footer.footer
+    .container-fluid
+      .footer__main
+        .footer__main-col.order-last.order-md-first
+          .footer__summary
+            small.copy Сopyright&copy; 2020 All rights reserved.
+            .dev
+              a(href="#").dev__link
+                img(src="assets/images/dev.png" alt="IT Works")
+        .footer__main-col
+          +b.NAV.footer__nav
+            +e.UL.nav-list
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Privacy policy
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Terms and conditions
+              +e.LI.nav-item
+                +e.A.nav-link(href="") Cookies policy
+        .footer__main-col
+          +soc('footer__soc')
+  // /footer
